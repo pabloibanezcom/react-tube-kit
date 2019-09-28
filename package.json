@@ -2,6 +2,11 @@
   "name": "tube-map-history.ui-kit",
   "version": "0.1.0",
   "private": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pabloibanezcom/tube-map-history.ui-kit"
+  },
+  "homepage": "https://pabloibanezcom.github.io/tube-map-history.ui-kit",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "scripts": {
@@ -14,7 +19,9 @@
     "js:watch": "cross-env NODE_ENV=production npx babel --minified  --watch src/lib --out-dir dist",
     "scss": "node-sass --include-path scss src/lib/main.scss dist/css/main.css --output-style compressed",
     "scss:watch": "npm run scss && node-sass --include-path scss src/lib/main.scss dist/css/main.css --output-style compressed -wo",
-    "fonts": "cpx src/lib/assets/fonts/fonts/**/*.woff2 dist/fonts"
+    "fonts": "cpx src/lib/assets/fonts/fonts/**/*.woff2 dist/fonts",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -b master -d build"
   },
   "dependencies": {
     "@babel/core": "7.6.0",
@@ -86,6 +93,7 @@
     "eslint-config-airbnb": "^18.0.1",
     "eslint-config-prettier": "^6.3.0",
     "eslint-plugin-prettier": "^3.1.1",
+    "gh-pages": "^2.1.1",
     "jest": "24.9.0",
     "jest-environment-jsdom-fourteen": "0.1.0",
     "jest-resolve": "24.9.0",
