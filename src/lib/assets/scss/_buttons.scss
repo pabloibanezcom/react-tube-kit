@@ -1,0 +1,135 @@
+@import './mixins/colors';
+
+button {
+  &:focus {
+    outline: none !important;
+  }
+}
+
+.btn {
+  display: inline-block;
+  text-align: center;
+  border-radius: 2px;
+  position: relative;
+  box-shadow: none !important;
+  user-select: none;
+  letter-spacing: 0.14px;
+  font-weight: 400;
+  white-space: nowrap;
+  text-decoration: none;
+  vertical-align: middle;
+  overflow: visible;
+  cursor: pointer;
+  appearance: none !important;
+
+  &:disabled {
+    cursor: inherit;
+  }
+
+  .icon {
+    vertical-align: middle;
+  }
+
+  &.btn-sm {
+    padding: 5px 20px;
+    font-size: 1.2rem;
+
+    .icon {
+      font-size: 1.5rem;
+      margin-right: 0.8rem;
+    }
+  }
+
+  &.btn-lg {
+    padding: 8px 30px;
+    font-size: 1.4rem;
+
+    .icon {
+      font-size: 1.8rem;
+      margin-right: 1rem;
+    }
+  }
+
+  &.btn-block {
+    width: 100%;
+  }
+
+  &.btn-uppercase {
+    text-transform: uppercase;
+  }
+
+  &.btn-select {
+    margin: 10px 1px;
+    padding: 8px;
+  }
+
+  &.btn-primary {
+    @include background-color(primary, primary, true);
+
+    &.btn-inverse {
+      @include background-color(primary, secondary, true);
+    }
+
+    &.btn-outline {
+      @include background-color(primary, primary, true, true);
+    }
+  }
+
+  &.btn-secondary {
+    @include background-color(secondary, secondary, true);
+
+    &.btn-inverse {
+      @include background-color(secondary, primary, true);
+    }
+
+    &.btn-outline {
+      @include background-color(secondary, secondary, true, true);
+    }
+  }
+
+  &.btn-warning {
+    @include background-color(warning, warning, true);
+
+    &.btn-outline {
+      @include background-color(warning, warning, true, true);
+    }
+  }
+
+  &.btn-danger {
+    @include background-color(danger, danger, true);
+
+    &.btn-outline {
+      @include background-color(danger, danger, true, true);
+    }
+  }
+
+  &.btn-hover-primary {
+    @include background-color-hover(primary);
+  }
+
+  &.btn-hover-secondary {
+    @include background-color-hover(secondary);
+  }
+
+  &.btn-light {
+    @include background-color(light, light, true);
+  }
+}
+
+.link {
+  &.link-sm {
+    font-size: 1.5rem;
+  }
+
+  &.link-lg {
+    font-size: 2rem;
+  }
+
+  &.link-primary {
+    @include color(primary, secondary);
+  }
+
+  &.link-secondary {
+    @include color(secondary, primary);
+  }
+}

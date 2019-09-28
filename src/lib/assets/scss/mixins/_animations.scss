@@ -1,0 +1,30 @@
+@mixin collapsed() {
+  max-height: 0;
+  height: auto;
+  transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
+}
+
+@mixin expanded() {
+  max-height: 1000px;
+  transition: max-height 0.5s ease-in-out;
+}
+
+@mixin expand-collapse($child: null) {
+  @if ($child) {
+    .#{$child} {
+      @include collapsed;
+    }
+  } @else {
+    @include collapsed;
+  }
+
+  &.shown {
+    @if ($child) {
+      .#{$child} {
+        @include expanded;
+      }
+    } @else {
+      @include expanded;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+@import './components/demo-menu/demo-menu';
+@import './components/demo-element/demo-element';
+@import './components/demo-props-table/demo-props-table';
+@import './components/demo-sections-menu/demo-sections-menu';
+@import '~codemirror/lib/codemirror';
+@import '~codemirror/theme/material';
+
+.demo {
+  .demo-content {
+    display: flex;
+    flex: 1 1;
+    flex-direction: column;
+    padding: 35px 70px;
+  }
+}

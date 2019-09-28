@@ -1,0 +1,88 @@
+.demo-element {
+  margin-bottom: 40px;
+
+  .demo-element__container {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+
+    .demo-element__show {
+      padding: 20px 20px;
+
+      &.fullWidth {
+        .jsx-parser {
+          > div {
+            width: 100%;
+          }
+        }
+      }
+
+      &.multi {
+        .jsx-parser {
+          > div {
+            :not(:first-child) {
+              margin-top: 20px;
+            }
+          }
+        }
+      }
+
+      .jsx-parser {
+        display: flex;
+
+        > div {
+          display: flex;
+          flex-direction: column;
+        }
+      }
+    }
+
+    .demo-element__code {
+      position: relative;
+
+      .demo-show-code-btn {
+        position: absolute;
+        z-index: 100;
+        right: 10px;
+        top: -15px;
+        background-color: #f5f5f5;
+        border: 1px solid #ddd;
+        font-weight: 200;
+
+        &:hover {
+          background-color: $primary-color;
+          color: $primary-alt-color;
+        }
+      }
+
+      .demo-element__codemirror {
+        @include expand-collapse('CodeMirror');
+
+        .CodeMirror {
+          padding: 0 15px;
+          border-bottom-left-radius: 5px;
+          border-bottom-right-radius: 5px;
+
+          .cm-tag {
+            color: #5ed663;
+          }
+
+          .cm-error {
+            background-color: initial;
+          }
+
+          .cm-bracket {
+            color: grey;
+          }
+
+          .cm-attribute {
+            color: #6cf3f3;
+          }
+
+          .cm-string {
+            color: #f5a021;
+          }
+        }
+      }
+    }
+  }
+}
