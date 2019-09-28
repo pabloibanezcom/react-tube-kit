@@ -38,6 +38,8 @@
     "css-loader": "2.1.1",
     "dotenv": "6.2.0",
     "dotenv-expand": "5.1.0",
+    "eslint": "^6.4.0",
+
     "eslint-config-react-app": "^5.0.2",
     "eslint-loader": "3.0.0",
     "eslint-plugin-flowtype": "3.13.0",
@@ -87,7 +89,6 @@
     "concurrently": "^4.1.2",
     "cpx": "^1.5.0",
     "cross-env": "^6.0.0",
-    "eslint": "^6.4.0",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-config-prettier": "^6.3.0",
     "eslint-plugin-prettier": "^3.1.1",
