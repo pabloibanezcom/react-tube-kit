@@ -1,68 +1,72 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# tube-map-history.ui-kit
 
-## Available Scripts
+A collection of components and utils for React.
 
-In the project directory, you can run:
+This package is bootstraped using [create-react-app](https://github.com/facebook/create-react-app)
 
-### `npm start`
+## Demo
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+[Demo Page](https://www.mydemo.com)
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+## Installation
 
-### `npm test`
+```bash
+npm install tube-map-history.ui-kit --save
+```
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Usage
 
-### `npm run build`
+### Styles - Option A: Loading CSS
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Add css import to main css/scss in your application (index.css i.e.)
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+```
+@import "~tube-map-history.ui-kit/dist/css/main.min.css";
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Styles - Option B: Loading SCSS
 
-### `npm run eject`
+Add scss import main scss in your application (index.scss i.e.)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```
+@import "~tube-map-history.ui-kit/dist/scss/main.scss";
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+This option allows to override default scss variables:
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```
+// Fonts
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+$font-primary: 'Circular Airbnb';
 
-## Learn More
+// Colors
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+$body-color: #484848
+$primary-color: #e6c300;
+$secondary-color: #002c41;
+$alternative-color: #00bcd4;
+$primary-alt-color: $secondary-color;
+$primary-outline-color: $secondary-color;
+$secondary-alt-color: $white-color;
+$secondary-outline-color: $secondary-color;
+$outline-font-color: $secondary-color;
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
 
-### Code Splitting
+Create a scss file contaning the variables to override and import it just before package main one.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+```
+@import "./_variables-overrides.scss";
+@import "~tube-map-history.ui-kit/dist/scss/main.scss";
+```
 
-### Analyzing the Bundle Size
+### Components
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+Import desired component from package and instantiate it as usual.
 
-### Making a Progressive Web App
+```
+import { Button } from 'tube-map-history.ui-kit';
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+<Button text="Continue" />
 
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+```

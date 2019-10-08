@@ -1,0 +1,44 @@
+{
+  "options": {
+    "background": {
+      "type": [
+        "light",
+        "primary",
+        "secondary"
+      ],
+      "default": "light",
+      "description": ""
+    },
+    "className": {
+      "type": "string",
+      "default": "''",
+      "description": ""
+    },
+    "color": {
+      "type": [
+        "primary",
+        "secondary"
+      ],
+      "default": "primary",
+      "description": ""
+    },
+    "pageRangeDisplayed": {
+      "type": "number",
+      "default": "4",
+      "description": ""
+    },
+    "size": {
+      "type": [
+        "sm",
+        "lg"
+      ],
+      "default": "lg",
+      "description": ""
+    }
+  },
+  "methods": {
+    "onPageChange()": {
+      "description": "It is executed when page is changed"
+    }
+  }
+}

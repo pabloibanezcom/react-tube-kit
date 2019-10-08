@@ -1,6 +1,6 @@
 import Badges from './badges/badges';
 import Buttons from './buttons/buttons';
-import Collapses from './collapses/collapses';
+import CollapsibleLists from './collapsible-lists/collapsible-lists';
 import CountryLabels from './country-labels/country-labels';
 import Forms from './forms/forms';
 import Headers from './headers/headers';
@@ -11,13 +11,13 @@ import Modals from './modals/modals';
 import Paginations from './paginations/paginations';
 import Panels from './panels/panels';
 import Selectors from './selectors/selectors';
-import Tabs from './tabs/tabs';
+import TabMenus from './tab-menus/tab-menus';
 import VisualIndex from './visual-index/visual-index';
 
 export {
   Badges,
   Buttons,
-  Collapses,
+  CollapsibleLists,
   CountryLabels,
   Forms,
   Headers,
@@ -28,6 +28,6 @@ export {
   Paginations,
   Panels,
   Selectors,
-  Tabs,
+  TabMenus,
   VisualIndex
 };

@@ -8,8 +8,8 @@
     "url": "buttons"
   },
   {
-    "name": "Collapses",
-    "url": "collapses"
+    "name": "Collapsible lists",
+    "url": "collapsible-lists"
   },
   {
     "name": "Country labels",
@@ -52,7 +52,7 @@
     "url": "selectors"
   },
   {
-    "name": "Tabs",
-    "url": "tabs"
+    "name": "Tab menus",
+    "url": "tab-menus"
   }
 ]

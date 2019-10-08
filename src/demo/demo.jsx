@@ -6,7 +6,7 @@ import routes from './routes';
 
 const Demo = ({ history }) => (
   <Fragment>
-    <Header optionsName="admin" />
+    <Header subtitle="UI Kit" />
     <div className="base-container demo">
       <DemoMenu currentPage={history.location.pathname.replace('/demo/', '')} />
       <div className="demo-content">{routes}</div>

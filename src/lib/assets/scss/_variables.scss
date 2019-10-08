@@ -1,4 +1,4 @@
-$font-primary: 'Circular Airbnb';
+$font-primary: 'Circular Airbnb' !default;
 
 // Base colors
 $white-color: #ffffff;
@@ -12,16 +12,16 @@ $warning-color: #eb8c00;
 $danger-color: #d2372c;
 
 // Theme colors
-$body-color: #484848;
+$body-color: #484848 !default;
 
-$primary-color: #e6c300;
-$secondary-color: #002c41;
-$alternative-color: #00bcd4;
+$primary-color: #e6c300 !default;
+$secondary-color: #002c41 !default;
+$alternative-color: #00bcd4 !default;
 
-$primary-alt-color: $secondary-color;
-$primary-outline-color: $secondary-color;
+$primary-alt-color: $secondary-color !default;
+$primary-outline-color: $secondary-color !default;
 
-$secondary-alt-color: $white-color;
-$secondary-outline-color: $secondary-color;
+$secondary-alt-color: $white-color !default;
+$secondary-outline-color: $secondary-color !default;
 
-$outline-font-color: $secondary-color;
+$outline-font-color: $secondary-color !default;

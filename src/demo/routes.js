@@ -3,7 +3,7 @@ import { Redirect, Route, Switch } from 'react-router-dom';
 import {
   Badges,
   Buttons,
-  Collapses,
+  CollapsibleLists,
   CountryLabels,
   Forms,
   Headers,
@@ -14,7 +14,7 @@ import {
   Paginations,
   Panels,
   Selectors,
-  Tabs,
+  TabMenus,
   VisualIndex
 } from './pages';
 
@@ -24,7 +24,7 @@ const routes = (
   <Switch>
     <Route path={`${baseUrl}/badges`} component={Badges} />
     <Route path={`${baseUrl}/buttons`} component={Buttons} />
-    <Route path={`${baseUrl}/collapses`} component={Collapses} />
+    <Route path={`${baseUrl}/collapsible-lists`} component={CollapsibleLists} />
     <Route path={`${baseUrl}/country-labels`} component={CountryLabels} />
     <Route path={`${baseUrl}/forms`} component={Forms} />
     <Route path={`${baseUrl}/headers`} component={Headers} />
@@ -35,7 +35,7 @@ const routes = (
     <Route path={`${baseUrl}/paginations`} component={Paginations} />
     <Route path={`${baseUrl}/panels`} component={Panels} />
     <Route path={`${baseUrl}/selectors`} component={Selectors} />
-    <Route path={`${baseUrl}/tabs`} component={Tabs} />
+    <Route path={`${baseUrl}/tab-menus`} component={TabMenus} />
     <Route path={`${baseUrl}`} component={VisualIndex} />
     <Redirect to={`${baseUrl}`} />
   </Switch>

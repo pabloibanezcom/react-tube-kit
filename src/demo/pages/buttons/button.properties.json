@@ -44,16 +44,6 @@
       "default": "null",
       "description": ""
     },
-    "i18nPrefix": {
-      "type": "string",
-      "default": "null",
-      "description": ""
-    },
-    "i18nText": {
-      "type": "string",
-      "default": "null",
-      "description": ""
-    },
     "icon": {
       "type": "string",
       "default": "''",

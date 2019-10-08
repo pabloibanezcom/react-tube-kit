@@ -1,4 +1,14 @@
-import { Badge } from 'components';
+import {
+  Badge,
+  Button,
+  CollapsibleList,
+  CountryLabel,
+  LoadingSpinner,
+  Modal,
+  Pagination,
+  Panel,
+  TabMenu
+} from '../../lib';
 
 const getComponentsForParser = componentsString => {
   const componentNames = componentsString.split(' ');
@@ -13,14 +23,22 @@ const getComponentFromName = componentName => {
   switch (componentName) {
     case 'Badge':
       return Badge;
-    // case 'Button':
-    //   return Button;
-    // case 'CollapseList':
-    //   return CollapseList;
-    // case 'CountryLabel':
-    //   return CountryLabel;
-    // case 'Panel':
-    //   return Panel;
+    case 'Button':
+      return Button;
+    case 'CollapsibleList':
+      return CollapsibleList;
+    case 'CountryLabel':
+      return CountryLabel;
+    case 'LoadingSpinner':
+      return LoadingSpinner;
+    case 'Modal':
+      return Modal;
+    case 'Pagination':
+      return Pagination;
+    case 'Panel':
+      return Panel;
+    case 'TabMenu':
+      return TabMenu;
     default:
       return null;
   }

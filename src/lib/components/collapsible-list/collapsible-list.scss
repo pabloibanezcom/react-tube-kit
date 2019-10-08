@@ -1,0 +1,132 @@
+.collapsible-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+
+  .collapsible-list-element {
+    @include expand-collapse('collapsible-list-content');
+
+    background-color: white;
+    margin-bottom: 5px;
+    box-shadow: 0 1px 4px 0 hsla(0, 0%, 59.2%, 0.17);
+
+    .collapsible-list-header {
+      font-weight: 400;
+
+      .collapsible-list-header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        > div {
+          padding: 6px 20px 6px 20px;
+          width: 100%;
+        }
+
+        i {
+          transform: rotate(0);
+          transition: all ease 0.2s;
+          margin-right: 20px;
+        }
+      }
+    }
+
+    &.shown {
+      .collapsible-list-header {
+        .collapsible-list-header-container {
+          i {
+            transform: rotate(90deg);
+          }
+        }
+      }
+    }
+  }
+
+  .collapsible-list-content {
+    overflow: hidden;
+
+    > div {
+      padding: 20px;
+
+      @include media-breakpoint-down(sm) {
+        padding: 15px;
+      }
+    }
+  }
+
+  // CUSTOMIZATION
+
+  &.collapsible-list-light {
+    .collapsible-list-element {
+      &.shown {
+        .collapsible-list-header {
+          @include background-color(light);
+        }
+      }
+
+      .collapsible-list-header {
+        @include background-color(light, light);
+      }
+    }
+  }
+
+  &.collapsible-list-primary {
+    .collapsible-list-element {
+      &.shown {
+        .collapsible-list-header {
+          @include background-color(secondary);
+        }
+      }
+
+      .collapsible-list-header {
+        @include background-color(primary, secondary);
+      }
+    }
+  }
+
+  &.collapsible-list-secondary {
+    .collapsible-list-element {
+      &.shown {
+        .collapsible-list-header {
+          @include background-color(primary);
+        }
+      }
+
+      .collapsible-list-header {
+        @include background-color(secondary, primary);
+      }
+    }
+  }
+
+  &.collapsible-list-hover-primary {
+    .collapsible-list-element {
+      &.shown {
+        .collapsible-list-header {
+          @include background-color(primary);
+        }
+      }
+
+      .collapsible-list-header {
+        &:hover {
+          @include background-color(primary);
+        }
+      }
+    }
+  }
+
+  &.collapsible-list-hover-secondary {
+    .collapsible-list-element {
+      &.shown {
+        .collapsible-list-header {
+          @include background-color(secondary);
+        }
+      }
+
+      .collapsible-list-header {
+        &:hover {
+          @include background-color(secondary);
+        }
+      }
+    }
+  }
+}

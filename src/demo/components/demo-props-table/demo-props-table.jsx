@@ -33,7 +33,7 @@ const DemoPropsTable = ({ properties: { options, methods } }) => {
         </div>
       ) : null}
       {methods ? (
-        <div className="mt-40">
+        <div className="mt-8">
           <h2 name="methods" className="mb-4">
             Methods
           </h2>
@@ -61,7 +61,13 @@ const DemoPropsTable = ({ properties: { options, methods } }) => {
 
 const getTypeLabel = type => {
   const getTypeStr = typeStr => {
-    if (typeStr === 'string' || typeStr === 'number' || typeStr === 'bool') {
+    if (
+      typeStr === 'string' ||
+      typeStr === 'number' ||
+      typeStr === 'bool' ||
+      typeStr === 'array' ||
+      typeStr === 'func'
+    ) {
       return <span className="primary-type">{typeStr}</span>;
     }
     return <span className="custom-type">{typeStr}</span>;
