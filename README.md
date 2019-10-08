@@ -1,8 +1,8 @@
-# tube-map-history.ui-kit
+# React Tube Kit
 
 A collection of components and utils for React.
 
-This package is bootstraped using [create-react-app](https://github.com/facebook/create-react-app)
+This package is bootstraped using [create-react-app](https://github.com/facebook/create-react-app) and is using [Bootstrap](https://getbootstrap.com) as base.
 
 ## Demo
 
@@ -11,7 +11,7 @@ This package is bootstraped using [create-react-app](https://github.com/facebook
 ## Installation
 
 ```bash
-npm install tube-map-history.ui-kit --save
+npm install react-tube-kit --save
 ```
 
 ## Usage
@@ -21,7 +21,7 @@ npm install tube-map-history.ui-kit --save
 Add css import to main css/scss in your application (index.css i.e.)
 
 ```
-@import "~tube-map-history.ui-kit/dist/css/main.min.css";
+@import "~react-tube-kit/dist/css/main.min.css";
 ```
 
 ### Styles - Option B: Loading SCSS
@@ -29,7 +29,7 @@ Add css import to main css/scss in your application (index.css i.e.)
 Add scss import main scss in your application (index.scss i.e.)
 
 ```
-@import "~tube-map-history.ui-kit/dist/scss/main.scss";
+@import "~react-tube-kit/dist/scss/main.scss";
 ```
 
 This option allows to override default scss variables:
@@ -57,7 +57,7 @@ Create a scss file contaning the variables to override and import it just before
 
 ```
 @import "./_variables-overrides.scss";
-@import "~tube-map-history.ui-kit/dist/scss/main.scss";
+@import "~react-tube-kit/dist/scss/main.scss";
 ```
 
 ### Components
@@ -65,7 +65,7 @@ Create a scss file contaning the variables to override and import it just before
 Import desired component from package and instantiate it as usual.
 
 ```
-import { Button } from 'tube-map-history.ui-kit';
+import { Button } from 'react-tube-kit';
 
 <Button text="Continue" />
 
