@@ -1,5 +1,6 @@
 {
   "name": "react-tube-kit",
+  "description": "UI kit for React applications - Components, helpers & styles",
   "version": "0.1.0",
   "private": false,
   "repository": {
@@ -13,8 +14,8 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js",
-    "build-npm": "rimraf dist && npm run statics && npm run js && npm run scss && npm run css",
-    "build-npm:watch": "rimraf dist && npm run statics && concurrently --kill-others \"npm run js:watch\" \"npm run scss:watch\" \"npm run css:watch\"",
+    "dist": "rimraf dist && npm run statics && npm run js && npm run scss && npm run css",
+    "dist:watch": "rimraf dist && npm run statics && concurrently --kill-others \"npm run js:watch\" \"npm run scss:watch\" \"npm run css:watch\"",
     "js": "cross-env NODE_ENV=production npx babel --minified  src/lib --out-dir dist",
     "js:watch": "cross-env NODE_ENV=production npx babel --minified  --watch src/lib --out-dir dist",
     "css": "node-sass --include-path scss src/lib/main.scss dist/css/main.min.css --output-style compressed",

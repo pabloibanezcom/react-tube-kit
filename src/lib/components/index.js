@@ -1,6 +1,7 @@
 import Badge from './badge/badge';
 import Button from './button/button';
 import CollapsibleList from './collapsible-list/collapsible-list';
+import ColorLabel from './color-label/color-label';
 import CountryLabel from './country-label/country-label';
 import Footer from './footer/footer';
 import Header from './header/header';
@@ -15,6 +16,7 @@ export {
   Badge,
   Button,
   CollapsibleList,
+  ColorLabel,
   CountryLabel,
   Footer,
   Header,

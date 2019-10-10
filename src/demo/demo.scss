@@ -1,7 +1,9 @@
+@import './components/code-highlight/code-highlight';
 @import './components/demo-menu/demo-menu';
 @import './components/demo-element/demo-element';
 @import './components/demo-props-table/demo-props-table';
 @import './components/demo-sections-menu/demo-sections-menu';
+@import './components/sections-menu/sections-menu';
 @import '~codemirror/lib/codemirror';
 @import '~codemirror/theme/material';
 
@@ -18,5 +20,15 @@
     height: 150px;
     position: relative;
     width: 100%;
+  }
+
+  b {
+    &.primary {
+      color: $primary-color;
+    }
+
+    &.secondary {
+      color: $secondary-color;
+    }
   }
 }

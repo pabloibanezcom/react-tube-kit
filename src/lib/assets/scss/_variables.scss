@@ -16,12 +16,8 @@ $body-color: #484848 !default;
 
 $primary-color: #e6c300 !default;
 $secondary-color: #002c41 !default;
-$alternative-color: #00bcd4 !default;
 
 $primary-alt-color: $secondary-color !default;
-$primary-outline-color: $secondary-color !default;
-
 $secondary-alt-color: $white-color !default;
-$secondary-outline-color: $secondary-color !default;
 
-$outline-font-color: $secondary-color !default;
+$outline-font-color: $secondary-color;

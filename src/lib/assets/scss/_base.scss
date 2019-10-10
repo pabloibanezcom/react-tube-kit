@@ -41,8 +41,11 @@ body {
 
 a {
   cursor: pointer;
+  color: $secondary-color;
+  font-weight: 400;
 
   &:hover {
     text-decoration: none;
+    color: $primary-color;
   }
 }

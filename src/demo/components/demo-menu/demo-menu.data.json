@@ -1,58 +1,96 @@
 [
   {
-    "name": "Badges",
-    "url": "badges"
+    "name": "Getting started",
+    "url": "getting-started",
+    "children": [
+      {
+        "name": "Introduction",
+        "url": "introduction"
+      },
+      {
+        "name": "Theming",
+        "url": "theming"
+      }
+    ]
   },
   {
-    "name": "Buttons & Links",
-    "url": "buttons"
+    "name": "Layout",
+    "url": "layout"
   },
   {
-    "name": "Collapsible lists",
-    "url": "collapsible-lists"
+    "name": "Components",
+    "url": "components",
+    "children": [
+      {
+        "name": "Badges",
+        "url": "badges"
+      },
+      {
+        "name": "Buttons & Links",
+        "url": "buttons"
+      },
+      {
+        "name": "Collapsible lists",
+        "url": "collapsible-lists"
+      },
+      {
+        "name": "Country labels",
+        "url": "country-labels"
+      },
+      {
+        "name": "Forms",
+        "url": "forms"
+      },
+      {
+        "name": "Headers",
+        "url": "headers"
+      },
+      {
+        "name": "Icons",
+        "url": "icons"
+      },
+      {
+        "name": "Inputs",
+        "url": "inputs"
+      },
+      {
+        "name": "Loading spinners",
+        "url": "loading-spinners"
+      },
+      {
+        "name": "Modals",
+        "url": "modals"
+      },
+      {
+        "name": "Paginations",
+        "url": "paginations"
+      },
+      {
+        "name": "Panels",
+        "url": "panels"
+      },
+      {
+        "name": "Selectors",
+        "url": "selectors"
+      },
+      {
+        "name": "Tab menus",
+        "url": "tab-menus"
+      }
+    ]
   },
   {
-    "name": "Country labels",
-    "url": "country-labels"
-  },
-  {
-    "name": "Forms",
-    "url": "forms"
-  },
-  {
-    "name": "Headers",
-    "url": "headers"
-  },
-  {
-    "name": "Icons",
-    "url": "icons"
-  },
-  {
-    "name": "Inputs",
-    "url": "inputs"
-  },
-  {
-    "name": "Loading spinners",
-    "url": "loading-spinners"
-  },
-  {
-    "name": "Modals",
-    "url": "modals"
-  },
-  {
-    "name": "Paginations",
-    "url": "paginations"
-  },
-  {
-    "name": "Panels",
-    "url": "panels"
-  },
-  {
-    "name": "Selectors",
-    "url": "selectors"
-  },
-  {
-    "name": "Tab menus",
-    "url": "tab-menus"
+    "name": "Utilities",
+    "url": "utilities",
+    "children": [
+      {
+        "name": "Flex",
+        "url": "flex"
+      },
+      {
+        "name": "Spacing",
+        "url": "spacing"
+      }
+    ]
   }
 ]

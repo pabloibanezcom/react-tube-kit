@@ -1,0 +1,8 @@
+[
+  {
+    "name": "$font-primary",
+    "default": "Circular Airbnb",
+    "type": "font",
+    "description": "Main font in application"
+  }
+]

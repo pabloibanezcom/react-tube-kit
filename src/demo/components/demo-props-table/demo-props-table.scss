@@ -1,33 +1,4 @@
 .demo-props-table {
-  table {
-    border: 1px solid #ddd;
-    table-layout: auto;
-    width: 100%;
-
-    thead {
-      background: $secondary-color;
-      color: $secondary-alt-color;
-    }
-
-    tbody {
-      tr {
-        td:first-child {
-          font-weight: 400;
-        }
-      }
-    }
-
-    th,
-    td {
-      padding: 16px;
-      font-weight: 200;
-    }
-
-    tr {
-      border-top: 1px solid #ddd;
-    }
-  }
-
   .primary-type {
     color: #a52a2a;
   }

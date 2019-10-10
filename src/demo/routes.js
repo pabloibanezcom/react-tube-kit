@@ -1,43 +1,17 @@
 import React from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
-import {
-  Badges,
-  Buttons,
-  CollapsibleLists,
-  CountryLabels,
-  Forms,
-  Headers,
-  Icons,
-  Inputs,
-  LoadingSpinners,
-  Modals,
-  Paginations,
-  Panels,
-  Selectors,
-  TabMenus,
-  VisualIndex
-} from './pages';
-
-const baseUrl = '/demo';
+import Components from './pages/components/components';
+import GettingStarted from './pages/getting-started/getting-started';
+import Layout from './pages/layout/layout';
+import Utilities from './pages/utilities/utilities';
 
 const routes = (
   <Switch>
-    <Route path={`${baseUrl}/badges`} component={Badges} />
-    <Route path={`${baseUrl}/buttons`} component={Buttons} />
-    <Route path={`${baseUrl}/collapsible-lists`} component={CollapsibleLists} />
-    <Route path={`${baseUrl}/country-labels`} component={CountryLabels} />
-    <Route path={`${baseUrl}/forms`} component={Forms} />
-    <Route path={`${baseUrl}/headers`} component={Headers} />
-    <Route path={`${baseUrl}/icons`} component={Icons} />
-    <Route path={`${baseUrl}/inputs`} component={Inputs} />
-    <Route path={`${baseUrl}/loading-spinners`} component={LoadingSpinners} />
-    <Route path={`${baseUrl}/modals`} component={Modals} />
-    <Route path={`${baseUrl}/paginations`} component={Paginations} />
-    <Route path={`${baseUrl}/panels`} component={Panels} />
-    <Route path={`${baseUrl}/selectors`} component={Selectors} />
-    <Route path={`${baseUrl}/tab-menus`} component={TabMenus} />
-    <Route path={`${baseUrl}`} component={VisualIndex} />
-    <Redirect to={`${baseUrl}`} />
+    <Route path="/components" component={Components} />
+    <Route path="/getting-started" component={GettingStarted} />
+    <Route path="/layout" component={Layout} />
+    <Route path="/utilities" component={Utilities} />
+    <Redirect to="/getting-started" />
   </Switch>
 );
 

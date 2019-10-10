@@ -1,7 +1,11 @@
-@mixin collapsed() {
+@mixin collapsed($collapsedTime: null) {
   max-height: 0;
   height: auto;
-  transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
+  @if ($collapsedTime) {
+    transition: max-height $collapsedTime cubic-bezier(0, 1, 0, 1);
+  } @else {
+    transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
+  }
 }
 
 @mixin expanded() {
@@ -9,13 +13,13 @@
   transition: max-height 0.5s ease-in-out;
 }
 
-@mixin expand-collapse($child: null) {
+@mixin expand-collapse($child: null, $collapsedTime: null) {
   @if ($child) {
     .#{$child} {
-      @include collapsed;
+      @include collapsed($collapsedTime);
     }
   } @else {
-    @include collapsed;
+    @include collapsed($collapsedTime);
   }
 
   &.shown {

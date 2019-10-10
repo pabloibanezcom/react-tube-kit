@@ -1,0 +1,35 @@
+.code-highlight {
+  .CodeMirror {
+    border-radius: 0.5rem !important;
+    padding: 10px 15px;
+    height: auto;
+
+    .cm-def {
+      color: #be6b95;
+    }
+
+    .cm-keyword {
+      color: #be6b95;
+    }
+
+    .cm-string {
+      color: #ffa976;
+    }
+
+    .cm-tag {
+      color: #5ed663;
+    }
+
+    .cm-error {
+      background-color: initial;
+    }
+
+    .cm-bracket {
+      color: grey;
+    }
+
+    .cm-attribute {
+      color: #6cf3f3;
+    }
+  }
+}

@@ -4,8 +4,8 @@ import Demo from './demo/demo';
 
 const routes = () => (
   <Switch>
-    <Route path="/demo" component={Demo} />
-    <Redirect to="/demo" />
+    <Route path="/" component={Demo} />
+    <Redirect to="/" />
   </Switch>
 );
 

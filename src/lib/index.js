@@ -2,6 +2,7 @@ export {
   Badge,
   Button,
   CollapsibleList,
+  ColorLabel,
   CountryLabel,
   Footer,
   Header,

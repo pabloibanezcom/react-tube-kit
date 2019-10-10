@@ -1,0 +1,32 @@
+[
+  {
+    "name": "$body-color",
+    "default": "#484848",
+    "type": "color",
+    "description": "Body color"
+  },
+  {
+    "name": "$primary-color",
+    "default": "#e6c300",
+    "type": "color",
+    "description": "Primary color in application"
+  },
+  {
+    "name": "$secondary-color",
+    "default": "#002c41",
+    "type": "color",
+    "description": "Secondary color in application"
+  },
+  {
+    "name": "$primary-alt-color",
+    "default": "#002c41",
+    "type": "color",
+    "description": "Primary alternate color in application"
+  },
+  {
+    "name": "$secondary-alt-color",
+    "default": "#ffffff",
+    "type": "color",
+    "description": "Secondary alternate color in application"
+  }
+]
