@@ -3,6 +3,8 @@ import { Redirect, Route, Switch } from 'react-router-dom';
 import Badges from './badges/badges';
 import Buttons from './buttons/buttons';
 import CollapsibleLists from './collapsible-lists/collapsible-lists';
+import ColorLabels from './color-labels/color-labels';
+import ColorSelectors from './color-selectors/color-selectors';
 import CountryLabels from './country-labels/country-labels';
 import Forms from './forms/forms';
 import Headers from './headers/headers';
@@ -20,6 +22,8 @@ const routes = path => (
     <Route path={`${path}/badges`} component={Badges} />
     <Route path={`${path}/buttons`} component={Buttons} />
     <Route path={`${path}/collapsible-lists`} component={CollapsibleLists} />
+    <Route path={`${path}/color-labels`} component={ColorLabels} />
+    <Route path={`${path}/color-selectors`} component={ColorSelectors} />
     <Route path={`${path}/country-labels`} component={CountryLabels} />
     <Route path={`${path}/forms`} component={Forms} />
     <Route path={`${path}/headers`} component={Headers} />

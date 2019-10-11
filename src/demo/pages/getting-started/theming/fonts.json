@@ -4,5 +4,11 @@
     "default": "Circular Airbnb",
     "type": "font",
     "description": "Main font in application"
+  },
+  {
+    "name": "$font-size-html",
+    "default": "10px",
+    "type": "string",
+    "description": "Html font size (al rem sizes are calculated based on this)"
   }
 ]

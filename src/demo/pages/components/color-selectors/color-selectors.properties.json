@@ -1,0 +1,19 @@
+{
+  "options": {
+    "className": {
+      "type": "string",
+      "default": "''",
+      "description": ""
+    },
+    "color": {
+      "type": "string",
+      "isRequired": true,
+      "description": "An hexadecimal color code"
+    }
+  },
+  "methods": {
+    "onChange(selectedColor)": {
+      "description": "It is executed when color is selected"
+    }
+  }
+}

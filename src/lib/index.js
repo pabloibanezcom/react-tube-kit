@@ -3,6 +3,7 @@ export {
   Button,
   CollapsibleList,
   ColorLabel,
+  ColorSelector,
   CountryLabel,
   Footer,
   Header,

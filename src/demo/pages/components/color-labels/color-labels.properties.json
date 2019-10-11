@@ -1,0 +1,14 @@
+{
+  "options": {
+    "className": {
+      "type": "string",
+      "default": "''",
+      "description": ""
+    },
+    "color": {
+      "type": "string",
+      "isRequired": true,
+      "description": "An hexadecimal color code"
+    }
+  }
+}

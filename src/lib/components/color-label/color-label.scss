@@ -1,8 +1,17 @@
 .color-label {
-  .color-label__color-circle {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
+  .color-label__color-box {
+    padding: 5px;
+    background: $white-color;
+    border-radius: 1px;
     margin-right: 10px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 0px 1px;
+    display: inline-block;
+
+    > div {
+      width: 36px;
+      height: 14px;
+      border-radius: 2px;
+      background: transparent;
+    }
   }
 }

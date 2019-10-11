@@ -2,6 +2,8 @@ import {
   Badge,
   Button,
   CollapsibleList,
+  ColorLabel,
+  ColorSelector,
   CountryLabel,
   LoadingSpinner,
   Modal,
@@ -29,6 +31,10 @@ const getComponentFromName = componentName => {
       return CollapsibleList;
     case 'CountryLabel':
       return CountryLabel;
+    case 'ColorLabel':
+      return ColorLabel;
+    case 'ColorSelector':
+      return ColorSelector;
     case 'LoadingSpinner':
       return LoadingSpinner;
     case 'Modal':

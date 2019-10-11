@@ -34,6 +34,14 @@
         "url": "collapsible-lists"
       },
       {
+        "name": "Color labels",
+        "url": "color-labels"
+      },
+      {
+        "name": "Color selectors",
+        "url": "color-selectors"
+      },
+      {
         "name": "Country labels",
         "url": "country-labels"
       },
