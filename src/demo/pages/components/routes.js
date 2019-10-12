@@ -10,6 +10,7 @@ import Forms from './forms/forms';
 import Headers from './headers/headers';
 import Icons from './icons/icons';
 import Inputs from './inputs/inputs';
+import Labels from './labels/labels';
 import LoadingSpinners from './loading-spinners/loading-spinners';
 import Modals from './modals/modals';
 import Paginations from './paginations/paginations';
@@ -29,6 +30,7 @@ const routes = path => (
     <Route path={`${path}/headers`} component={Headers} />
     <Route path={`${path}/icons`} component={Icons} />
     <Route path={`${path}/inputs`} component={Inputs} />
+    <Route path={`${path}/labels`} component={Labels} />
     <Route path={`${path}/loading-spinners`} component={LoadingSpinners} />
     <Route path={`${path}/modals`} component={Modals} />
     <Route path={`${path}/paginations`} component={Paginations} />

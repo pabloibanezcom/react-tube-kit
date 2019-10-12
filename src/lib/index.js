@@ -8,6 +8,7 @@ export {
   Footer,
   Header,
   Icon,
+  Label,
   LoadingSpinner,
   Modal,
   Pagination,

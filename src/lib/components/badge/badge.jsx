@@ -3,7 +3,7 @@ import React from 'react';
 import { getContrastColor } from '../../util/color';
 
 const Badge = props => {
-  const { block, border, color, backgroundColor, fontColor, extraClass, text } = props;
+  const { children, block, border, color, backgroundColor, fontColor, extraClass } = props;
   const style =
     backgroundColor || fontColor
       ? { backgroundColor, color: fontColor || getContrastColor(backgroundColor) }
@@ -15,10 +15,10 @@ const Badge = props => {
     <span
       className={`badge badge-${color} ${block ? 'badge-block' : ''} ${
         border ? 'badge-border' : ''
-      } ${extraClass}`}
+      } ${extraClass} d-inline-flex align-items-center`}
       style={style}
     >
-      {text}
+      {children}
     </span>
   );
 };
@@ -38,8 +38,7 @@ Badge.propTypes = {
   color: PropTypes.oneOf(['primary', 'secondary']),
   backgroundColor: PropTypes.string,
   fontColor: PropTypes.string,
-  extraClass: PropTypes.string,
-  text: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired
+  extraClass: PropTypes.string
 };
 
 export default Badge;

@@ -1,23 +1,19 @@
 import React from 'react';
 import { DemoElement, DemoPropsTable, DemoSectionsMenu } from '../../../components';
-import properties from './badge.properties.json';
-import badgeBlock from './examples/badge-block';
-import badgeBorder from './examples/badge-border';
-import badgeCustom from './examples/badge-custom';
-import badgePrimary from './examples/badge-primary';
-import badgeSecondary from './examples/badge-secondary';
+import labelPrimary from './examples/label-primary';
+import properties from './label.properties.json';
 
-const examples = [badgePrimary, badgeSecondary, badgeCustom, badgeBorder, badgeBlock];
+const examples = [labelPrimary];
 
-const Badges = () => (
+const Labels = () => (
   <div>
-    <h1 className="right-line mb-8">Badges</h1>
+    <h1 className="right-line mb-8">Labels</h1>
     <div className="row justify-content-end">
       <div className="col-lg-9">
         {examples.map(example => (
           <DemoElement
             key={example.id}
-            component="Badge"
+            component="Label"
             example={example}
             options={{ fullWidth: true }}
           />
@@ -31,4 +27,4 @@ const Badges = () => (
   </div>
 );
 
-export default Badges;
+export default Labels;

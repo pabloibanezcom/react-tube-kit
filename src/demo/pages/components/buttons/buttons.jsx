@@ -31,7 +31,12 @@ const Buttons = () => (
     <div className="row justify-content-end">
       <div className="col-lg-9">
         {examples.map(example => (
-          <DemoElement key={example.id} component="Button" example={example} />
+          <DemoElement
+            key={example.id}
+            component="Button"
+            example={example}
+            options={{ flexColumn: true }}
+          />
         ))}
         <DemoPropsTable properties={properties} />
       </div>

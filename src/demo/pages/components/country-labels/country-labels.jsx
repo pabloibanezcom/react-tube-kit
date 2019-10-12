@@ -2,8 +2,11 @@ import React from 'react';
 import { DemoElement, DemoPropsTable, DemoSectionsMenu } from '../../../components';
 import properties from './country-labels.properties.json';
 import basic from './examples/basic';
+import countriesList from './examples/countries-list';
+import withBadge from './examples/with-badge';
+import withBadgeSecondary from './examples/with-badge-secondary';
 
-const examples = [basic];
+const examples = [basic, withBadge, withBadgeSecondary, countriesList];
 
 const CountryLabels = () => (
   <div>

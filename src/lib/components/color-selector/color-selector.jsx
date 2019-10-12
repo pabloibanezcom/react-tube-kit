@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import { ChromePicker } from 'react-color';
 
 const ColorSelector = ({ className, color, onChange }) => {
-  console.log(color);
   const [showColorMenu, setShowColorMenu] = useState(false);
   const [selectedColor, setSelectedColor] = useState(color);
 

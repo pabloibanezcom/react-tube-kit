@@ -1,7 +1,6 @@
-const html = `<Badge 
-  text="Some info"
-  color="primary"
-/>`;
+const html = `<Badge>
+  Some info
+</Badge>`;
 
 const badgePrimary = {
   id: 'primary',

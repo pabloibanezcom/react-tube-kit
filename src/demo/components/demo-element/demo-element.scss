@@ -17,6 +17,15 @@
         }
       }
 
+      &.flexColumn {
+        .jsx-parser {
+          > div {
+            display: flex;
+            flex-direction: column;
+          }
+        }
+      }
+
       &.multi {
         .jsx-parser {
           > div {
@@ -29,11 +38,6 @@
 
       .jsx-parser {
         display: flex;
-
-        > div {
-          display: flex;
-          flex-direction: column;
-        }
       }
     }
 

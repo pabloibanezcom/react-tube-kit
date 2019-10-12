@@ -9,9 +9,9 @@ require('codemirror/mode/xml/xml');
 const DemoElement = ({
   actions,
   component,
-  example: { id, name, html, multi },
+  example: { id, name, html, multi, disableCode },
   bindings,
-  options: { fullWidth }
+  options
 }) => {
   const [showCode, setShowCode] = useState(false);
   const [actionFlags, setActionFlags] = useState(
@@ -27,7 +27,9 @@ const DemoElement = ({
       <h3 className="mb-2">{name}</h3>
       <div className="demo-element__container">
         <div
-          className={`demo-element__show ${fullWidth ? 'fullWidth' : ''} ${multi ? 'multi' : ''}`}
+          className={`demo-element__show ${options.fullWidth ? 'fullWidth' : ''} ${
+            options.flexColumn ? 'flexColumn' : ''
+          } ${multi ? 'multi' : ''}`}
         >
           <JsxParser
             bindings={{ ...bindings, ...actionFlags }}
@@ -35,40 +37,42 @@ const DemoElement = ({
             jsx={`<div>${html}</div>`}
           />
         </div>
-        <div className="demo-element__code">
-          <div className="demo-element__buttons">
-            {actions.map(act => (
+        {!disableCode ? (
+          <div className="demo-element__code">
+            <div className="demo-element__buttons">
+              {actions.map(act => (
+                <button
+                  key={act.propName}
+                  type="button"
+                  className="demo-element__btn"
+                  onClick={() => toggleActionFlag(act.propName)}
+                >
+                  {actionFlags[act.propName] ? act.textActive : act.text}
+                </button>
+              ))}
               <button
-                key={act.propName}
                 type="button"
-                className="demo-element__btn"
-                onClick={() => toggleActionFlag(act.propName)}
+                className="demo-element__btn demo-show-code-btn"
+                onClick={() => setShowCode(!showCode)}
               >
-                {actionFlags[act.propName] ? act.textActive : act.text}
+                {!showCode ? 'Show code' : 'Hide code'}
               </button>
-            ))}
-            <button
-              type="button"
-              className="demo-element__btn demo-show-code-btn"
-              onClick={() => setShowCode(!showCode)}
-            >
-              {!showCode ? 'Show code' : 'Hide code'}
-            </button>
+            </div>
+            <div className={`demo-element__codemirror ${showCode ? 'shown' : ''}`}>
+              <CodeMirror
+                value={html}
+                options={{
+                  mode: 'xml',
+                  theme: 'material',
+                  lineNumbers: false,
+                  smartIndent: true,
+                  indentWithTabs: true,
+                  readOnly: true
+                }}
+              />
+            </div>
           </div>
-          <div className={`demo-element__codemirror ${showCode ? 'shown' : ''}`}>
-            <CodeMirror
-              value={html}
-              options={{
-                mode: 'xml',
-                theme: 'material',
-                lineNumbers: false,
-                smartIndent: true,
-                indentWithTabs: true,
-                readOnly: true
-              }}
-            />
-          </div>
-        </div>
+        ) : null}
       </div>
     </div>
   );

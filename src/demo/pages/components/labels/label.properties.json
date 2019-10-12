@@ -1,0 +1,29 @@
+{
+  "options": {
+    "className": {
+      "type": "string",
+      "default": "''",
+      "description": ""
+    },
+    "color": {
+      "type": [
+        "white",
+        "black",
+        "primary",
+        "secondary"
+      ],
+      "default": "null",
+      "description": ""
+    },
+    "fontColor": {
+      "type": "string",
+      "default": "null",
+      "description": ""
+    },
+    "forHtml": {
+      "type": "string",
+      "default": "null",
+      "description": ""
+    }
+  }
+}

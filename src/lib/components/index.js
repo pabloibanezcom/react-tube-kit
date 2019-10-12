@@ -7,6 +7,7 @@ import CountryLabel from './country-label/country-label';
 import Footer from './footer/footer';
 import Header from './header/header';
 import Icon from './icon/icon';
+import Label from './label/label';
 import LoadingSpinner from './loading-spinner/loading-spinner';
 import Modal from './modal/modal';
 import Pagination from './pagination/pagination';
@@ -23,6 +24,7 @@ export {
   Footer,
   Header,
   Icon,
+  Label,
   LoadingSpinner,
   Modal,
   Pagination,

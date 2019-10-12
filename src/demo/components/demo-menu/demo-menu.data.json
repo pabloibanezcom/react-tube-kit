@@ -62,6 +62,10 @@
         "url": "inputs"
       },
       {
+        "name": "Labels",
+        "url": "labels"
+      },
+      {
         "name": "Loading spinners",
         "url": "loading-spinners"
       },

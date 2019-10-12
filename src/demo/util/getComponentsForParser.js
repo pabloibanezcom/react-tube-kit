@@ -5,6 +5,7 @@ import {
   ColorLabel,
   ColorSelector,
   CountryLabel,
+  Label,
   LoadingSpinner,
   Modal,
   Pagination,
@@ -35,6 +36,8 @@ const getComponentFromName = componentName => {
       return ColorLabel;
     case 'ColorSelector':
       return ColorSelector;
+    case 'Label':
+      return Label;
     case 'LoadingSpinner':
       return LoadingSpinner;
     case 'Modal':

@@ -1,7 +1,8 @@
 const html = `<Badge 
-  text="Some info"
   color="secondary"
-/>`;
+>
+  Some info
+</Badge>`;
 
 const badgeSecondary = {
   id: 'secondary',

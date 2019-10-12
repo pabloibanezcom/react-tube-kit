@@ -32,14 +32,6 @@
       "type": "string",
       "default": "null",
       "description": ""
-    },
-    "text": {
-      "type": [
-        "string",
-        "number"
-      ],
-      "isRequired": true,
-      "description": ""
     }
   }
 }
