@@ -1,13 +1,11 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-const Label = ({ children, className, color, forhtml, weight }) => {
-  return (
-    <label className={`label text-${color} font-weight-${weight} ${className}`} forhtml={forhtml}>
-      {children}
-    </label>
-  );
-};
+const Label = ({ children, className, color, forhtml, weight }) => (
+  <label className={`label text-${color} font-weight-${weight} ${className}`} forhtml={forhtml}>
+    {children}
+  </label>
+);
 
 Label.defaultProps = {
   className: '',

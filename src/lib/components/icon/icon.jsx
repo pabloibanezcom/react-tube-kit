@@ -1,28 +1,35 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-const Icon = props => {
-  const { color, extraClass, name, size } = props;
-  return (
-    <i
-      className={`icon icon-${name} ${size ? `icon-${size}` : ''}  ${
-        color ? `icon-${color}` : ''
-      } ${extraClass}`}
-    />
-  );
-};
+const Icon = ({ color, className, name, size, type }) => (
+  <i
+    className={`icon icon-${name} icon-${size} ${!color ? `text-${type}` : null} ${className}`}
+    style={{ color }}
+  />
+);
 
 Icon.defaultProps = {
+  className: '',
   color: null,
-  size: null,
-  extraClass: ''
+  size: 'md',
+  type: 'dark'
 };
 
 Icon.propTypes = {
-  color: PropTypes.oneOf(['primary', 'secondary', 'light']),
+  className: PropTypes.string,
+  color: PropTypes.string,
   name: PropTypes.string.isRequired,
   size: PropTypes.oneOf(['sm', 'md', 'lg']),
-  extraClass: PropTypes.string
+  type: PropTypes.oneOf([
+    'primary',
+    'secondary',
+    'success',
+    'danger',
+    'warning',
+    'light',
+    'dark',
+    'white'
+  ])
 };
 
 export default Icon;
