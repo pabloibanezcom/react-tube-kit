@@ -1,13 +1,13 @@
 const html = `<Badge
   backgroundColor="#8a1717"
-  fontColor="#ffffff"
+  color="#95d08f"
 >
   Some info
 </Badge>`;
 
 const badgeCustom = {
   id: 'custom',
-  name: 'Custom',
+  name: 'Custom colors',
   html
 };
 

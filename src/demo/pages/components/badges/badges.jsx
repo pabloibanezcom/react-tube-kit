@@ -4,10 +4,9 @@ import properties from './badge.properties.json';
 import badgeBlock from './examples/badge-block';
 import badgeBorder from './examples/badge-border';
 import badgeCustom from './examples/badge-custom';
-import badgePrimary from './examples/badge-primary';
-import badgeSecondary from './examples/badge-secondary';
+import badgeTypes from './examples/badge-types';
 
-const examples = [badgePrimary, badgeSecondary, badgeCustom, badgeBorder, badgeBlock];
+const examples = [badgeTypes, badgeCustom, badgeBorder, badgeBlock];
 
 const Badges = () => (
   <div>

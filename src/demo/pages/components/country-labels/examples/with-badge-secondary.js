@@ -1,6 +1,6 @@
 const html = `<CountryLabel
   badge
-  color="secondary"
+  type="secondary"
   country={{code: 'GB', name: 'United Kingdom'}}
 />`;
 

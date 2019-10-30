@@ -14,7 +14,12 @@ const CountryLabels = () => (
     <div className="row justify-content-end">
       <div className="col-lg-9">
         {examples.map(example => (
-          <DemoElement key={example.id} component="CountryLabel" example={example} />
+          <DemoElement
+            key={example.id}
+            component="CountryLabel"
+            example={example}
+            options={{ fullWidth: true }}
+          />
         ))}
         <DemoPropsTable properties={properties} />
       </div>

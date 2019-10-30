@@ -1,9 +1,10 @@
 import React from 'react';
 import { DemoElement, DemoPropsTable, DemoSectionsMenu } from '../../../components';
-import labelPrimary from './examples/label-primary';
+import labelColors from './examples/label-colors';
+import labelWeights from './examples/label-weights';
 import properties from './label.properties.json';
 
-const examples = [labelPrimary];
+const examples = [labelColors, labelWeights];
 
 const Labels = () => (
   <div>
@@ -11,12 +12,7 @@ const Labels = () => (
     <div className="row justify-content-end">
       <div className="col-lg-9">
         {examples.map(example => (
-          <DemoElement
-            key={example.id}
-            component="Label"
-            example={example}
-            options={{ fullWidth: true }}
-          />
+          <DemoElement key={example.id} component="Label" example={example} />
         ))}
         <DemoPropsTable properties={properties} />
       </div>

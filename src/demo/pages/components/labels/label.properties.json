@@ -6,24 +6,19 @@
       "description": ""
     },
     "color": {
-      "type": [
-        "white",
-        "black",
-        "primary",
-        "secondary"
-      ],
-      "default": "null",
-      "description": ""
+      "type": "Color",
+      "default": "body",
+      "description": "View all color options <Link to='/utilities/colors'>here</Link>."
     },
-    "fontColor": {
+    "forhtml": {
       "type": "string",
       "default": "null",
       "description": ""
     },
-    "forHtml": {
-      "type": "string",
-      "default": "null",
-      "description": ""
+    "weight": {
+      "type": "Font Weight",
+      "default": "normal",
+      "description": "View all font weight options <Link to='/utilities/text'>here</Link>."
     }
   }
 }

@@ -1,13 +1,9 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-const Label = ({ children, color, fontColor, forHtml, className }) => {
+const Label = ({ children, className, color, forhtml, weight }) => {
   return (
-    <label
-      className={`label label-${color} ${className}`}
-      style={fontColor ? { color: fontColor } : null}
-      forHtml={forHtml}
-    >
+    <label className={`label text-${color} font-weight-${weight} ${className}`} forhtml={forhtml}>
       {children}
     </label>
   );
@@ -15,16 +11,30 @@ const Label = ({ children, color, fontColor, forHtml, className }) => {
 
 Label.defaultProps = {
   className: '',
-  color: 'black',
-  fontColor: null,
-  forHtml: null
+  color: 'body',
+  forhtml: null,
+  weight: 'normal'
 };
 
 Label.propTypes = {
   className: PropTypes.string,
-  color: PropTypes.oneOf(['white', 'black', 'primary', 'secondary']),
-  fontColor: PropTypes.string,
-  forHtml: PropTypes.string
+  color: PropTypes.oneOf([
+    'primary',
+    'secondary',
+    'success',
+    'danger',
+    'warning',
+    'info',
+    'light',
+    'dark',
+    'body',
+    'muted',
+    'white',
+    'black-50',
+    'white-50'
+  ]),
+  forhtml: PropTypes.string,
+  weight: PropTypes.oneOf(['bold', 'normal', 'light'])
 };
 
 export default Label;

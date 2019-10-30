@@ -1,4 +1,10 @@
 import React from 'react';
+import JsxParser from 'react-jsx-parser';
+import { Link } from 'react-router-dom';
+
+const getRenderHtml = str => {
+  return <JsxParser components={{ Link }} jsx={str} />;
+};
 
 const DemoPropsTable = ({ properties: { options, methods } }) => {
   return (
@@ -25,7 +31,7 @@ const DemoPropsTable = ({ properties: { options, methods } }) => {
                   <td>{getTypeLabel(options[propName].type)}</td>
                   <td>{getRequiredLabel(options[propName].isRequired)}</td>
                   <td>{options[propName].default}</td>
-                  <td>{options[propName].description}</td>
+                  <td>{getRenderHtml(options[propName].description)}</td>
                 </tr>
               ))}
             </tbody>
@@ -48,7 +54,7 @@ const DemoPropsTable = ({ properties: { options, methods } }) => {
               {Object.keys(methods).map(methodName => (
                 <tr key={methodName}>
                   <td>{methodName}</td>
-                  <td>{methods[methodName].description}</td>
+                  <td>{getRenderHtml(methods[methodName].description)}</td>
                 </tr>
               ))}
             </tbody>

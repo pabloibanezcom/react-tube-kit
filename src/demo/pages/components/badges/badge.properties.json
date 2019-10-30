@@ -15,22 +15,36 @@
       "default": "false",
       "description": ""
     },
-    "color": {
-      "type": [
-        "primary",
-        "secondary"
-      ],
-      "default": "primary",
-      "description": ""
-    },
-    "extraClass": {
+    "className": {
       "type": "string",
       "default": "''",
       "description": ""
     },
-    "fontColor": {
+    "color": {
       "type": "string",
-      "default": "null",
+      "default": "primary",
+      "description": ""
+    },
+    "weight": {
+      "type": [
+        "bold",
+        "normal",
+        "light"
+      ],
+      "default": "normal",
+      "description": ""
+    },
+    "type": {
+      "type": [
+        "primary",
+        "secondary",
+        "success",
+        "danger",
+        "warning",
+        "light",
+        "dark"
+      ],
+      "default": "primary",
       "description": ""
     }
   }

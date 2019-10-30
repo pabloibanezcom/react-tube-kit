@@ -6,7 +6,7 @@ const html = `<Badge
 
 const badgeBorder = {
   id: 'badgeBorder',
-  name: 'Border',
+  name: 'With border',
   html
 };
 

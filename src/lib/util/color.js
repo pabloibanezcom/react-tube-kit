@@ -6,3 +6,24 @@ export const getContrastColor = hexcolor => {
   const yiq = (r * 299 + g * 587 + b * 114) / 1000;
   return yiq >= 128 ? '#000000' : '#ffffff';
 };
+
+export const getAlternateColor = color => {
+  switch (color) {
+    case 'primary':
+      return 'primary-alt';
+    case 'secondary':
+      return 'secondary-alt';
+    case 'success':
+      return 'white';
+    case 'danger':
+      return 'white';
+    case 'warning':
+      return 'black';
+    case 'light':
+      return 'black';
+    case 'dark':
+      return 'white';
+    default:
+      return 'white';
+  }
+};

@@ -96,12 +96,20 @@
     "url": "utilities",
     "children": [
       {
+        "name": "Colors",
+        "url": "colors"
+      },
+      {
         "name": "Flex",
         "url": "flex"
       },
       {
         "name": "Spacing",
         "url": "spacing"
+      },
+      {
+        "name": "Text",
+        "url": "text"
       }
     ]
   }

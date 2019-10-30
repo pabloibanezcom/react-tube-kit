@@ -1,22 +1,19 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { getContrastColor } from '../../util/color';
+import { getAlternateColor } from '../../util/color';
 
-const Badge = props => {
-  const { children, block, border, color, backgroundColor, fontColor, extraClass } = props;
-  const style =
-    backgroundColor || fontColor
-      ? { backgroundColor, color: fontColor || getContrastColor(backgroundColor) }
-      : null;
-  if (border && fontColor) {
-    style.borderColor = fontColor;
-  }
+const Badge = ({ children, block, border, className, color, backgroundColor, weight, type }) => {
   return (
     <span
-      className={`badge badge-${color} ${block ? 'badge-block' : ''} ${
+      className={`badge px-2 py-1 ${!backgroundColor ? `bg-${type}` : null} text-${color ||
+        getAlternateColor(type)} font-weight-${weight} ${block ? 'd-block' : 'd-inline-flex'} ${
         border ? 'badge-border' : ''
-      } ${extraClass} d-inline-flex align-items-center`}
-      style={style}
+      } ${className} align-items-center`}
+      style={{
+        backgroundColor,
+        color,
+        borderColor: border ? color || getAlternateColor(type) : null
+      }}
     >
       {children}
     </span>
@@ -24,21 +21,23 @@ const Badge = props => {
 };
 
 Badge.defaultProps = {
+  backgroundColor: null,
   block: false,
   border: false,
-  color: 'primary',
-  backgroundColor: null,
-  fontColor: null,
-  extraClass: ''
+  className: '',
+  color: null,
+  weight: 'normal',
+  type: 'primary'
 };
 
 Badge.propTypes = {
+  backgroundColor: PropTypes.string,
   block: PropTypes.bool,
   border: PropTypes.bool,
-  color: PropTypes.oneOf(['primary', 'secondary']),
-  backgroundColor: PropTypes.string,
-  fontColor: PropTypes.string,
-  extraClass: PropTypes.string
+  className: PropTypes.string,
+  color: PropTypes.string,
+  weight: PropTypes.oneOf(['bold', 'normal', 'light']),
+  type: PropTypes.oneOf(['primary', 'secondary', 'success', 'danger', 'warning', 'light', 'dark'])
 };
 
 export default Badge;

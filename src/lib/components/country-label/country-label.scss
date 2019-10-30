@@ -2,5 +2,9 @@
   .country-flag {
     zoom: 0.45;
     margin-right: 20px;
+
+    &.flag-small {
+      zoom: 0.3;
+    }
   }
 }
