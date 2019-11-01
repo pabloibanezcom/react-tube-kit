@@ -7,6 +7,7 @@ import CountryLabel from './country-label/country-label';
 import Footer from './footer/footer';
 import Header from './header/header';
 import Icon from './icon/icon';
+import Input from './input/input';
 import Label from './label/label';
 import LoadingSpinner from './loading-spinner/loading-spinner';
 import Modal from './modal/modal';
@@ -24,6 +25,7 @@ export {
   Footer,
   Header,
   Icon,
+  Input,
   Label,
   LoadingSpinner,
   Modal,
