@@ -1,17 +1,20 @@
 const html = `<Button
   type="link"
-  text="Primary link"
-/>
+>
+  Primary link
+</Button>
 <Button
   type="link"
   color="secondary"
-  text="Secondary link"
-/>
+>
+Secondary link
+</Button>
 <Button
   type="link"
   size="lg"
-  text="Large link"
-/>
+>
+  Large link
+</Button>
 `;
 
 const buttonLink = {

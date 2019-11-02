@@ -1,0 +1,30 @@
+[
+  {
+    "value": "london",
+    "name": "London"
+  },
+  {
+    "value": "madrid",
+    "name": "Madrid"
+  },
+  {
+    "value": "paris",
+    "name": "Paris"
+  },
+  {
+    "value": "berlin",
+    "name": "Berlin"
+  },
+  {
+    "value": "rome",
+    "name": "Rome"
+  },
+  {
+    "value": "amsterdam",
+    "name": "Amsterdam"
+  },
+  {
+    "value": "stockholm",
+    "name": "Stockholm"
+  }
+]

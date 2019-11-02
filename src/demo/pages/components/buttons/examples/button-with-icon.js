@@ -1,7 +1,8 @@
 const html = `<Button
-  text="Search"
   icon="search"
-/>`;
+>
+  Continue
+</Button>`;
 
 const buttonWithIcon = {
   id: 'with-icon',

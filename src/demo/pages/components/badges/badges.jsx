@@ -18,7 +18,7 @@ const Badges = () => (
             key={example.id}
             component="Badge"
             example={example}
-            options={{ fullWidth: true }}
+            options={{ width: 'full' }}
           />
         ))}
         <DemoPropsTable properties={properties} />

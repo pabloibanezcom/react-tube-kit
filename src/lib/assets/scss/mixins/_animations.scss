@@ -32,3 +32,14 @@
     }
   }
 }
+
+@mixin scale-ease() {
+  transform: scale(0) !important;
+  transform-origin: top center;
+  transition: transform ease 0.2s;
+  will-change: transform;
+
+  &.show {
+    transform: scale(1) !important;
+  }
+}

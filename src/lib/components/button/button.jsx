@@ -8,6 +8,7 @@ const Button = ({
   backgroundColor,
   block,
   disabled,
+  children,
   className,
   icon,
   inverse,
@@ -20,7 +21,6 @@ const Button = ({
   color,
   uppercase,
   submit,
-  text,
   to,
   type
 }) => {
@@ -38,7 +38,7 @@ const Button = ({
     return (
       <Link to={to} className={classStr} disabled={disabled}>
         {icon ? <Icon name={icon} /> : null}
-        {text}
+        {children}
       </Link>
     );
   }
@@ -53,7 +53,7 @@ const Button = ({
         onClick={onClick}
       >
         {icon ? <Icon name={icon} /> : null}
-        {text}
+        {children}
       </button>
     );
   }
@@ -69,7 +69,7 @@ const Button = ({
         target={newPage ? '_blank' : null}
       >
         {icon ? <Icon name={icon} /> : null}
-        {text}
+        {children}
       </a>
     );
   }
@@ -77,7 +77,7 @@ const Button = ({
     return (
       <a className={classStr} onClick={onClick} disabled={disabled}>
         {icon ? <Icon name={icon} /> : null}
-        {text}
+        {children}
       </a>
     );
   }
@@ -100,7 +100,6 @@ Button.defaultProps = {
   href: null,
   newPage: false,
   submit: false,
-  text: null,
   to: null,
   type: 'btn',
   onClick: () => {}
@@ -117,9 +116,8 @@ Button.propTypes = {
   icon: PropTypes.string,
   outline: PropTypes.bool,
   size: PropTypes.oneOf(['sm', 'lg']),
-  color: PropTypes.oneOf(['primary', 'secondary', 'light', 'warning', 'danger']),
+  color: PropTypes.oneOf(['primary', 'secondary', 'light', 'warning', 'danger', 'transparent']),
   uppercase: PropTypes.bool,
-  text: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
   href: PropTypes.string,
   newPage: PropTypes.bool,
   submit: PropTypes.bool,

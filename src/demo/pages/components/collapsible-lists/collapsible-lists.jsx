@@ -40,7 +40,7 @@ const CollapsibleLists = () => (
             component="CollapsibleList"
             example={example}
             bindings={bindings}
-            options={{ fullWidth: true }}
+            options={{ width: 'full' }}
           />
         ))}
         <DemoPropsTable properties={properties} />

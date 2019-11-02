@@ -21,7 +21,8 @@
         "secondary",
         "light",
         "warning",
-        "danger"
+        "danger",
+        "transparent"
       ],
       "default": "primary",
       "description": ""

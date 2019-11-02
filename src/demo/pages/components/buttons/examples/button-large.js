@@ -1,7 +1,8 @@
 const html = `<Button
-  text="Continue"
   size="lg"
-/>`;
+>
+  Continue
+</Button>`;
 
 const buttonLarge = {
   id: 'large',

@@ -18,7 +18,7 @@ const CountryLabels = () => (
             key={example.id}
             component="CountryLabel"
             example={example}
-            options={{ fullWidth: true }}
+            options={{ width: 'full' }}
           />
         ))}
         <DemoPropsTable properties={properties} />

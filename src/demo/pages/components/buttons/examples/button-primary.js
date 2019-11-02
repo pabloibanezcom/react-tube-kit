@@ -1,6 +1,6 @@
-const html = `<Button
-  text="Continue"
-/>`;
+const html = `<Button>
+  Continue
+</Button>`;
 
 const buttonPrimary = {
   id: 'primary',

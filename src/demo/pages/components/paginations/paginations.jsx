@@ -33,7 +33,7 @@ const Paginations = () => (
             component="Pagination"
             example={example}
             bindings={{ mockPagination }}
-            options={{ fullWidth: true }}
+            options={{ width: 'full' }}
           />
         ))}
         <DemoPropsTable properties={properties} />

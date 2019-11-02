@@ -13,6 +13,7 @@ import LoadingSpinner from './loading-spinner/loading-spinner';
 import Modal from './modal/modal';
 import Pagination from './pagination/pagination';
 import Panel from './panel/panel';
+import Selector from './selector/selector';
 import TabMenu from './tab-menu/tab-menu';
 
 export {
@@ -31,5 +32,6 @@ export {
   Modal,
   Pagination,
   Panel,
+  Selector,
   TabMenu
 };
