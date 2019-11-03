@@ -12,6 +12,7 @@ import {
   Modal,
   Pagination,
   Panel,
+  Selector,
   TabMenu
 } from '../../lib';
 
@@ -52,6 +53,8 @@ const getComponentFromName = componentName => {
       return Pagination;
     case 'Panel':
       return Panel;
+    case 'Selector':
+      return Selector;
     case 'TabMenu':
       return TabMenu;
     default:

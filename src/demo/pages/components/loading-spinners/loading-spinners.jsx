@@ -25,7 +25,7 @@ const LoadingSpinners = () => (
             key={example.id}
             component="LoadingSpinner"
             example={example}
-            options={{ fullWidth: true }}
+            options={{ width: 'full' }}
             actions={[{ text: 'Start spinner', textActive: 'Stop spinner', propName: 'isLoading' }]}
           />
         ))}

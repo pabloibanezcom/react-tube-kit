@@ -25,7 +25,7 @@ const Panels = () => (
             key={example.id}
             component="Panel"
             example={example}
-            options={{ fullWidth: true }}
+            options={{ width: 'full' }}
           />
         ))}
         <DemoPropsTable properties={properties} />

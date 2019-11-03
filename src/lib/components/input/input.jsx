@@ -31,7 +31,7 @@ const Input = ({
     <div className="input-wrapper">
       <input
         type={type}
-        className={`input input-bg-${bgColor} text-${color} ${
+        className={`input input-underline-${bgColor} text-${color} ${
           icon ? 'input-with-icon' : null
         } ${className}`}
         value={value}

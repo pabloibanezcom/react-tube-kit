@@ -1,7 +1,8 @@
 const html = `<Button
   color="light"
-  text="Continue"
-/>`;
+>
+  Continue
+</Button>`;
 
 const buttonLight = {
   id: 'light',

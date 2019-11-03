@@ -14,5 +14,6 @@ export {
   Modal,
   Pagination,
   Panel,
+  Selector,
   TabMenu
 } from './components';

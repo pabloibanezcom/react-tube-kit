@@ -1,12 +1,14 @@
 const html = `<Button
-  text="Continue"
   outline
-/>
+>
+  Continue
+</Button>
 <Button
   color="secondary"
-  text="Continue"
   outline
-/>
+>
+  Continue
+</Button>
 `;
 
 const buttonOutline = {

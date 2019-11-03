@@ -1,12 +1,14 @@
 const html = `<Button
-  text="Continue"
   inverse
-/>
+>
+  Continue
+</Button>
 <Button
   color="secondary"
-  text="Continue"
   inverse
-/>
+>
+  Continue
+</Button>
 `;
 
 const buttonInverse = {

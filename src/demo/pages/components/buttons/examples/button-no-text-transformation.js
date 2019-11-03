@@ -1,7 +1,8 @@
 const html = `<Button
-  text="Continue"
   uppercase={false}
-/>`;
+>
+  Continue
+</Button>`;
 
 const buttonNoTextTransformation = {
   id: 'no-text-transformation',

@@ -27,7 +27,7 @@ const DemoElement = ({
       <h3 className="mb-2">{name}</h3>
       <div className="demo-element__container">
         <div
-          className={`demo-element__show ${options.fullWidth ? 'fullWidth' : ''} ${
+          className={`demo-element__show w-${options.width} ${
             options.flexColumn ? 'flexColumn' : ''
           } ${multi ? 'multi' : ''}`}
         >
@@ -81,7 +81,9 @@ const DemoElement = ({
 DemoElement.defaultProps = {
   actions: [],
   bindings: null,
-  options: {}
+  options: {
+    width: 'default'
+  }
 };
 
 DemoElement.propTypes = {
@@ -101,7 +103,7 @@ DemoElement.propTypes = {
     multi: PropTypes.bool
   }).isRequired,
   options: PropTypes.shape({
-    fullWidth: PropTypes.bool
+    width: PropTypes.string
   })
 };
 

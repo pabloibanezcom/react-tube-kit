@@ -1,7 +1,8 @@
 const html = `<Button
-  text="Continue"
   block={false}
-/>`;
+>
+  Continue
+</Button>`;
 
 const buttonNoBlock = {
   id: 'no-block',

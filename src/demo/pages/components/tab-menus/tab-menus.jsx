@@ -62,7 +62,7 @@ const TabMenus = () => (
             component="TabMenu"
             example={example}
             bindings={{ mockTabs, mockTabsWithIcons }}
-            options={{ fullWidth: true }}
+            options={{ width: 'full' }}
           />
         ))}
         <DemoPropsTable properties={properties} />

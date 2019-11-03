@@ -1,0 +1,49 @@
+@mixin input-underline() {
+  background-image: linear-gradient($primary-color, $primary-color),
+    linear-gradient($grey-gradient-color, $grey-gradient-color);
+  background-size: 0 2px, 100% 1px;
+  background-repeat: no-repeat;
+  background-position: center bottom, center calc(100% - 1px);
+  background-color: transparent;
+  transition: background 0s ease-out;
+
+  &.input-underline-primary {
+    background-image: linear-gradient($primary-color, $primary-color),
+      linear-gradient($grey-gradient-color, $grey-gradient-color);
+  }
+
+  &.input-underline-secondary {
+    background-image: linear-gradient($secondary-color, $secondary-color),
+      linear-gradient($grey-gradient-color, $grey-gradient-color);
+  }
+
+  &.input-underline-success {
+    background-image: linear-gradient($success-color, $success-color),
+      linear-gradient($grey-gradient-color, $grey-gradient-color);
+  }
+
+  &.input-underline-danger {
+    background-image: linear-gradient($danger-color, $danger-color),
+      linear-gradient($grey-gradient-color, $grey-gradient-color);
+  }
+
+  &.input-underline-warning {
+    background-image: linear-gradient($warning-color, $warning-color),
+      linear-gradient($grey-gradient-color, $grey-gradient-color);
+  }
+
+  &.input-underline-light {
+    background-image: linear-gradient($light-color, $light-color),
+      linear-gradient($grey-gradient-color, $grey-gradient-color);
+  }
+
+  &.input-underline-dark {
+    background-image: linear-gradient($dark-color, $dark-color),
+      linear-gradient($grey-gradient-color, $grey-gradient-color);
+  }
+
+  &.input-underline-white {
+    background-image: linear-gradient($white-color, $white-color),
+      linear-gradient($grey-gradient-color, $grey-gradient-color);
+  }
+}

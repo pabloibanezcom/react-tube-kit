@@ -9,10 +9,34 @@
     .demo-element__show {
       padding: 30px 20px;
 
-      &.fullWidth {
+      &.w-full {
         .jsx-parser {
           > div {
             width: 100%;
+          }
+        }
+      }
+
+      &.w-100 {
+        .jsx-parser {
+          > div {
+            width: 200px;
+          }
+        }
+      }
+
+      &.w-200 {
+        .jsx-parser {
+          > div {
+            width: 200px;
+          }
+        }
+      }
+
+      &.w-400 {
+        .jsx-parser {
+          > div {
+            width: 200px;
           }
         }
       }

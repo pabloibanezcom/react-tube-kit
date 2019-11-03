@@ -10,12 +10,14 @@ import buttonNoTextTransformation from './examples/button-no-text-transformation
 import buttonOutline from './examples/button-outline';
 import buttonPrimary from './examples/button-primary';
 import buttonSecondary from './examples/button-secondary';
+import buttonTransparent from './examples/button-transparent';
 import buttonWithIcon from './examples/button-with-icon';
 
 const examples = [
   buttonPrimary,
   buttonSecondary,
   buttonLight,
+  buttonTransparent,
   buttonOutline,
   buttonInverse,
   buttonLarge,
