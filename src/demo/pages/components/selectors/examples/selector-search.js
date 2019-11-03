@@ -1,5 +1,5 @@
 const html = `<Selector
-  options={basicOptions}
+  options={towns}
   search
 />`;
 

@@ -1,0 +1,44 @@
+[
+  {
+    "value": "central",
+    "name": "Central Line",
+    "color": "#dc241f",
+    "fontColor": "#ffffff"
+  },
+  {
+    "value": "jubilee",
+    "name": "Jubilee Line",
+    "color": "#6a7278",
+    "fontColor": "#ffffff"
+  },
+  {
+    "value": "piccadilly",
+    "name": "Piccadilly Line",
+    "color": "#0019a8",
+    "fontColor": "#ffffff"
+  },
+  {
+    "value": "victoria",
+    "name": "Victoria Line",
+    "color": "#00a0e2",
+    "fontColor": "#000000"
+  },
+  {
+    "value": "bakerloo",
+    "name": "Bakerloo Line",
+    "color": "#894e24",
+    "fontColor": "#ffffff"
+  },
+  {
+    "value": "northern",
+    "name": "Northern Line",
+    "color": "#000000",
+    "fontColor": "#ffffff"
+  },
+  {
+    "value": "district",
+    "name": "District Line",
+    "color": "#007229",
+    "fontColor": "#ffffff"
+  }
+]

@@ -8,20 +8,34 @@ import Input from '../input/input';
 
 const Selector = ({
   className,
+  custom,
+  customProp,
   minLengthSearch,
+  maxOptions,
   nameProp,
   native,
-  placeholder,
+  optionClassName,
   options,
+  placeholder,
   search,
   valueProp,
   onChange
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState(null);
+  const [focusedIndex, setFocusedIndex] = useState(-1);
   const [searchStr, setSearchStr] = useState('');
   const windowSize = useWindowSize();
   const menuRef = useRef();
+  const Custom = custom;
+
+  React.useEffect(() => {
+    window.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  });
 
   useOutsideClick(menuRef, () => {
     if (isOpen) {
@@ -31,28 +45,60 @@ const Selector = ({
 
   const handleOptionSelected = option => {
     setSelectedOption(option);
-    setIsOpen(false);
+    setTimeout(() => setIsOpen(false), 0);
     onChange(option);
   };
 
   const handleSearchChange = str => {
-    setSearchStr(str);
+    setSearchStr(str.toLowerCase());
   };
 
-  const handleKeyPress = evt => {
-    console.log(evt);
+  const handleKeyDown = evt => {
+    if (!isOpen) {
+      return;
+    }
+    if (evt.key === 'ArrowUp') {
+      if (focusedIndex > 0) {
+        setFocusedIndex(focusedIndex - 1);
+      }
+      evt.preventDefault();
+    } else if (evt.key === 'ArrowDown') {
+      if (focusedIndex < options.length - 1) {
+        setFocusedIndex(focusedIndex + 1);
+      }
+      evt.preventDefault();
+    } else if (evt.key === 'Enter') {
+      handleOptionSelected(
+        options.filter(opt => filterOption(opt)).slice(0, maxOptions)[focusedIndex]
+      );
+    }
   };
 
   const filterOption = opt => {
     if (
       searchStr &&
       searchStr.length > minLengthSearch - 1 &&
-      !opt[nameProp].includes(searchStr) &&
-      !opt[valueProp].includes(searchStr)
+      !opt[nameProp].toLowerCase().includes(searchStr)
     ) {
       return false;
     }
     return true;
+  };
+
+  const getIndexFirstToShow = () => {
+    return focusedIndex - (maxOptions - 1) < 0 ? 0 : focusedIndex - (maxOptions - 1);
+  };
+
+  const optionHtml = opt => {
+    if (custom && customProp) {
+      const dynamicProps = { [customProp]: opt };
+      // eslint-disable-next-line react/jsx-props-no-spreading
+      return <Custom {...dynamicProps} />;
+    }
+    if (custom) {
+      return <Custom>opt</Custom>;
+    }
+    return opt[nameProp];
   };
 
   const customSelect = (
@@ -64,16 +110,11 @@ const Selector = ({
         size="lg"
         onClick={() => setIsOpen(true)}
       >
-        {!selectedOption ? placeholder : selectedOption[nameProp]}
+        {!selectedOption ? placeholder : optionHtml(selectedOption)}
         <Icon className="selector-icon" name="angle-down" size="sm" />
       </Button>
       <input type="hidden" value={(selectedOption && selectedOption[valueProp]) || ''} />
-      <div
-        className={`selector-menu ${isOpen ? 'show' : null}`}
-        ref={menuRef}
-        onKeyPress={handleKeyPress}
-        tabIndex="0"
-      >
+      <div className={`selector-menu ${isOpen ? 'show' : null}`} ref={menuRef} tabIndex="0">
         {search ? (
           <div className="selector-searchbox">
             <Input onChange={handleSearchChange} />
@@ -83,15 +124,26 @@ const Selector = ({
           <ul>
             {options
               .filter(opt => filterOption(opt))
-              .map(opt => (
+              .slice(getIndexFirstToShow(), getIndexFirstToShow() + maxOptions)
+              .map((opt, i) => (
                 <li key={opt[valueProp]}>
                   <a
                     role="option"
                     aria-disabled="false"
                     aria-selected="false"
+                    className={`${optionClassName} ${
+                      selectedOption && opt[valueProp] === selectedOption[valueProp]
+                        ? 'selected'
+                        : null
+                    } ${
+                      focusedIndex > -1 && options[focusedIndex][valueProp] === opt[valueProp]
+                        ? 'focused'
+                        : null
+                    }`}
+                    onMouseEnter={() => setFocusedIndex(i)}
                     onClick={() => handleOptionSelected(opt)}
                   >
-                    {opt[nameProp]}
+                    {optionHtml(opt)}
                   </a>
                 </li>
               ))}
@@ -116,22 +168,28 @@ const Selector = ({
   );
 
   return (
-    <div className={`selector d-flex flex-column w-100 ${className}`}>
-      {!native || (native === 'mobileOnly' && !(windowSize === 'xs' || windowSize === 'sm')) ? (
-        <>{customSelect}</>
-      ) : (
-        <>{nativeSelect}</>
-      )}
-    </div>
+    <>
+      <div className={`selector d-flex flex-column w-100 ${className}`}>
+        {!native || (native === 'mobileOnly' && !(windowSize === 'xs' || windowSize === 'sm')) ? (
+          <>{customSelect}</>
+        ) : (
+          <>{nativeSelect}</>
+        )}
+      </div>
+    </>
   );
 };
 
 Selector.defaultProps = {
   className: '',
+  custom: null,
+  customProp: null,
   minLengthSearch: 2,
+  maxOptions: 10,
   nameProp: 'name',
   native: 'mobileOnly',
   placeholder: 'Please select an option',
+  optionClassName: '',
   search: false,
   valueProp: 'value',
   onChange: () => {}
@@ -139,11 +197,15 @@ Selector.defaultProps = {
 
 Selector.propTypes = {
   className: PropTypes.string,
+  custom: PropTypes.elementType,
+  customProp: PropTypes.string,
   minLengthSearch: PropTypes.number,
+  maxOptions: PropTypes.number,
   nameProp: PropTypes.string,
   native: PropTypes.oneOf([true, false, 'mobileOnly']),
-  placeholder: PropTypes.string,
+  optionClassName: PropTypes.string,
   options: PropTypes.array.isRequired,
+  placeholder: PropTypes.string,
   search: PropTypes.bool,
   valueProp: PropTypes.string,
   onChange: PropTypes.func

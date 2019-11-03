@@ -5,6 +5,16 @@
       "default": "''",
       "description": ""
     },
+    "custom": {
+      "type": "Component",
+      "default": "null",
+      "description": ""
+    },
+    "customProp": {
+      "type": "string",
+      "default": "null",
+      "description": ""
+    },
     "minLengthSearch": {
       "type": "number",
       "default": "name",

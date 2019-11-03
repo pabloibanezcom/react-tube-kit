@@ -1,11 +1,34 @@
 import React from 'react';
+import { CountryLabel } from '../../../../lib';
 import { DemoElement, DemoPropsTable, DemoSectionsMenu } from '../../../components';
-import basicOptions from './examples/basic-options.json';
+import countries from './examples/countries.json';
+import lines from './examples/lines.json';
 import selectorBasic from './examples/selector-basic';
+import selectorCustom from './examples/selector-custom';
+import selectorManyOptions from './examples/selector-many-options';
+import selectorOptionCustomClass from './examples/selector-option-custom-class';
 import selectorSearch from './examples/selector-search';
+import towns from './examples/towns.json';
 import properties from './selector.properties.json';
 
-const examples = [selectorBasic, selectorSearch];
+const examples = [
+  selectorBasic,
+  selectorSearch,
+  selectorCustom,
+  selectorOptionCustomClass,
+  selectorManyOptions
+];
+
+const LineLabel = ({ line }) => (
+  <div
+    className="d-flex align-items-center line-label"
+    style={{ borderLeft: `10px solid ${line.color}`, padding: '8px 15px' }}
+  >
+    {line.name}
+  </div>
+);
+
+const townsWithCountries = towns.map(t => ({ ...t, code: t.country.code }));
 
 const Selectors = () => (
   <div>
@@ -17,7 +40,7 @@ const Selectors = () => (
             key={example.id}
             component="Selector"
             example={example}
-            bindings={{ basicOptions }}
+            bindings={{ lines, towns, townsWithCountries, countries, LineLabel, CountryLabel }}
             options={{ width: '200' }}
           />
         ))}

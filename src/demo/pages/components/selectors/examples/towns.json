@@ -1,0 +1,51 @@
+[
+  {
+    "value": "london",
+    "name": "London",
+    "country": {
+      "code": "GB"
+    }
+  },
+  {
+    "value": "madrid",
+    "name": "Madrid",
+    "country": {
+      "code": "ES"
+    }
+  },
+  {
+    "value": "paris",
+    "name": "Paris",
+    "country": {
+      "code": "FR"
+    }
+  },
+  {
+    "value": "berlin",
+    "name": "Berlin",
+    "country": {
+      "code": "DE"
+    }
+  },
+  {
+    "value": "rome",
+    "name": "Rome",
+    "country": {
+      "code": "IT"
+    }
+  },
+  {
+    "value": "amsterdam",
+    "name": "Amsterdam",
+    "country": {
+      "code": "NL"
+    }
+  },
+  {
+    "value": "stockholm",
+    "name": "Stockholm",
+    "country": {
+      "code": "SE"
+    }
+  }
+]
