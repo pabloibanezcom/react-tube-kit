@@ -89,14 +89,22 @@ const Selector = ({
     return focusedIndex - (maxOptions - 1) < 0 ? 0 : focusedIndex - (maxOptions - 1);
   };
 
-  const optionHtml = opt => {
+  const optionHtml = (opt, isOptionSelected) => {
     if (custom && customProp) {
       const dynamicProps = { [customProp]: opt };
-      // eslint-disable-next-line react/jsx-props-no-spreading
-      return <Custom {...dynamicProps} />;
+
+      return (
+        <Custom
+          // eslint-disable-next-line react/jsx-props-no-spreading
+          {...dynamicProps}
+          className={`${isOptionSelected ? 'selector-option-selected' : null}`}
+        />
+      );
     }
     if (custom) {
-      return <Custom>opt</Custom>;
+      return (
+        <Custom className={`${isOptionSelected ? 'selector-option-selected' : null}`}>opt</Custom>
+      );
     }
     return opt[nameProp];
   };
@@ -110,7 +118,7 @@ const Selector = ({
         size="lg"
         onClick={() => setIsOpen(true)}
       >
-        {!selectedOption ? placeholder : optionHtml(selectedOption)}
+        {!selectedOption ? placeholder : optionHtml(selectedOption, true)}
         <Icon className="selector-icon" name="angle-down" size="sm" />
       </Button>
       <input type="hidden" value={(selectedOption && selectedOption[valueProp]) || ''} />

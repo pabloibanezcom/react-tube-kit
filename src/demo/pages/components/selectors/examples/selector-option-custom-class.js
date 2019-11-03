@@ -1,7 +1,7 @@
 const html = `<Selector
   options={lines}
   optionClassName="p-0"
-  custom={LineLabel}
+  custom={SelectorLine}
   customProp="line"
 />`;
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import { CountryLabel } from '../../../../lib';
 import { DemoElement, DemoPropsTable, DemoSectionsMenu } from '../../../components';
+import SelectorLine from '../../../components/custom-components/selector-line/selector-line';
 import countries from './examples/countries.json';
 import lines from './examples/lines.json';
 import selectorBasic from './examples/selector-basic';
@@ -19,15 +20,6 @@ const examples = [
   selectorManyOptions
 ];
 
-const LineLabel = ({ line }) => (
-  <div
-    className="d-flex align-items-center line-label"
-    style={{ borderLeft: `10px solid ${line.color}`, padding: '8px 15px' }}
-  >
-    {line.name}
-  </div>
-);
-
 const townsWithCountries = towns.map(t => ({ ...t, code: t.country.code }));
 
 const Selectors = () => (
@@ -40,7 +32,7 @@ const Selectors = () => (
             key={example.id}
             component="Selector"
             example={example}
-            bindings={{ lines, towns, townsWithCountries, countries, LineLabel, CountryLabel }}
+            bindings={{ lines, towns, townsWithCountries, countries, SelectorLine, CountryLabel }}
             options={{ width: '200' }}
           />
         ))}
