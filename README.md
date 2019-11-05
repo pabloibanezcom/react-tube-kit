@@ -6,7 +6,7 @@ This package is bootstraped using [create-react-app](https://github.com/facebook
 
 ## Demo
 
-[Demo Page](https://www.mydemo.com)
+[Demo Page](https://react-tube-kit.herokuapp.com/)
 
 ## Installation
 
