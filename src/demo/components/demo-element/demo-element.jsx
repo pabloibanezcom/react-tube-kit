@@ -2,14 +2,17 @@ import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 import { UnControlled as CodeMirror } from 'react-codemirror2';
 import JsxParser from 'react-jsx-parser';
+import { withRouter } from 'react-router-dom';
+import { Icon } from '../../../lib';
 import getComponentsForParser from '../../util/getComponentsForParser';
 
 require('codemirror/mode/xml/xml');
 
 const DemoElement = ({
+  history,
   actions,
   component,
-  example: { id, name, html, multi, disableCode },
+  example: { id, name, html, multi, disableCode, url },
   bindings,
   options
 }) => {
@@ -18,8 +21,13 @@ const DemoElement = ({
     actions.length ? Object.assign(...actions.map(act => ({ [act.propName]: false }))) : null
   );
 
-  const toggleActionFlag = action => {
-    setActionFlags({ ...actionFlags, [action]: !actionFlags[action] });
+  const fireAction = action => {
+    if (action.propName) {
+      setActionFlags({ ...actionFlags, [action.propName]: !actionFlags[action.propName] });
+    }
+    if (action.to) {
+      history.push(url);
+    }
   };
 
   return (
@@ -39,22 +47,24 @@ const DemoElement = ({
         </div>
         {!disableCode ? (
           <div className="demo-element__code">
-            <div className="demo-element__buttons">
-              {actions.map(act => (
+            <div className="demo-element__buttons d-flex">
+              {actions.map((act, i) => (
                 <button
-                  key={act.propName}
+                  key={i}
                   type="button"
-                  className="demo-element__btn"
-                  onClick={() => toggleActionFlag(act.propName)}
+                  className="demo-element__btn d-flex align-items-center"
+                  onClick={() => fireAction(act)}
                 >
+                  <Icon name={act.icon} className="mr-2 opacity-7" size="sm" />
                   {actionFlags[act.propName] ? act.textActive : act.text}
                 </button>
               ))}
               <button
                 type="button"
-                className="demo-element__btn demo-show-code-btn"
+                className="demo-element__btn demo-show-code-btn d-flex align-items-center"
                 onClick={() => setShowCode(!showCode)}
               >
+                <Icon name="code" className="mr-2 opacity-7" size="sm" />
                 {!showCode ? 'Show code' : 'Hide code'}
               </button>
             </div>
@@ -100,11 +110,12 @@ DemoElement.propTypes = {
     id: PropTypes.string,
     html: PropTypes.string,
     name: PropTypes.string,
-    multi: PropTypes.bool
+    multi: PropTypes.bool,
+    url: PropTypes.string
   }).isRequired,
   options: PropTypes.shape({
     width: PropTypes.string
   })
 };
 
-export default DemoElement;
+export default withRouter(DemoElement);

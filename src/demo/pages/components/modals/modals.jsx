@@ -25,7 +25,7 @@ const Modals = () => (
             component="Modal"
             example={example}
             bindings={{ fakeContent, fakeFunction }}
-            actions={[{ text: 'Show modal', propName: 'showModal' }]}
+            actions={[{ text: 'Show modal', icon: 'play', propName: 'showModal' }]}
           />
         ))}
       </div>

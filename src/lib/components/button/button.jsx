@@ -11,6 +11,7 @@ const Button = ({
   children,
   className,
   icon,
+  iconColor,
   inverse,
   hover,
   onClick,
@@ -52,7 +53,7 @@ const Button = ({
         style={style}
         onClick={onClick}
       >
-        {icon ? <Icon name={icon} /> : null}
+        {icon ? <Icon name={icon} type={iconColor} className={!children ? 'm-0' : null} /> : null}
         {children}
       </button>
     );
@@ -68,7 +69,7 @@ const Button = ({
         href={href}
         target={newPage ? '_blank' : null}
       >
-        {icon ? <Icon name={icon} /> : null}
+        {icon ? <Icon name={icon} type={iconColor} /> : null}
         {children}
       </a>
     );
@@ -76,7 +77,7 @@ const Button = ({
   if (type === 'link' && !href) {
     return (
       <a className={classStr} onClick={onClick} disabled={disabled}>
-        {icon ? <Icon name={icon} /> : null}
+        {icon ? <Icon name={icon} type={iconColor} /> : null}
         {children}
       </a>
     );
@@ -92,6 +93,7 @@ Button.defaultProps = {
   disabled: false,
   className: '',
   icon: '',
+  iconColor: null,
   inverse: false,
   outline: false,
   size: 'sm',
@@ -114,6 +116,7 @@ Button.propTypes = {
   className: PropTypes.string,
   inverse: PropTypes.bool,
   icon: PropTypes.string,
+  iconColor: PropTypes.string,
   outline: PropTypes.bool,
   size: PropTypes.oneOf(['sm', 'lg']),
   color: PropTypes.oneOf(['primary', 'secondary', 'light', 'warning', 'danger', 'transparent']),
