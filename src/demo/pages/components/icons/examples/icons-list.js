@@ -44,6 +44,10 @@ const html = `<div className="d-flex flex-row flex-wrap">
     <Icon name="close" />
   </div>
   <div className="d-flex flex-column text-center mb-5 mr-2" style={{width: 120}}>
+    <span className="font-weight-normal text-black-50 mb-1">code</span>
+    <Icon name="code" />
+  </div>
+  <div className="d-flex flex-column text-center mb-5 mr-2" style={{width: 120}}>
     <span className="font-weight-normal text-black-50 mb-1">connection</span>
     <Icon name="connection" />
   </div>
@@ -104,8 +108,16 @@ const html = `<div className="d-flex flex-row flex-wrap">
     <Icon name="person" />
   </div>
   <div className="d-flex flex-column text-center mb-5 mr-2" style={{width: 120}}>
+    <span className="font-weight-normal text-black-50 mb-1">play</span>
+    <Icon name="play" />
+  </div>
+  <div className="d-flex flex-column text-center mb-5 mr-2" style={{width: 120}}>
     <span className="font-weight-normal text-black-50 mb-1">publish</span>
     <Icon name="publish" />
+  </div>
+  <div className="d-flex flex-column text-center mb-5 mr-2" style={{width: 120}}>
+    <span className="font-weight-normal text-black-50 mb-1">screen-full</span>
+    <Icon name="screen-full" />
   </div>
   <div className="d-flex flex-column text-center mb-5 mr-2" style={{width: 120}}>
     <span className="font-weight-normal text-black-50 mb-1">search</span>

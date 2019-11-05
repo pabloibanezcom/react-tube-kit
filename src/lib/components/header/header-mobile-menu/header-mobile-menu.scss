@@ -1,0 +1,23 @@
+.header-mobile-menu {
+  @include expand-collapse();
+  position: absolute;
+  overflow: auto;
+  width: 100%;
+  background-color: $secondary-color;
+  color: $secondary-alt-color;
+  margin-top: 2px;
+  z-index: 9999;
+
+  ul {
+    li {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        padding: 10px 20px;
+        text-align: center;
+      }
+    }
+  }
+}
