@@ -2,26 +2,25 @@ import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 import { Button } from '../..';
 import getDisplayClass from '../../util/getDisplayClass';
-import HeaderMobileMenu from './header-mobile-menu/header-mobile-menu';
 
-const menuElements = [
-  {
-    name: 'Badges',
-    url: '/components/badges'
-  },
-  {
-    name: 'Buttons & Links',
-    url: '/components/buttons'
-  },
-  {
-    name: 'Collapsible ists',
-    url: '/components/collapsible-lists'
-  },
-  {
-    name: 'Color labels',
-    url: '/components/color-labels'
-  }
-];
+// const menuElements = [
+//   {
+//     name: 'Badges',
+//     url: '/components/badges'
+//   },
+//   {
+//     name: 'Buttons & Links',
+//     url: '/components/buttons'
+//   },
+//   {
+//     name: 'Collapsible ists',
+//     url: '/components/collapsible-lists'
+//   },
+//   {
+//     name: 'Color labels',
+//     url: '/components/color-labels'
+//   }
+// ];
 
 const Header = ({
   animated,
@@ -72,13 +71,7 @@ const Header = ({
           <div className="d-none d-md-flex">{rightContent}</div>
         </div>
       </div>
-      <div className={`${getDisplayClass(menuButtonDisplay)}`}>
-        <HeaderMobileMenu
-          menuElements={menuElements}
-          shown={showMenu}
-          onSelected={() => setShowMenu(false)}
-        />
-      </div>
+      <div className={`${getDisplayClass(menuButtonDisplay)}`} />
     </header>
   );
 };
