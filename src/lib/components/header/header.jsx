@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { useState } from 'react';
-import { Button } from '../..';
 import getDisplayClass from '../../util/getDisplayClass';
+import Button from '../button/button';
 
 // const menuElements = [
 //   {
