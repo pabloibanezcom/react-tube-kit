@@ -26,6 +26,10 @@
         "url": "badges"
       },
       {
+        "name": "Bottom menus",
+        "url": "bottom-menus"
+      },
+      {
         "name": "Buttons & Links",
         "url": "buttons"
       },

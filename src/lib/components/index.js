@@ -1,4 +1,5 @@
 import Badge from './badge/badge';
+import BottomMenu from './bottom-menu/bottom-menu';
 import Button from './button/button';
 import CollapsibleList from './collapsible-list/collapsible-list';
 import ColorLabel from './color-label/color-label';
@@ -18,6 +19,7 @@ import TabMenu from './tab-menu/tab-menu';
 
 export {
   Badge,
+  BottomMenu,
   Button,
   CollapsibleList,
   ColorLabel,

@@ -3,38 +3,20 @@ import React, { useState } from 'react';
 import getDisplayClass from '../../util/getDisplayClass';
 import Button from '../button/button';
 
-// const menuElements = [
-//   {
-//     name: 'Badges',
-//     url: '/components/badges'
-//   },
-//   {
-//     name: 'Buttons & Links',
-//     url: '/components/buttons'
-//   },
-//   {
-//     name: 'Collapsible ists',
-//     url: '/components/collapsible-lists'
-//   },
-//   {
-//     name: 'Color labels',
-//     url: '/components/color-labels'
-//   }
-// ];
-
 const Header = ({
   animated,
+  className,
   logo,
   menuButtonDisplay,
   rightContent,
+  subtitle,
   title,
-  titleDisplay,
-  subtitle
+  titleDisplay
 }) => {
   const [showMenu, setShowMenu] = useState(false);
 
   return (
-    <header className="header">
+    <header className={`header ${className}`}>
       <div className="header__container container d-flex align-items-center h-100 p-0">
         <div className="header__left flex-grow-1 pl-3">
           <div className="header__title d-flex align-items-center">
@@ -78,22 +60,24 @@ const Header = ({
 
 Header.defaultProps = {
   animated: false,
+  className: '',
   logo: null,
   menuButtonDisplay: '-md',
   rightContent: null,
+  subtitle: null,
   title: null,
-  titleDisplay: 'md-',
-  subtitle: null
+  titleDisplay: 'md-'
 };
 
 Header.propTypes = {
   animated: PropTypes.bool,
+  className: PropTypes.string,
   logo: PropTypes.node,
   menuButtonDisplay: PropTypes.string,
   rightContent: PropTypes.element,
+  subtitle: PropTypes.string,
   title: PropTypes.string,
-  titleDisplay: PropTypes.string,
-  subtitle: PropTypes.string
+  titleDisplay: PropTypes.string
 };
 
 export default Header;

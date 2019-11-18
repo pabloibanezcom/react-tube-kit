@@ -1,5 +1,6 @@
 export {
   Badge,
+  BottomMenu,
   Button,
   CollapsibleList,
   ColorLabel,

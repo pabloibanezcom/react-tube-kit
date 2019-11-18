@@ -1,5 +1,6 @@
 import {
   Badge,
+  BottomMenu,
   Button,
   CollapsibleList,
   ColorLabel,
@@ -30,6 +31,8 @@ const getComponentFromName = componentName => {
   switch (componentName) {
     case 'Badge':
       return Badge;
+    case 'BottomMenu':
+      return BottomMenu;
     case 'Button':
       return Button;
     case 'CollapsibleList':

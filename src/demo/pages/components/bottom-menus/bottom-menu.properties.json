@@ -1,0 +1,24 @@
+{
+  "options": {
+    "className": {
+      "type": "string",
+      "default": "''",
+      "description": ""
+    },
+    "display": {
+      "type": "string",
+      "default": "-md",
+      "description": ""
+    },
+    "menuElements": {
+      "type": "[menuElement]",
+      "isRequired": true,
+      "description": ""
+    },
+    "scrollHide": {
+      "type": "bool",
+      "default": "false",
+      "description": ""
+    }
+  }
+}
