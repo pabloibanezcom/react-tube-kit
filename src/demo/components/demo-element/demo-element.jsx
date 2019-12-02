@@ -12,7 +12,7 @@ const DemoElement = ({
   history,
   actions,
   component,
-  example: { id, name, html, multi, disableCode, url },
+  example: { id, name, html, multi, disableCode, disableExample, url },
   bindings,
   options
 }) => {
@@ -39,11 +39,13 @@ const DemoElement = ({
             options.flexColumn ? 'flexColumn' : ''
           } ${multi ? 'multi' : ''}`}
         >
-          <JsxParser
-            bindings={{ ...bindings, ...actionFlags }}
-            components={getComponentsForParser(component)}
-            jsx={`<div>${html}</div>`}
-          />
+          {!disableExample ? (
+            <JsxParser
+              bindings={{ ...bindings, ...actionFlags }}
+              components={getComponentsForParser(component)}
+              jsx={`<div>${html}</div>`}
+            />
+          ) : null}
         </div>
         {!disableCode ? (
           <div className="demo-element__code">
@@ -107,6 +109,8 @@ DemoElement.propTypes = {
   bindings: PropTypes.object,
   component: PropTypes.string.isRequired,
   example: PropTypes.shape({
+    disableCode: PropTypes.bool,
+    disableExample: PropTypes.bool,
     id: PropTypes.string,
     html: PropTypes.string,
     name: PropTypes.string,

@@ -25,3 +25,14 @@ $primary-alt-color: $secondary-color !default;
 $secondary-alt-color: $white-color !default;
 
 $outline-font-color: $secondary-color;
+
+// z-index
+$z-layout-wrapper: 100;
+$z-header: 200;
+$z-side-navbar: 300;
+
+// Layout
+$header-height: 56px;
+$side-navbar-width: 230px;
+$layout-transitions-duration: 0.2s;
+$overlay-opacity: 0.75;

@@ -3,17 +3,17 @@ import { Link } from 'react-router-dom';
 import menuElements from './demo-menu.data.json';
 
 const DemoMenu = ({ currentPage }) => {
-  const [activeSection, setActiveSection] = useState(currentPage.split('/')[1]);
+  const [activeSections, setActiveSections] = useState(currentPage.split('/')[1]);
 
-  const renderMenuElementTitle = el => (
+  const renderMenuElementTitle = (el, urlElements) => (
     <Fragment>
       <li className="group-title">
-        <a onClick={() => setActiveSection(el.url)}>{el.name}</a>
+        <a onClick={() => setActiveSections([...urlElements, el.url])}>{el.name}</a>
       </li>
       <li className="demo-menu__submenu">
-        <ul className={`demo-menu__submenu-list ${activeSection === el.url ? 'shown' : ''}`}>
+        <ul className={`demo-menu__submenu-list ${activeSections.includes(el.url) ? 'shown' : ''}`}>
           {el.children.map((child, i) => (
-            <Fragment key={i}>{renderMenuElement(child, [el.url])}</Fragment>
+            <Fragment key={i}>{renderMenuElement(child, [...urlElements, el.url])}</Fragment>
           ))}
         </ul>
       </li>
@@ -25,7 +25,7 @@ const DemoMenu = ({ currentPage }) => {
     return (
       <Fragment>
         {el.children ? (
-          renderMenuElementTitle(el)
+          renderMenuElementTitle(el, urlElements)
         ) : (
           <li
             className={`link-element ${currentPage === url ? 'active' : ''} ${

@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import getDisplayClass from '../../util/getDisplayClass';
-import Icon from '../icon/icon';
+import getDisplayClass from '../../../util/getDisplayClass';
+import Icon from '../../icon/icon';
 
 const BottomMenu = ({ className, display, menuElements, scrollHide }) => {
   const [prevScrollpos, setPrevScrollpos] = useState(window.pageYOffset);

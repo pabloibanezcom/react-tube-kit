@@ -10,11 +10,13 @@ import {
   Icon,
   Input,
   Label,
+  LayoutWrapper,
   LoadingSpinner,
   Modal,
   Pagination,
   Panel,
   Selector,
+  SideNavbar,
   TabMenu
 } from '../../lib';
 
@@ -51,6 +53,8 @@ const getComponentFromName = componentName => {
       return Input;
     case 'Label':
       return Label;
+    case 'LayoutWrapper':
+      return LayoutWrapper;
     case 'LoadingSpinner':
       return LoadingSpinner;
     case 'Modal':
@@ -61,6 +65,8 @@ const getComponentFromName = componentName => {
       return Panel;
     case 'Selector':
       return Selector;
+    case 'SideNavbar':
+      return SideNavbar;
     case 'TabMenu':
       return TabMenu;
     default:

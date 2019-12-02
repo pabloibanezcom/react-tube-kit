@@ -1,15 +1,17 @@
 import Badge from './badge/badge';
-import BottomMenu from './bottom-menu/bottom-menu';
 import Button from './button/button';
 import CollapsibleList from './collapsible-list/collapsible-list';
 import ColorLabel from './color-label/color-label';
 import ColorSelector from './color-selector/color-selector';
 import CountryLabel from './country-label/country-label';
 import Footer from './footer/footer';
-import Header from './header/header';
 import Icon from './icon/icon';
 import Input from './input/input';
 import Label from './label/label';
+import BottomMenu from './layout/bottom-menu/bottom-menu';
+import Header from './layout/header/header';
+import LayoutWrapper from './layout/layout-wrapper/layout-wrapper';
+import SideNavbar from './layout/side-navbar/side-navbar';
 import LoadingSpinner from './loading-spinner/loading-spinner';
 import Modal from './modal/modal';
 import Pagination from './pagination/pagination';
@@ -30,10 +32,12 @@ export {
   Icon,
   Input,
   Label,
+  LayoutWrapper,
   LoadingSpinner,
   Modal,
   Pagination,
   Panel,
   Selector,
+  SideNavbar,
   TabMenu
 };

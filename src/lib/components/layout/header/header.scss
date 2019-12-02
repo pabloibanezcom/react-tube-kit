@@ -1,13 +1,16 @@
 @import './header-mobile-menu/header-mobile-menu.scss';
 
 .header {
+  position: fixed;
   background-color: $secondary-color;
   color: $secondary-alt-color;
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.29);
   border-bottom: 2px solid $primary-color;
-  height: 56px;
+  height: $header-height;
+  width: 100%;
+  z-index: $z-header;
 
-  .header__logo {
+  &__logo {
     margin-right: 10px;
     height: 36px;
 
@@ -16,7 +19,7 @@
     }
   }
 
-  h1 {
+  &__title {
     font-size: 2.4rem;
     display: inline-block;
     font-weight: 200;
@@ -29,16 +32,16 @@
     span {
       font-weight: 400;
     }
-
-    .header__subtitle {
-      color: $primary-color;
-      margin-left: 15px;
-      font-size: 2.2rem;
-      word-spacing: 0px;
-    }
   }
 
-  .header__menu-buttom {
+  &__subtitle {
+    color: $primary-color;
+    margin-left: 15px;
+    font-size: 2.2rem;
+    word-spacing: 0px;
+  }
+
+  &__menu-buttom {
     color: $white-color;
 
     i {

@@ -1,12 +1,13 @@
 @import './badge/badge.scss';
-@import './bottom-menu/bottom-menu.scss';
+@import './layout/bottom-menu/bottom-menu.scss';
 @import './button/button.scss';
 @import './collapsible-list/collapsible-list.scss';
 @import './color-label/color-label.scss';
 @import './color-selector/color-selector.scss';
 @import './country-label/country-label.scss';
 @import './footer/footer.scss';
-@import './header/header.scss';
+@import './layout/layout-wrapper/layout-wrapper.scss';
+@import './layout/header/header.scss';
 @import './icon/icon.scss';
 @import './input/input.scss';
 @import './loading-spinner/loading-spinner.scss';
@@ -14,4 +15,5 @@
 @import './pagination/pagination.scss';
 @import './panel/panel.scss';
 @import './selector/selector.scss';
+@import './layout/side-navbar/side-navbar.scss';
 @import './tab-menu/tab-menu.scss';

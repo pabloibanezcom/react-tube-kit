@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
-import React, { useState } from 'react';
-import getDisplayClass from '../../util/getDisplayClass';
-import Button from '../button/button';
+import React from 'react';
+import getDisplayClass from '../../../util/getDisplayClass';
+import Button from '../../button/button';
 
 const Header = ({
   animated,
@@ -11,15 +11,14 @@ const Header = ({
   rightContent,
   subtitle,
   title,
-  titleDisplay
+  titleDisplay,
+  onMenuClick
 }) => {
-  const [showMenu, setShowMenu] = useState(false);
-
   return (
     <header className={`header ${className}`}>
       <div className="header__container container d-flex align-items-center h-100 p-0">
         <div className="header__left flex-grow-1 pl-3">
-          <div className="header__title d-flex align-items-center">
+          <div className="d-flex align-items-center">
             {logo ? (
               <img
                 className={`header__logo ${
@@ -31,7 +30,7 @@ const Header = ({
             ) : null}
             {title ? (
               <h1
-                className={`${getDisplayClass(titleDisplay)} ${
+                className={`header__title ${getDisplayClass(titleDisplay)} ${
                   animated ? 'animated fadeInRight animation-delay-6' : null
                 }`}
               >
@@ -48,7 +47,7 @@ const Header = ({
             iconColor="white"
             size="lg"
             className={`${getDisplayClass(menuButtonDisplay)} header__menu-buttom p-0`}
-            onClick={() => setShowMenu(!showMenu)}
+            onClick={onMenuClick}
           />
           <div className="d-none d-md-flex">{rightContent}</div>
         </div>
@@ -66,7 +65,8 @@ Header.defaultProps = {
   rightContent: null,
   subtitle: null,
   title: null,
-  titleDisplay: 'md-'
+  titleDisplay: 'md-',
+  onMenuClick: () => {}
 };
 
 Header.propTypes = {
@@ -77,7 +77,8 @@ Header.propTypes = {
   rightContent: PropTypes.element,
   subtitle: PropTypes.string,
   title: PropTypes.string,
-  titleDisplay: PropTypes.string
+  titleDisplay: PropTypes.string,
+  onMenuClick: PropTypes.func
 };
 
 export default Header;

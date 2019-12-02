@@ -1,0 +1,22 @@
+[
+  {
+    "name": "User",
+    "url": "/user",
+    "icon": "person"
+  },
+  {
+    "name": "Image",
+    "url": "/image",
+    "icon": "image"
+  },
+  {
+    "name": "World",
+    "url": "/world",
+    "icon": "globe"
+  },
+  {
+    "name": "Calendar",
+    "url": "/calendar",
+    "icon": "calendar"
+  }
+]

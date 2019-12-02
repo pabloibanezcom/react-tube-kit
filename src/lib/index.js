@@ -11,10 +11,12 @@ export {
   Icon,
   Input,
   Label,
+  LayoutWrapper,
   LoadingSpinner,
   Modal,
   Pagination,
   Panel,
   Selector,
+  SideNavbar,
   TabMenu
 } from './components';

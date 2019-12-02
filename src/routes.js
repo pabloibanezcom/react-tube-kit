@@ -1,22 +1,14 @@
 import React from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
 import Demo from './demo/demo';
-import BottomMenuBasicPage from './demo/pages/components/bottom-menus/examples/bottom-menu-basic/bottom-menu-basic-page';
-import BottomMenuScrollHidePage from './demo/pages/components/bottom-menus/examples/bottom-menu-scroll-hide/bottom-menu-scroll-hide-page';
-import HeaderBasicPage from './demo/pages/components/headers/examples/header-basic/header-basic-page';
-import HeaderTitleMobileHiddenPage from './demo/pages/components/headers/examples/header-title-mobile-hidden/header-title-mobile-hidden-page';
-import HeaderWithLogoPage from './demo/pages/components/headers/examples/header-with-logo/header-with-logo-page';
+import LayoutWrapperBasicPage from './demo/pages/components/layout/layout-wrappers/examples/layout-wrapper-basic/layout-wrapper-basic-page';
 
 const routes = () => (
   <Switch>
-    <Route path="/components/bottom-menus/basic" exact component={BottomMenuBasicPage} />
-    <Route path="/components/bottom-menus/scroll-hide" exact component={BottomMenuScrollHidePage} />
-    <Route path="/components/headers/basic" exact component={HeaderBasicPage} />
-    <Route path="/components/headers/header-logo" exact component={HeaderWithLogoPage} />
     <Route
-      path="/components/headers/header-title-mobile-hidden"
+      path="/components/layout/layout-wrapper/basic"
       exact
-      component={HeaderTitleMobileHiddenPage}
+      component={LayoutWrapperBasicPage}
     />
     <Route path="/" component={Demo} />
     <Redirect to="/" />
