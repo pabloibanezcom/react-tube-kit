@@ -1,0 +1,86 @@
+[
+  {
+    "value": "central",
+    "name": "Central Line",
+    "color": "#dc241f",
+    "fontColor": "#ffffff"
+  },
+  {
+    "value": "jubilee",
+    "name": "Jubilee Line",
+    "color": "#6a7278",
+    "fontColor": "#ffffff"
+  },
+  {
+    "value": "piccadilly",
+    "name": "Piccadilly Line",
+    "color": "#0019a8",
+    "fontColor": "#ffffff"
+  },
+  {
+    "value": "victoria",
+    "name": "Victoria Line",
+    "color": "#00a0e2",
+    "fontColor": "#000000"
+  },
+  {
+    "value": "bakerloo",
+    "name": "Bakerloo Line",
+    "color": "#894e24",
+    "fontColor": "#ffffff"
+  },
+  {
+    "value": "northern",
+    "name": "Northern Line",
+    "color": "#000000",
+    "fontColor": "#ffffff"
+  },
+  {
+    "value": "district",
+    "name": "District Line",
+    "color": "#007229",
+    "fontColor": "#ffffff"
+  },
+  {
+    "value": "metropolitan",
+    "name": "Metropolitan Line",
+    "color": "#751056",
+    "fontColor": "#ffffff"
+  },
+  {
+    "value": "circle",
+    "name": "Circle Line",
+    "color": "#ffce00",
+    "fontColor": "#ffffff"
+  },
+  {
+    "value": "hammersmith_and_city",
+    "name": "Hammersmith & City Line",
+    "color": "#d799af",
+    "fontColor": "#ffffff"
+  },
+  {
+    "value": "waterloo_and_city",
+    "name": "Waterloo & City Line",
+    "color": "#76d0bd",
+    "fontColor": "#000000"
+  },
+  {
+    "value": "overground",
+    "name": "London Overground",
+    "color": "#e86a10",
+    "fontColor": "#000000"
+  },
+  {
+    "value": "dlr",
+    "name": "DLR",
+    "color": "#00afad",
+    "fontColor": "#000000"
+  },
+  {
+    "value": "elizabeth",
+    "name": "Elizabeth Line",
+    "color": "#5a429a",
+    "fontColor": "#ffffff"
+  }
+]

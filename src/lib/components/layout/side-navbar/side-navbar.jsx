@@ -57,7 +57,13 @@ const SideNavbar = ({
             </div>
             <div className="d-flex align-items-center">
               <Icon
-                name={
+                name="angle-right"
+                className={`side-navbar__group-title-link__arrow ${
+                  activeSections && activeSections.includes(el.url)
+                    ? 'side-navbar__group-title-link__arrow--open'
+                    : ''
+                }`}
+                namess={
                   activeSections && activeSections.includes(el.url) ? 'angle-down' : 'angle-right'
                 }
               />
@@ -99,7 +105,9 @@ const SideNavbar = ({
           >
             <Link className="side-navbar__nav-link" to={url} onClick={close}>
               <div
-                className="d-flex align-items-center"
+                className={`d-flex align-items-center side-navbar__nav-link__padding-container ${
+                  level > 0 ? 'side-navbar__nav-link__padding-container--open' : ''
+                }`}
                 style={{
                   paddingLeft: 10 * level
                 }}

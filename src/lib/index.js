@@ -7,6 +7,7 @@ export {
   ColorSelector,
   CountryLabel,
   Footer,
+  Form,
   Header,
   Icon,
   Input,

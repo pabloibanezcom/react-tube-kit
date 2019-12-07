@@ -33,6 +33,22 @@
         }
       }
 
+      &.w-250 {
+        .jsx-parser {
+          > div {
+            width: 250px;
+          }
+        }
+      }
+
+      &.w-300 {
+        .jsx-parser {
+          > div {
+            width: 300px;
+          }
+        }
+      }
+
       &.w-400 {
         .jsx-parser {
           > div {
@@ -62,6 +78,7 @@
 
       .jsx-parser {
         display: flex;
+        // overflow-x: auto;
       }
     }
 
@@ -77,7 +94,7 @@
 
       .demo-element__buttons {
         position: absolute;
-        z-index: 1;
+        z-index: 2;
         right: 10px;
         top: -15px;
 
@@ -98,10 +115,24 @@
       .demo-element__codemirror {
         @include expand-collapse('CodeMirror');
 
+        .demo-element__codemirror__overlay {
+          position: absolute;
+          overflow: auto;
+          top: 0px;
+          left: 0px;
+          right: 0px;
+          bottom: 0px;
+          z-index: 1;
+        }
+
         .CodeMirror {
           padding: 0 15px;
           border-bottom-left-radius: 5px;
           border-bottom-right-radius: 5px;
+
+          .CodeMirror-lines {
+            pointer-events: none;
+          }
 
           .cm-tag {
             color: #5ed663;

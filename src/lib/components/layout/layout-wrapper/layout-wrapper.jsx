@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React, { useEffect, useState } from 'react';
 import isSize from '../../../util/isSize';
 import useWindowSize from '../../../util/useWindowSize';
+import BottomMenu from '../bottom-menu/bottom-menu';
 import Header from '../header/header';
 import SideNavbar from '../side-navbar/side-navbar';
 
@@ -24,7 +25,12 @@ const LayoutWrapper = ({
   sideNavbarElements,
   sideNavbarShown,
   sideNavbarSticky,
-  sideNavbarStretch
+  sideNavbarStretch,
+  // bottomMenu
+  bottomMenuClassName,
+  bottomMenuDisplay,
+  bottomMenuElements,
+  bottomMenuScrollHide
 }) => {
   const windowSize = useWindowSize();
   const [showSideNavbar, setShowSideNavbar] = useState(isSize(windowSize, sideNavbarShown));
@@ -72,6 +78,12 @@ const LayoutWrapper = ({
         >
           <div className="container">{children}</div>
         </div>
+        <BottomMenu
+          className={bottomMenuClassName}
+          elements={bottomMenuElements}
+          display={bottomMenuDisplay}
+          scrollHide={bottomMenuScrollHide}
+        />
         <div
           className={`layout__overlay ${
             !showSideNavbar || isNavbarSticky || isNavbarStretch ? 'layout__overlay--hidden' : ''
@@ -100,7 +112,12 @@ LayoutWrapper.defaultProps = {
   sideNavbarElements: [],
   sideNavbarShown: 'md-',
   sideNavbarSticky: false,
-  sideNavbarStretch: 'md-'
+  sideNavbarStretch: 'md-',
+  // bottomMenu
+  bottomMenuClassName: '',
+  bottomMenuDisplay: '-md',
+  bottomMenuElements: [],
+  bottomMenuScrollHide: false
 };
 
 LayoutWrapper.propTypes = {
@@ -127,7 +144,18 @@ LayoutWrapper.propTypes = {
   ),
   sideNavbarShown: PropTypes.string,
   sideNavbarSticky: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
-  sideNavbarStretch: PropTypes.oneOfType([PropTypes.string, PropTypes.bool])
+  sideNavbarStretch: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
+  // bottomMenu
+  bottomMenuClassName: PropTypes.string,
+  bottomMenuDisplay: PropTypes.string,
+  bottomMenuElements: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string,
+      url: PropTypes.string,
+      icon: PropTypes.string
+    })
+  ),
+  bottomMenuScrollHide: PropTypes.bool
 };
 
 export default LayoutWrapper;

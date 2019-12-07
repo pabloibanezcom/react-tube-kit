@@ -4,12 +4,14 @@ import Icon from '../icon/icon';
 
 const Input = ({
   bgColor,
+  bgShow,
   className,
   clearable,
   color,
   defaultValue,
   disabled,
   icon,
+  name,
   placeholder,
   readOnly,
   type,
@@ -31,9 +33,10 @@ const Input = ({
     <div className="input-wrapper">
       <input
         type={type}
-        className={`input input-underline-${bgColor} text-${color} ${
-          icon ? 'input-with-icon' : null
-        } ${className}`}
+        className={`input input-underline-${bgColor} ${
+          bgShow ? 'input-underline-show' : ''
+        } text-${color} ${icon ? 'input-with-icon' : ''} ${className}`}
+        name={name}
         value={value}
         placeholder={placeholder}
         disabled={disabled}
@@ -53,12 +56,14 @@ const Input = ({
 
 Input.defaultProps = {
   bgColor: 'primary',
+  bgShow: false,
   className: '',
   clearable: false,
   color: 'secondary',
   defaultValue: '',
   disabled: false,
   icon: null,
+  name: null,
   placeholder: null,
   readOnly: false,
   type: 'text',
@@ -77,6 +82,7 @@ Input.propTypes = {
     'dark',
     'white'
   ]),
+  bgShow: PropTypes.bool,
   className: PropTypes.string,
   clearable: PropTypes.bool,
   color: PropTypes.oneOf([
@@ -93,6 +99,7 @@ Input.propTypes = {
   defaultValue: PropTypes.string,
   disabled: PropTypes.bool,
   icon: PropTypes.string,
+  name: PropTypes.string,
   placeholder: PropTypes.string,
   readOnly: PropTypes.bool,
   type: PropTypes.oneOf(['text', 'number', 'email', 'password', 'tel']),

@@ -45,22 +45,24 @@ const DemoPropsTable = ({ properties: { options, methods } }) => {
           <h2 name="methods" className="mb-4">
             Methods
           </h2>
-          <table>
-            <thead>
-              <tr>
-                <th>Method</th>
-                <th>Description</th>
-              </tr>
-            </thead>
-            <tbody>
-              {Object.keys(methods).map(methodName => (
-                <tr key={methodName}>
-                  <td>{methodName}</td>
-                  <td>{getRenderHtml(methods[methodName].description)}</td>
+          <div className="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Method</th>
+                  <th>Description</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {Object.keys(methods).map(methodName => (
+                  <tr key={methodName}>
+                    <td>{methodName}</td>
+                    <td>{getRenderHtml(methods[methodName].description)}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
       ) : null}
     </div>

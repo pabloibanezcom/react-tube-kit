@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import getDisplayClass from '../../../util/getDisplayClass';
 import Icon from '../../icon/icon';
 
-const BottomMenu = ({ className, display, menuElements, scrollHide }) => {
+const BottomMenu = ({ className, display, elements, scrollHide }) => {
   const [prevScrollpos, setPrevScrollpos] = useState(window.pageYOffset);
   const [visible, setVisible] = useState(true);
 
@@ -30,7 +30,7 @@ const BottomMenu = ({ className, display, menuElements, scrollHide }) => {
       )} ${className}`}
     >
       <ul>
-        {menuElements.map(mEl => (
+        {elements.map(mEl => (
           <li key={mEl.name}>
             <Link to={mEl.url}>
               <Icon name={mEl.icon} color="white" />
@@ -45,6 +45,7 @@ const BottomMenu = ({ className, display, menuElements, scrollHide }) => {
 
 BottomMenu.defaultProps = {
   className: '',
+  elements: [],
   display: '-md',
   scrollHide: false
 };
@@ -52,13 +53,13 @@ BottomMenu.defaultProps = {
 BottomMenu.propTypes = {
   className: PropTypes.string,
   display: PropTypes.string,
-  menuElements: PropTypes.arrayOf(
+  elements: PropTypes.arrayOf(
     PropTypes.shape({
       name: PropTypes.string,
       url: PropTypes.string,
       icon: PropTypes.string
     })
-  ).isRequired,
+  ),
   scrollHide: PropTypes.bool
 };
 

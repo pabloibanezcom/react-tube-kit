@@ -44,6 +44,7 @@ const DemoElement = ({
               bindings={{ ...bindings, ...actionFlags }}
               components={getComponentsForParser(component)}
               jsx={`<div>${html}</div>`}
+              blacklistedAttrs={[]}
             />
           ) : null}
         </div>
@@ -71,6 +72,7 @@ const DemoElement = ({
               </button>
             </div>
             <div className={`demo-element__codemirror ${showCode ? 'shown' : ''}`}>
+              <div className="demo-element__codemirror__overlay" />
               <CodeMirror
                 value={html}
                 options={{

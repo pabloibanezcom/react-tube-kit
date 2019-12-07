@@ -75,6 +75,7 @@
     "react-custom-scrollbars": "^4.2.1",
     "react-dev-utils": "^9.0.4",
     "react-dom": "^16.10.0",
+    "react-hook-form": "^3.28.13",
     "react-jsx-parser": "^1.19.1",
     "react-modal": "^3.10.1",
     "react-paginate": "^6.3.0",

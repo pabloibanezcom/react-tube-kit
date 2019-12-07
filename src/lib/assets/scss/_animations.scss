@@ -1,0 +1,8 @@
+.animation-opacity {
+  opacity: 0 !important;
+  transition: opacity 0.1s ease-out;
+
+  &--shown {
+    opacity: 1 !important;
+  }
+}

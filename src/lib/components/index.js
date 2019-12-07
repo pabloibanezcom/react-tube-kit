@@ -5,6 +5,7 @@ import ColorLabel from './color-label/color-label';
 import ColorSelector from './color-selector/color-selector';
 import CountryLabel from './country-label/country-label';
 import Footer from './footer/footer';
+import Form from './form/form';
 import Icon from './icon/icon';
 import Input from './input/input';
 import Label from './label/label';
@@ -28,6 +29,7 @@ export {
   CountryLabel,
   ColorSelector,
   Footer,
+  Form,
   Header,
   Icon,
   Input,
