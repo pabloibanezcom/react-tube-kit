@@ -14,28 +14,30 @@ const DemoPropsTable = ({ properties: { options, methods } }) => {
           <h2 name="options" className="mb-4">
             Options
           </h2>
-          <table>
-            <thead>
-              <tr>
-                <th>Property</th>
-                <th>Type</th>
-                <th>Required</th>
-                <th>Default</th>
-                <th>Description</th>
-              </tr>
-            </thead>
-            <tbody>
-              {Object.keys(options).map(propName => (
-                <tr key={propName}>
-                  <td>{propName}</td>
-                  <td>{getTypeLabel(options[propName].type)}</td>
-                  <td>{getRequiredLabel(options[propName].isRequired)}</td>
-                  <td>{options[propName].default}</td>
-                  <td>{getRenderHtml(options[propName].description)}</td>
+          <div className="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Property</th>
+                  <th>Type</th>
+                  <th>Required</th>
+                  <th>Default</th>
+                  <th>Description</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {Object.keys(options).map(propName => (
+                  <tr key={propName}>
+                    <td>{propName}</td>
+                    <td>{getTypeLabel(options[propName].type)}</td>
+                    <td>{getRequiredLabel(options[propName].isRequired)}</td>
+                    <td>{options[propName].default}</td>
+                    <td>{getRenderHtml(options[propName].description)}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
       ) : null}
       {methods ? (
@@ -43,22 +45,24 @@ const DemoPropsTable = ({ properties: { options, methods } }) => {
           <h2 name="methods" className="mb-4">
             Methods
           </h2>
-          <table>
-            <thead>
-              <tr>
-                <th>Method</th>
-                <th>Description</th>
-              </tr>
-            </thead>
-            <tbody>
-              {Object.keys(methods).map(methodName => (
-                <tr key={methodName}>
-                  <td>{methodName}</td>
-                  <td>{getRenderHtml(methods[methodName].description)}</td>
+          <div className="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Method</th>
+                  <th>Description</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {Object.keys(methods).map(methodName => (
+                  <tr key={methodName}>
+                    <td>{methodName}</td>
+                    <td>{getRenderHtml(methods[methodName].description)}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
       ) : null}
     </div>

@@ -9,6 +9,13 @@
     padding-top: 2px;
     padding-bottom: 4px;
 
+    &.input-underline-show {
+      outline: none;
+      background-size: 100% 2px, 100% 1px;
+      box-shadow: none;
+      transition-duration: 0.3s;
+    }
+
     &:focus {
       outline: none;
       background-size: 100% 2px, 100% 1px;

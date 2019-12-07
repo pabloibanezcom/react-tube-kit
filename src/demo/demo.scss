@@ -9,13 +9,6 @@
 @import '~codemirror/theme/material';
 
 .demo {
-  .demo-content {
-    display: flex;
-    flex: 1 1;
-    flex-direction: column;
-    padding: 35px 70px;
-  }
-
   .sample-div {
     background-color: #eee;
     height: 150px;

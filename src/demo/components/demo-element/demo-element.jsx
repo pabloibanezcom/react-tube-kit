@@ -12,7 +12,7 @@ const DemoElement = ({
   history,
   actions,
   component,
-  example: { id, name, html, multi, disableCode, url },
+  example: { id, name, html, multi, disableCode, disableExample, url },
   bindings,
   options
 }) => {
@@ -39,11 +39,14 @@ const DemoElement = ({
             options.flexColumn ? 'flexColumn' : ''
           } ${multi ? 'multi' : ''}`}
         >
-          <JsxParser
-            bindings={{ ...bindings, ...actionFlags }}
-            components={getComponentsForParser(component)}
-            jsx={`<div>${html}</div>`}
-          />
+          {!disableExample ? (
+            <JsxParser
+              bindings={{ ...bindings, ...actionFlags }}
+              components={getComponentsForParser(component)}
+              jsx={`<div>${html}</div>`}
+              blacklistedAttrs={[]}
+            />
+          ) : null}
         </div>
         {!disableCode ? (
           <div className="demo-element__code">
@@ -69,6 +72,7 @@ const DemoElement = ({
               </button>
             </div>
             <div className={`demo-element__codemirror ${showCode ? 'shown' : ''}`}>
+              <div className="demo-element__codemirror__overlay" />
               <CodeMirror
                 value={html}
                 options={{
@@ -107,6 +111,8 @@ DemoElement.propTypes = {
   bindings: PropTypes.object,
   component: PropTypes.string.isRequired,
   example: PropTypes.shape({
+    disableCode: PropTypes.bool,
+    disableExample: PropTypes.bool,
     id: PropTypes.string,
     html: PropTypes.string,
     name: PropTypes.string,

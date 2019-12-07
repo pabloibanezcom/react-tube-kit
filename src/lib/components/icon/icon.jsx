@@ -3,7 +3,9 @@ import React from 'react';
 
 const Icon = ({ color, className, name, size, type }) => (
   <i
-    className={`icon icon-${name} icon-${size} ${!color ? `text-${type}` : null} ${className}`}
+    className={`icon icon-${name} icon-${size} ${
+      !color && type ? `text-${type}` : null
+    } ${className}`}
     style={{ color }}
   />
 );
@@ -12,7 +14,7 @@ Icon.defaultProps = {
   className: '',
   color: null,
   size: 'md',
-  type: 'dark'
+  type: null
 };
 
 Icon.propTypes = {

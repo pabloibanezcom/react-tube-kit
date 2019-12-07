@@ -1,4 +1,8 @@
 .demo-props-table {
+  .table-wrapper {
+    overflow-x: auto;
+  }
+
   .primary-type {
     color: #a52a2a;
   }

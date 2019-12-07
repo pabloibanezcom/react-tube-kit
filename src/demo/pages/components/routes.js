@@ -7,10 +7,10 @@ import ColorLabels from './color-labels/color-labels';
 import ColorSelectors from './color-selectors/color-selectors';
 import CountryLabels from './country-labels/country-labels';
 import Forms from './forms/forms';
-import Headers from './headers/headers';
 import Icons from './icons/icons';
 import Inputs from './inputs/inputs';
 import Labels from './labels/labels';
+import Layout from './layout/layout';
 import LoadingSpinners from './loading-spinners/loading-spinners';
 import Modals from './modals/modals';
 import Paginations from './paginations/paginations';
@@ -27,10 +27,10 @@ const routes = path => (
     <Route path={`${path}/color-selectors`} component={ColorSelectors} />
     <Route path={`${path}/country-labels`} component={CountryLabels} />
     <Route path={`${path}/forms`} component={Forms} />
-    <Route path={`${path}/headers`} component={Headers} />
     <Route path={`${path}/icons`} component={Icons} />
     <Route path={`${path}/inputs`} component={Inputs} />
     <Route path={`${path}/labels`} component={Labels} />
+    <Route path={`${path}/layout`} component={Layout} />
     <Route path={`${path}/loading-spinners`} component={LoadingSpinners} />
     <Route path={`${path}/modals`} component={Modals} />
     <Route path={`${path}/paginations`} component={Paginations} />

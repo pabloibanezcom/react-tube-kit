@@ -5,10 +5,14 @@ import ColorLabel from './color-label/color-label';
 import ColorSelector from './color-selector/color-selector';
 import CountryLabel from './country-label/country-label';
 import Footer from './footer/footer';
-import Header from './header/header';
+import Form from './form/form';
 import Icon from './icon/icon';
 import Input from './input/input';
 import Label from './label/label';
+import BottomMenu from './layout/bottom-menu/bottom-menu';
+import Header from './layout/header/header';
+import LayoutWrapper from './layout/layout-wrapper/layout-wrapper';
+import SideNavbar from './layout/side-navbar/side-navbar';
 import LoadingSpinner from './loading-spinner/loading-spinner';
 import Modal from './modal/modal';
 import Pagination from './pagination/pagination';
@@ -18,20 +22,24 @@ import TabMenu from './tab-menu/tab-menu';
 
 export {
   Badge,
+  BottomMenu,
   Button,
   CollapsibleList,
   ColorLabel,
   CountryLabel,
   ColorSelector,
   Footer,
+  Form,
   Header,
   Icon,
   Input,
   Label,
+  LayoutWrapper,
   LoadingSpinner,
   Modal,
   Pagination,
   Panel,
   Selector,
+  SideNavbar,
   TabMenu
 };

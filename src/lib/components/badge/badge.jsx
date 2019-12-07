@@ -6,7 +6,7 @@ const Badge = ({ children, block, border, className, color, backgroundColor, wei
   <span
     className={`badge px-2 py-1 ${!backgroundColor ? `bg-${type}` : null} text-${color ||
       getAlternateColor(type)} font-weight-${weight} ${block ? 'd-block' : 'd-inline-flex'} ${
-      border ? 'badge-border' : ''
+      border ? 'badge--with-border' : ''
     } ${className} align-items-center`}
     style={{
       backgroundColor,

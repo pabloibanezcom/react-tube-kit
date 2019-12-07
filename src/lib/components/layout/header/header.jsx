@@ -1,44 +1,24 @@
 import PropTypes from 'prop-types';
-import React, { useState } from 'react';
-import { Button } from '../..';
-import getDisplayClass from '../../util/getDisplayClass';
-import HeaderMobileMenu from './header-mobile-menu/header-mobile-menu';
-
-const menuElements = [
-  {
-    name: 'Badges',
-    url: '/components/badges'
-  },
-  {
-    name: 'Buttons & Links',
-    url: '/components/buttons'
-  },
-  {
-    name: 'Collapsible ists',
-    url: '/components/collapsible-lists'
-  },
-  {
-    name: 'Color labels',
-    url: '/components/color-labels'
-  }
-];
+import React from 'react';
+import getDisplayClass from '../../../util/getDisplayClass';
+import Button from '../../button/button';
 
 const Header = ({
   animated,
+  className,
   logo,
   menuButtonDisplay,
   rightContent,
+  subtitle,
   title,
   titleDisplay,
-  subtitle
+  onMenuClick
 }) => {
-  const [showMenu, setShowMenu] = useState(false);
-
   return (
-    <header className="header">
+    <header className={`header ${className}`}>
       <div className="header__container container d-flex align-items-center h-100 p-0">
         <div className="header__left flex-grow-1 pl-3">
-          <div className="header__title d-flex align-items-center">
+          <div className="d-flex align-items-center">
             {logo ? (
               <img
                 className={`header__logo ${
@@ -50,7 +30,7 @@ const Header = ({
             ) : null}
             {title ? (
               <h1
-                className={`${getDisplayClass(titleDisplay)} ${
+                className={`header__title ${getDisplayClass(titleDisplay)} ${
                   animated ? 'animated fadeInRight animation-delay-6' : null
                 }`}
               >
@@ -67,40 +47,38 @@ const Header = ({
             iconColor="white"
             size="lg"
             className={`${getDisplayClass(menuButtonDisplay)} header__menu-buttom p-0`}
-            onClick={() => setShowMenu(!showMenu)}
+            onClick={onMenuClick}
           />
           <div className="d-none d-md-flex">{rightContent}</div>
         </div>
       </div>
-      <div className={`${getDisplayClass(menuButtonDisplay)}`}>
-        <HeaderMobileMenu
-          menuElements={menuElements}
-          shown={showMenu}
-          onSelected={() => setShowMenu(false)}
-        />
-      </div>
+      <div className={`${getDisplayClass(menuButtonDisplay)}`} />
     </header>
   );
 };
 
 Header.defaultProps = {
   animated: false,
+  className: '',
   logo: null,
   menuButtonDisplay: '-md',
   rightContent: null,
+  subtitle: null,
   title: null,
   titleDisplay: 'md-',
-  subtitle: null
+  onMenuClick: () => {}
 };
 
 Header.propTypes = {
   animated: PropTypes.bool,
+  className: PropTypes.string,
   logo: PropTypes.node,
   menuButtonDisplay: PropTypes.string,
   rightContent: PropTypes.element,
+  subtitle: PropTypes.string,
   title: PropTypes.string,
   titleDisplay: PropTypes.string,
-  subtitle: PropTypes.string
+  onMenuClick: PropTypes.func
 };
 
 export default Header;

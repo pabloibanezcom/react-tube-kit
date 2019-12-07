@@ -1,0 +1,57 @@
+{
+  "options": {
+    "autoComplete": {
+      "type": "bool",
+      "default": "false",
+      "description": ""
+    },
+    "autoSubmit": {
+      "type": "bool",
+      "default": "false",
+      "description": ""
+    },
+    "className": {
+      "type": "string",
+      "default": "''",
+      "description": ""
+    },
+    "direction": {
+      "type": [
+        "horizontal",
+        "vertical"
+      ],
+      "default": "vertical",
+      "description": ""
+    },
+    "errorClassName": {
+      "type": "string",
+      "default": "text-danger font-weight-normal",
+      "description": ""
+    },
+    "fields": {
+      "type": "[Field]",
+      "default": "[]",
+      "description": ""
+    },
+    "labelClassName": {
+      "type": "string",
+      "default": "font-weight-normal",
+      "description": ""
+    },
+    "submitText": {
+      "type": "string",
+      "default": "Submit",
+      "description": ""
+    },
+    "submitBtnProps": {
+      "type": "any",
+      "default": "Submit",
+      "description": ""
+    }
+  },
+  "methods": {
+    "onSubmit()": {
+      "description": "It is executed when form is submitted"
+    }
+  }
+}
