@@ -10,6 +10,7 @@ const CountryLabel = ({
   className,
   color,
   country: { code, name },
+  size,
   weight,
   type
 }) => {
@@ -21,7 +22,7 @@ const CountryLabel = ({
   );
 
   return (
-    <div className={`d-flex align-items-center country-label ${className}`}>
+    <div className={`d-flex align-items-center country-label country-label--${size} ${className}`}>
       {!badge ? (
         basicLabel
       ) : (
@@ -47,6 +48,7 @@ CountryLabel.defaultProps = {
   border: false,
   className: '',
   color: null,
+  size: 'md',
   weight: 'normal',
   type: 'primary'
 };
@@ -62,6 +64,7 @@ CountryLabel.propTypes = {
     code: PropTypes.string,
     name: PropTypes.string
   }).isRequired,
+  size: PropTypes.oneOf(['sm', 'md', 'lg']),
   weight: PropTypes.oneOf(['bold', 'normal', 'light']),
   type: PropTypes.oneOf(['primary', 'secondary', 'success', 'danger', 'warning'])
 };

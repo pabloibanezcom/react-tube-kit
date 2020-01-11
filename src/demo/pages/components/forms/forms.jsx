@@ -2,11 +2,18 @@ import React from 'react';
 import { DemoElement, DemoPropsTable, DemoSectionsMenu } from '../../../components';
 import formBasic from './examples/form-basic';
 import formHorizontal from './examples/form-horizontal';
+import formWithInitialValues from './examples/form-with-initial-values';
 import formWithNoButton from './examples/form-with-no-button';
 import formWithSelectors from './examples/form-with-selectors';
 import properties from './form.properties.json';
 
-const examples = [formBasic, formWithSelectors, formHorizontal, formWithNoButton];
+const examples = [
+  formBasic,
+  formWithSelectors,
+  formWithInitialValues,
+  formHorizontal,
+  formWithNoButton
+];
 
 const handleSubmit = formData => {
   console.log(formData);
@@ -24,7 +31,11 @@ const Forms = () => (
               component="Form"
               example={example}
               options={{ flexColumn: true, width: 'full' }}
-              bindings={{ formFields: example.formFields, handleSubmit }}
+              bindings={{
+                formFields: example.formFields,
+                formData: example.formData,
+                handleSubmit
+              }}
             />
           ))}
           <DemoPropsTable properties={properties} />

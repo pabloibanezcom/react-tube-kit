@@ -16,6 +16,11 @@
       "default": "primary",
       "description": ""
     },
+    "content": {
+      "type": "any",
+      "default": "null",
+      "description": ""
+    },
     "panel": {
       "type": [
         "white",

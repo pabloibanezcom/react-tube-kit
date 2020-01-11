@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React, { useEffect, useState } from 'react';
 import isSize from '../../../util/isSize';
 import useWindowSize from '../../../util/useWindowSize';
+import LoadingSpinner from '../../loading-spinner/loading-spinner';
 import BottomMenu from '../bottom-menu/bottom-menu';
 import Header from '../header/header';
 import SideNavbar from '../side-navbar/side-navbar';
@@ -10,6 +11,8 @@ const LayoutWrapper = ({
   children,
   className,
   currentPage,
+  // loading-spinner
+  loading,
   // header
   headerAnimated,
   headerClassName,
@@ -23,6 +26,7 @@ const LayoutWrapper = ({
   sideNavbarAlign,
   sideNavbarClassName,
   sideNavbarElements,
+  sideNavbarEnabled,
   sideNavbarShown,
   sideNavbarSticky,
   sideNavbarStretch,
@@ -30,6 +34,7 @@ const LayoutWrapper = ({
   bottomMenuClassName,
   bottomMenuDisplay,
   bottomMenuElements,
+  bottomMenuEnabled,
   bottomMenuScrollHide
 }) => {
   const windowSize = useWindowSize();
@@ -49,6 +54,11 @@ const LayoutWrapper = ({
 
   return (
     <div className={`layout ${className}`}>
+      <LoadingSpinner
+        loading={loading || !(!showSideNavbar || isNavbarSticky || isNavbarStretch)}
+        background="dark"
+        noSpinner={!loading && !(!showSideNavbar || isNavbarSticky || isNavbarStretch)}
+      />
       <Header
         animated={headerAnimated}
         className={headerClassName}
@@ -61,34 +71,40 @@ const LayoutWrapper = ({
         onMenuClick={() => setShowSideNavbar(!showSideNavbar)}
       />
       <div className="layout__main">
-        <SideNavbar
-          align={sideNavbarAlign}
-          className={sideNavbarClassName}
-          currentPage={currentPage}
-          elements={sideNavbarElements}
-          shown={showSideNavbar}
-          isSticky={isNavbarSticky}
-          isStretch={isNavbarStretch}
-          onClose={() => setShowSideNavbar(false)}
-        />
+        {sideNavbarEnabled ? (
+          <SideNavbar
+            align={sideNavbarAlign}
+            className={sideNavbarClassName}
+            currentPage={currentPage}
+            elements={sideNavbarElements}
+            shown={showSideNavbar}
+            isSticky={isNavbarSticky}
+            isStretch={isNavbarStretch}
+            onClose={() => setShowSideNavbar(false)}
+          />
+        ) : null}
         <div
           className={`layout__container layout__container--${sideNavbarAlign} ${
-            isNavbarStretch && showSideNavbar ? `layout__container--stretch-${sideNavbarAlign}` : ''
+            sideNavbarEnabled && isNavbarStretch && showSideNavbar
+              ? `layout__container--stretch-${sideNavbarAlign}`
+              : ''
           }`}
         >
-          <div className="container">{children}</div>
+          {children}
         </div>
-        <BottomMenu
-          className={bottomMenuClassName}
-          elements={bottomMenuElements}
-          display={bottomMenuDisplay}
-          scrollHide={bottomMenuScrollHide}
-        />
-        <div
+        {bottomMenuEnabled ? (
+          <BottomMenu
+            className={bottomMenuClassName}
+            elements={bottomMenuElements}
+            display={bottomMenuDisplay}
+            scrollHide={bottomMenuScrollHide}
+          />
+        ) : null}
+        {/* <div
           className={`layout__overlay ${
             !showSideNavbar || isNavbarSticky || isNavbarStretch ? 'layout__overlay--hidden' : ''
           }`}
-        />
+        /> */}
       </div>
     </div>
   );
@@ -97,6 +113,8 @@ const LayoutWrapper = ({
 LayoutWrapper.defaultProps = {
   className: '',
   currentPage: null,
+  // loading-spinner
+  loading: false,
   // header
   headerAnimated: false,
   headerClassName: '',
@@ -110,6 +128,7 @@ LayoutWrapper.defaultProps = {
   sideNavbarAlign: 'left',
   sideNavbarClassName: '',
   sideNavbarElements: [],
+  sideNavbarEnabled: true,
   sideNavbarShown: 'md-',
   sideNavbarSticky: false,
   sideNavbarStretch: 'md-',
@@ -117,12 +136,15 @@ LayoutWrapper.defaultProps = {
   bottomMenuClassName: '',
   bottomMenuDisplay: '-md',
   bottomMenuElements: [],
+  bottomMenuEnabled: true,
   bottomMenuScrollHide: false
 };
 
 LayoutWrapper.propTypes = {
   className: PropTypes.string,
   currentPage: PropTypes.string,
+  // loading-spinner
+  loading: PropTypes.bool,
   // header
   headerAnimated: PropTypes.bool,
   headerClassName: PropTypes.string,
@@ -142,6 +164,7 @@ LayoutWrapper.propTypes = {
       icon: PropTypes.string
     })
   ),
+  sideNavbarEnabled: PropTypes.bool,
   sideNavbarShown: PropTypes.string,
   sideNavbarSticky: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
   sideNavbarStretch: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
@@ -155,6 +178,7 @@ LayoutWrapper.propTypes = {
       icon: PropTypes.string
     })
   ),
+  bottomMenuEnabled: PropTypes.bool,
   bottomMenuScrollHide: PropTypes.bool
 };
 

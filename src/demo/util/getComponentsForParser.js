@@ -2,6 +2,7 @@ import {
   Badge,
   BottomMenu,
   Button,
+  Card,
   CollapsibleList,
   ColorLabel,
   ColorSelector,
@@ -38,6 +39,8 @@ const getComponentFromName = componentName => {
       return BottomMenu;
     case 'Button':
       return Button;
+    case 'Card':
+      return Card;
     case 'CollapsibleList':
       return CollapsibleList;
     case 'CountryLabel':

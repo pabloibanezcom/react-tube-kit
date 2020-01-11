@@ -1,8 +1,99 @@
+$animations: none, zoomIn, zoomOut, fadeIn, fadeOut, slideInUp, slideInDown, slideInLeft,
+  slideInRight, slideOutUp, slideOutDown, slideOutLeft, slideOutRight !default;
+
 .animation-opacity {
   opacity: 0 !important;
   transition: opacity 0.1s ease-out;
 
   &--shown {
     opacity: 1 !important;
+  }
+}
+
+.animated-2x {
+  animation-duration: 0.5s;
+}
+
+.animated-3x {
+  animation-duration: 0.25s;
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+    max-height: 0;
+    overflow: auto;
+  }
+
+  to {
+    opacity: 1;
+    max-height: 5000px;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    max-height: 0;
+    overflow: auto;
+  }
+
+  to {
+    opacity: 1;
+    max-height: 5000px;
+  }
+}
+
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+}
+
+@-webkit-keyframes fadeOut {
+  from {
+    opacity: 1;
+    max-height: 5000px;
+  }
+
+  to {
+    opacity: 0;
+    max-height: 0;
+    overflow: auto;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    max-height: 5000px;
+  }
+
+  to {
+    opacity: 0;
+    max-height: 0;
+    overflow: auto;
+  }
+}
+
+.fadeOut {
+  -webkit-animation-name: fadeOut;
+  animation-name: fadeOut;
+}
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+    @each $value in $animations {
+      @if $value == none {
+        .animation-none#{$infix} {
+          animation-name: none !important;
+        }
+      } @else {
+        .#{$value}#{$infix} {
+          animation-name: $value !important;
+        }
+      }
+    }
   }
 }

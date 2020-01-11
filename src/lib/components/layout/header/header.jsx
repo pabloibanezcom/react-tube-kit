@@ -31,7 +31,7 @@ const Header = ({
             {title ? (
               <h1
                 className={`header__title ${getDisplayClass(titleDisplay)} ${
-                  animated ? 'animated fadeInRight animation-delay-6' : null
+                  animated ? 'animated fadeInRight animation-delay-6' : ''
                 }`}
               >
                 {title}

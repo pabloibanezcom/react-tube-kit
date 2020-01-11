@@ -1,12 +1,26 @@
+/* eslint-disable no-nested-ternary */
 import PropTypes from 'prop-types';
 import React from 'react';
 import { getAlternateColor } from '../../util/color';
 
-const Badge = ({ children, block, border, className, color, backgroundColor, weight, type }) => (
+const Badge = ({
+  children,
+  block,
+  border,
+  className,
+  color,
+  outline,
+  backgroundColor,
+  weight,
+  type
+}) => (
   <span
-    className={`badge px-2 py-1 ${!backgroundColor ? `bg-${type}` : null} text-${color ||
-      getAlternateColor(type)} font-weight-${weight} ${block ? 'd-block' : 'd-inline-flex'} ${
-      border ? 'badge--with-border' : ''
+    className={`badge  ${
+      !backgroundColor ? (outline ? `border border-${type} text-${type}` : `bg-${type}`) : null
+    } text-${color || getAlternateColor(type, outline)} font-weight-${weight} ${
+      block ? 'd-block' : 'd-inline-flex'
+    } ${border ? 'badge--with-border' : ''} ${
+      outline ? 'badge--outline' : ''
     } ${className} align-items-center`}
     style={{
       backgroundColor,
@@ -24,6 +38,7 @@ Badge.defaultProps = {
   border: false,
   className: '',
   color: null,
+  outline: false,
   weight: 'normal',
   type: 'primary'
 };
@@ -34,6 +49,7 @@ Badge.propTypes = {
   border: PropTypes.bool,
   className: PropTypes.string,
   color: PropTypes.string,
+  outline: PropTypes.bool,
   weight: PropTypes.oneOf(['bold', 'normal', 'light']),
   type: PropTypes.oneOf(['primary', 'secondary', 'success', 'danger', 'warning', 'light', 'dark'])
 };

@@ -1,0 +1,27 @@
+.card {
+  &__image-wrapper {
+    img {
+      width: 100%;
+      border-top-left-radius: $border-radius;
+      border-top-right-radius: $border-radius;
+    }
+  }
+
+  &__content {
+    padding: 10px !important;
+    border-bottom-left-radius: $border-radius;
+    border-bottom-right-radius: $border-radius;
+
+    &--white {
+      @include background-color(white);
+    }
+
+    &--primary {
+      @include background-color(primary);
+    }
+
+    &--secondary {
+      @include background-color(secondary);
+    }
+  }
+}

@@ -16,7 +16,7 @@ const panel = ({ background, children, className, header, headerColor, width }) 
 
 panel.defaultProps = {
   background: 'white',
-  className: null,
+  className: '',
   header: null,
   headerColor: null,
   width: null

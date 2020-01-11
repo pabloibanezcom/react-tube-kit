@@ -7,12 +7,12 @@ export const getContrastColor = hexcolor => {
   return yiq >= 128 ? '#000000' : '#ffffff';
 };
 
-export const getAlternateColor = color => {
+export const getAlternateColor = (color, isOutline) => {
   switch (color) {
     case 'primary':
       return 'primary-alt';
     case 'secondary':
-      return 'secondary-alt';
+      return !isOutline ? 'secondary-alt' : 'secondary';
     case 'success':
       return 'white';
     case 'danger':

@@ -53,3 +53,7 @@ ul {
   margin: 0;
   list-style-type: none;
 }
+
+:focus {
+  outline: 0;
+}

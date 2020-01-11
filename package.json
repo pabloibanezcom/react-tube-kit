@@ -1,7 +1,7 @@
 {
   "name": "react-tube-kit",
   "description": "UI kit for React applications - Components, helpers & styles",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": false,
   "repository": {
     "type": "git",
@@ -24,8 +24,8 @@
     "scss:watch": "cpx src/lib/**/*.{scss,css} dist/scss --watch",
     "statics": "npm run fonts && npm run icons && npm run img",
     "fonts": "cpx src/lib/assets/fonts/fonts/**/*.woff2 dist/scss/assets/fonts/fonts && cpx src/lib/assets/fonts/fonts/**/*.woff2 dist/fonts",
-    "icons": "cpx src/lib/assets/icons/fonts/**/*.{svg,ttf,woff} dist/scss/assets/icons/fonts && cpx src/lib/assets/icons/fonts/**/*.{svg,ttf,woff} dist/fonts",
-    "img": "cpx src/lib/assets/img/**/*.{png,jpg} dist/assets/img"
+    "icons": "cpx src/lib/assets/icons/css/fonts/**/*.{svg,ttf,woff} dist/scss/assets/icons/css/fonts && cpx src/lib/assets/icons/fonts/**/*.{svg,ttf,woff} dist/fonts",
+    "img": "cpx src/lib/assets/img/**/*.{png,jpg} dist/assets/img && cpx src/lib/assets/img/countries/countries.png dist/scss/assets/img/countries"
   },
   "dependencies": {
     "@babel/core": "7.6.0",
@@ -43,7 +43,7 @@
     "case-sensitive-paths-webpack-plugin": "2.2.0",
     "codemirror": "^5.49.0",
     "css-loader": "2.1.1",
-    "dotenv": "6.2.0",
+    "dotenv": "^6.2.0",
     "dotenv-expand": "5.1.0",
     "eslint": "^6.4.0",
     "eslint-config-react-app": "^5.0.2",
@@ -68,7 +68,7 @@
     "postcss-preset-env": "6.7.0",
     "postcss-safe-parser": "4.0.1",
     "prop-types": "^15.7.2",
-    "react": "^16.10.0",
+    "react": "^16.12.0",
     "react-app-polyfill": "^1.0.3",
     "react-codemirror2": "^6.0.0",
     "react-color": "^2.17.3",

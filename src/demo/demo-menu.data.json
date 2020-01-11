@@ -30,6 +30,10 @@
         "url": "buttons"
       },
       {
+        "name": "Cards",
+        "url": "cards"
+      },
+      {
         "name": "Collapsible lists",
         "url": "collapsible-lists"
       },

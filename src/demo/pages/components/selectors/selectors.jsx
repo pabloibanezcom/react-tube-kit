@@ -6,7 +6,9 @@ import countries from './examples/countries.json';
 import lines from './examples/lines.json';
 import selectorBasic from './examples/selector-basic';
 import selectorCustom from './examples/selector-custom';
+import selectorDefaultValue from './examples/selector-default-value';
 import selectorManyOptions from './examples/selector-many-options';
+import selectorNullOption from './examples/selector-null-option';
 import selectorOptionCustomClass from './examples/selector-option-custom-class';
 import selectorSearch from './examples/selector-search';
 import towns from './examples/towns.json';
@@ -14,6 +16,8 @@ import properties from './selector.properties.json';
 
 const examples = [
   selectorBasic,
+  selectorDefaultValue,
+  selectorNullOption,
   selectorSearch,
   selectorCustom,
   selectorOptionCustomClass,

@@ -14,7 +14,7 @@ const Demo = ({ history }) => (
       currentPage={history.location.pathname.replace('/demo/', '')}
       sideNavbarElements={menuElements}
     >
-      {routes}
+      <div className="container layout-container pt-7 pb-7">{routes}</div>
     </LayoutWrapper>
     <Footer text="Development & Design by Pablo Ibanez - 2019" />
   </Fragment>

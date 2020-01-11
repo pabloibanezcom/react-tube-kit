@@ -1,5 +1,6 @@
 import Badge from './badge/badge';
 import Button from './button/button';
+import Card from './card/card';
 import CollapsibleList from './collapsible-list/collapsible-list';
 import ColorLabel from './color-label/color-label';
 import ColorSelector from './color-selector/color-selector';
@@ -24,6 +25,7 @@ export {
   Badge,
   BottomMenu,
   Button,
+  Card,
   CollapsibleList,
   ColorLabel,
   CountryLabel,

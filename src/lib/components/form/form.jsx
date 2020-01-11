@@ -12,13 +12,17 @@ const Form = ({
   className,
   direction,
   errorClassName,
+  externalErrors,
   fields,
   labelClassName,
+  showLabel,
   submitText,
   submitBtnProps,
+  value,
+  onCancel,
   onSubmit
 }) => {
-  const { errors, register, handleSubmit, setValue, setError } = useForm();
+  const { errors, getValues, register, handleSubmit, setValue, setError } = useForm();
   const form = autoSubmit ? React.createRef() : null;
   const randomNamesMap = {};
 
@@ -29,10 +33,20 @@ const Form = ({
   }
 
   const handleFieldChange = (field, selectedValue) => {
+    const currentValue = getValues()[field.name];
     setValue(field.name, selectedValue);
     setError(field.name, null);
     if (autoSubmit) {
-      form.current.dispatchEvent(new Event('submit'));
+      if (!field.minStr || getValues()[field.name].length >= field.minStr) {
+        form.current.dispatchEvent(new Event('submit'));
+      } else if (
+        selectedValue.length < field.minStr &&
+        currentValue &&
+        currentValue.length >= field.minStr
+      ) {
+        setValue(field.name, '');
+        form.current.dispatchEvent(new Event('submit'));
+      }
     }
   };
 
@@ -42,8 +56,23 @@ const Form = ({
         { name: field.name },
         { required: field.required ? 'This is a mandatory field' : null }
       );
+      if (value && value[field.name]) {
+        setValue(field.name, value[field.name]);
+      }
     });
-  }, [fields, register]);
+    if (externalErrors.length) {
+      setError(externalErrors);
+    }
+  }, [externalErrors, fields, register, value, setError, setValue]);
+
+  const getFieldValue = (field, values) => {
+    if (values && values[field.name]) {
+      return field.fieldProps && field.fieldProps.valueProp && !field.fieldProps.isDefaultValueObj
+        ? values[field.name][field.fieldProps.valueProp]
+        : values[field.name];
+    }
+    return null;
+  };
 
   return (
     <form
@@ -55,25 +84,40 @@ const Form = ({
       } ${className}`}
       onSubmit={handleSubmit(onSubmit)}
     >
-      {fields.map(field => (
-        <FormField
-          key={field.name}
-          label={field.label}
-          name={!autoComplete ? randomNamesMap[field.name] : field.name}
-          fieldProps={field.fieldProps}
-          type={field.type}
-          error={errors[field.name] && errors[field.name].message}
-          className={direction === 'horizontal' ? 'mr-6' : 'mb-2'}
-          errorClassName={errorClassName}
-          labelClassName={labelClassName}
-          onChange={value => handleFieldChange(field, value)}
-        />
-      ))}
+      {fields.map(field => {
+        return (
+          <FormField
+            key={field.name}
+            label={field.label}
+            valueProp={field.valueProp || 'defaultValue'}
+            value={getFieldValue(field, value)}
+            name={!autoComplete ? randomNamesMap[field.name] : field.name}
+            fieldProps={field.fieldProps}
+            type={field.type}
+            error={errors[field.name] && errors[field.name].message}
+            className={direction === 'horizontal' ? 'mr-6' : 'mb-2'}
+            errorClassName={errorClassName}
+            labelClassName={labelClassName}
+            showLabel={showLabel}
+            onChange={val => handleFieldChange(field, val)}
+          />
+        );
+      })}
       {!autoSubmit ? (
-        <div>
-          <Button submit {...submitBtnProps}>
-            {submitText}
-          </Button>
+        <div className="row mt-2">
+          <div className="col-md-6 mb-3 mb-0-md">
+            <Button submit {...submitBtnProps} block color="secondary" inverse>
+              {submitText}
+            </Button>
+          </div>
+
+          {onCancel ? (
+            <div className="col-md-6">
+              <Button block color="secondary" outline onClick={onCancel}>
+                Cancel
+              </Button>
+            </div>
+          ) : null}
         </div>
       ) : null}
     </form>
@@ -86,10 +130,15 @@ Form.defaultProps = {
   className: '',
   direction: 'vertical',
   errorClassName: 'text-danger font-weight-normal',
+  externalErrors: [],
   fields: [],
   labelClassName: 'font-weight-normal',
-  submitText: 'Submit',
-  submitBtnProps: {}
+  showLabel: true,
+  submitText: 'Confirm',
+  submitBtnProps: {},
+  value: null,
+  onCancel: null,
+  onSubmit: () => {}
 };
 
 Form.propTypes = {
@@ -98,6 +147,13 @@ Form.propTypes = {
   className: PropTypes.string,
   direction: PropTypes.oneOf(['horizontal', 'vertical']),
   errorClassName: PropTypes.string,
+  externalErrors: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string,
+      type: PropTypes.string,
+      message: PropTypes.string
+    })
+  ),
   fields: PropTypes.arrayOf(
     PropTypes.shape({
       label: PropTypes.string,
@@ -106,9 +162,12 @@ Form.propTypes = {
     })
   ),
   labelClassName: PropTypes.string,
+  showLabel: PropTypes.bool,
   submitText: PropTypes.string,
   submitBtnProps: PropTypes.any,
-  onSubmit: PropTypes.func.isRequired
+  value: PropTypes.object,
+  onCancel: PropTypes.func,
+  onSubmit: PropTypes.func
 };
 
 export default Form;

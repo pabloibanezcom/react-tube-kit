@@ -5,6 +5,7 @@ import tabMenuPrimary from './examples/tab-menu-primary';
 import tabMenuPrimarySecondaryPanel from './examples/tab-menu-primary-secondary-panel';
 import tabMenuSecondary from './examples/tab-menu-secondary';
 import tabMenuSecondaryPrimaryPanel from './examples/tab-menu-secondary-primary-panel';
+import tabMenuSingleContent from './examples/tab-menu-single-content';
 import tabMenuWithIcons from './examples/tab-menu-with-icons';
 import properties from './tab.properties.json';
 
@@ -14,9 +15,11 @@ const examples = [
   tabMenuPrimarySecondaryPanel,
   tabMenuSecondaryPrimaryPanel,
   tabMenuWithIcons,
-  tabMenuActiveTab
+  tabMenuActiveTab,
+  tabMenuSingleContent
 ];
 
+const mockComponentSingle = () => <div>This is single tab content</div>;
 const mockComponentA = () => <div>This is tab A</div>;
 const mockComponentB = () => <div>This is tab B</div>;
 const mockComponentC = () => <div>This is tab C</div>;
@@ -62,7 +65,7 @@ const TabMenus = () => (
               key={example.id}
               component="TabMenu"
               example={example}
-              bindings={{ mockTabs, mockTabsWithIcons }}
+              bindings={{ mockTabs, mockTabsWithIcons, mockComponentSingle }}
               options={{ width: 'full' }}
             />
           ))}

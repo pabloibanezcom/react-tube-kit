@@ -3,8 +3,7 @@ import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 import Icon from '../icon/icon';
 
-const CollapsibleList = props => {
-  const { className, color, content, elements, header } = props;
+const CollapsibleList = ({ bindings, className, color, content, elements, header }) => {
   const [activeElementId, setActiveElementId] = useState(false);
 
   const setActiveElement = el => {
@@ -28,7 +27,7 @@ const CollapsibleList = props => {
               </a>
             </div>
             <div className="collapsible-list-content">
-              <Content {...props} />
+              <Content element={el} bindings={bindings} />
             </div>
           </div>
         </li>
@@ -38,15 +37,18 @@ const CollapsibleList = props => {
 };
 
 CollapsibleList.defaultProps = {
+  bindings: null,
   className: '',
-  color: 'light'
+  color: 'light',
+  elements: []
 };
 
 CollapsibleList.propTypes = {
+  bindings: PropTypes.any,
   className: PropTypes.string,
   color: PropTypes.oneOf(['light', 'primary', 'secondary']),
   content: PropTypes.oneOfType([PropTypes.string, PropTypes.func]).isRequired,
-  elements: PropTypes.array.isRequired,
+  elements: PropTypes.array,
   header: PropTypes.oneOfType([PropTypes.string, PropTypes.func]).isRequired
 };
 

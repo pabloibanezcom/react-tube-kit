@@ -7,4 +7,19 @@
       zoom: 0.3;
     }
   }
+
+  &--sm {
+    .country-flag {
+      zoom: 0.35;
+      margin-right: 10px;
+    }
+    font-size: 12px;
+  }
+
+  &--lg {
+    .country-flag {
+      zoom: 0.55;
+    }
+    font-size: 18px;
+  }
 }

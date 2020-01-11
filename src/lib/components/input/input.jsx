@@ -18,7 +18,7 @@ const Input = ({
   onChange,
   onClick
 }) => {
-  const [value, setValue] = useState(defaultValue);
+  const [value, setValue] = useState(defaultValue || '');
 
   const handleOnChange = newValue => {
     setValue(newValue);
@@ -82,7 +82,7 @@ Input.propTypes = {
     'dark',
     'white'
   ]),
-  bgShow: PropTypes.bool,
+  bgShow: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
   className: PropTypes.string,
   clearable: PropTypes.bool,
   color: PropTypes.oneOf([
@@ -96,7 +96,7 @@ Input.propTypes = {
     'muted',
     'white'
   ]),
-  defaultValue: PropTypes.string,
+  defaultValue: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   disabled: PropTypes.bool,
   icon: PropTypes.string,
   name: PropTypes.string,

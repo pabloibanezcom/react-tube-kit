@@ -1,25 +1,25 @@
 import React from 'react';
 import { DemoElement, DemoPropsTable, DemoSectionsMenu } from '../../../components';
-import properties from './badge.properties.json';
-import badgeBlock from './examples/badge-block';
-import badgeBorder from './examples/badge-border';
-import badgeCustom from './examples/badge-custom';
-import badgeOutline from './examples/badge-outline';
-import badgeTypes from './examples/badge-types';
+import properties from './card.properties.json';
+import cardPrimary from './examples/card-primary';
+import cardSecondary from './examples/card-secondary';
+import cardWhite from './examples/card-white';
+import imgSample from './examples/sample_img.jpg';
 
-const examples = [badgeTypes, badgeOutline, badgeCustom, badgeBorder, badgeBlock];
+const examples = [cardWhite, cardPrimary, cardSecondary];
 
-const Badges = () => (
+const Cards = () => (
   <div className="row">
     <div className="col-lg-12">
-      <h1 className="right-line mb-8">Badges</h1>
+      <h1 className="right-line mb-8">Cards</h1>
       <div className="row justify-content-end">
         <div className="col-lg-9">
           {examples.map(example => (
             <DemoElement
               key={example.id}
-              component="Badge"
+              component="Card"
               example={example}
+              bindings={{ imgSample }}
               options={{ width: 'full' }}
             />
           ))}
@@ -33,4 +33,4 @@ const Badges = () => (
   </div>
 );
 
-export default Badges;
+export default Cards;

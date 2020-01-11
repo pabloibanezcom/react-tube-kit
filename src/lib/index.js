@@ -2,6 +2,7 @@ export {
   Badge,
   BottomMenu,
   Button,
+  Card,
   CollapsibleList,
   ColorLabel,
   ColorSelector,

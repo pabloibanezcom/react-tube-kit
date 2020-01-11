@@ -4,7 +4,7 @@ import React from 'react';
 const Icon = ({ color, className, name, size, type }) => (
   <i
     className={`icon icon-${name} icon-${size} ${
-      !color && type ? `text-${type}` : null
+      !color && type ? `text-${type}` : ''
     } ${className}`}
     style={{ color }}
   />

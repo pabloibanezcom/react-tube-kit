@@ -35,11 +35,24 @@ const Button = ({
     hover ? `btn-hover-${hover}` : ''
   } ${buttonClasses} ${className}`;
   const style = { color: fontColor, backgroundColor, borderColor: backgroundColor };
+
+  const content = (
+    <>
+      {icon ? (
+        <div className="d-flex justify-content-center align-items-center">
+          <Icon name={icon} type={iconColor} className={!children ? 'm-0' : ''} />
+          {children}
+        </div>
+      ) : (
+        <>{children}</>
+      )}
+    </>
+  );
+
   if (to) {
     return (
       <Link to={to} className={classStr} disabled={disabled}>
-        {icon ? <Icon name={icon} /> : null}
-        {children}
+        {content}
       </Link>
     );
   }
@@ -53,8 +66,7 @@ const Button = ({
         style={style}
         onClick={onClick}
       >
-        {icon ? <Icon name={icon} type={iconColor} className={!children ? 'm-0' : null} /> : null}
-        {children}
+        {content}
       </button>
     );
   }
@@ -69,16 +81,14 @@ const Button = ({
         href={href}
         target={newPage ? '_blank' : null}
       >
-        {icon ? <Icon name={icon} type={iconColor} /> : null}
-        {children}
+        {content}
       </a>
     );
   }
   if (type === 'link' && !href) {
     return (
       <a className={classStr} onClick={onClick} disabled={disabled}>
-        {icon ? <Icon name={icon} type={iconColor} /> : null}
-        {children}
+        {content}
       </a>
     );
   }

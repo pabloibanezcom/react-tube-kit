@@ -1,9 +1,20 @@
 import PropTypes from 'prop-types';
 import React, { createRef, useEffect, useState } from 'react';
+import getDisplayClass from '../../util/getDisplayClass';
 import Icon from '../icon/icon';
 import Panel from '../panel/panel';
 
-const TabMenu = ({ activeTab, className, color, panel, tabs, onTabChange }) => {
+const TabMenu = ({
+  activeTab,
+  className,
+  color,
+  content,
+  panel,
+  tabs,
+  showIcon,
+  showTitle,
+  onTabChange
+}) => {
   const [currentTab, setCurrentTab] = useState(
     Number.isInteger(activeTab) ? activeTab : tabs.find(t => t.id === activeTab)
   );
@@ -23,7 +34,7 @@ const TabMenu = ({ activeTab, className, color, panel, tabs, onTabChange }) => {
   }, [menuHeader, tabs.length]);
 
   const renderContent = () => {
-    const MockContent = tabs[currentTab].content;
+    const MockContent = content || tabs[currentTab].content;
     return <MockContent />;
   };
 
@@ -38,9 +49,12 @@ const TabMenu = ({ activeTab, className, color, panel, tabs, onTabChange }) => {
         {tabs.map(({ icon, name }, i) => {
           return (
             <li key={i} className={`tab-menu__header-item ${i === currentTab ? 'active' : ''}`}>
-              <a onClick={() => changeTab(i)}>
-                <Icon name={icon} />
-                <span>{name}</span>
+              <a
+                className="d-flex justify-content-center align-items-center"
+                onClick={() => changeTab(i)}
+              >
+                {icon ? <Icon name={icon} className={`${getDisplayClass(showIcon)}`} /> : null}
+                <span className={`${getDisplayClass(showTitle)}`}>{name}</span>
               </a>
             </li>
           );
@@ -59,9 +73,12 @@ const TabMenu = ({ activeTab, className, color, panel, tabs, onTabChange }) => {
 
 TabMenu.defaultProps = {
   activeTab: 0,
-  className: null,
+  className: '',
   color: 'primary',
+  content: null,
   panel: 'white',
+  showIcon: 'md-',
+  showTitle: 'xs-',
   onTabChange: () => {}
 };
 
@@ -69,15 +86,18 @@ TabMenu.propTypes = {
   activeTab: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   className: PropTypes.string,
   color: PropTypes.oneOf(['primary', 'secondary']),
+  content: PropTypes.any,
   panel: PropTypes.oneOf(['white', 'primary', 'secondary']),
   tabs: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string,
       name: PropTypes.string,
       icon: PropTypes.string,
-      content: PropTypes.oneOfType([PropTypes.string, PropTypes.func])
+      content: PropTypes.any
     })
   ).isRequired,
+  showIcon: PropTypes.string,
+  showTitle: PropTypes.string,
   onTabChange: PropTypes.func
 };
 
