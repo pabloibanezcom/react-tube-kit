@@ -96,6 +96,10 @@
         "url": "modals"
       },
       {
+        "name": "Notifications",
+        "url": "notifications"
+      },
+      {
         "name": "Paginations",
         "url": "paginations"
       },

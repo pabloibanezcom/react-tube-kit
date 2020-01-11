@@ -22,3 +22,4 @@ export {
   SideNavbar,
   TabMenu
 } from './components';
+export { error, info, warning } from './util/notification';

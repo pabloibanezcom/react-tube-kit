@@ -14,6 +14,7 @@ import Labels from './labels/labels';
 import Layout from './layout/layout';
 import LoadingSpinners from './loading-spinners/loading-spinners';
 import Modals from './modals/modals';
+import Notifications from './notifications/notifications';
 import Paginations from './paginations/paginations';
 import Panels from './panels/panels';
 import Selectors from './selectors/selectors';
@@ -35,6 +36,7 @@ const routes = path => (
     <Route path={`${path}/layout`} component={Layout} />
     <Route path={`${path}/loading-spinners`} component={LoadingSpinners} />
     <Route path={`${path}/modals`} component={Modals} />
+    <Route path={`${path}/notifications`} component={Notifications} />
     <Route path={`${path}/paginations`} component={Paginations} />
     <Route path={`${path}/panels`} component={Panels} />
     <Route path={`${path}/selectors`} component={Selectors} />

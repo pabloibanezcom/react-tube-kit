@@ -28,6 +28,9 @@ const DemoElement = ({
     if (action.to) {
       history.push(url);
     }
+    if (action.func) {
+      action.func(id);
+    }
   };
 
   return (

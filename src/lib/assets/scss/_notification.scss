@@ -1,0 +1,31 @@
+@import './external/snackbar';
+
+.notification {
+  background-color: $secondary-color !important;
+  color: $secondary-alt-color !important;
+  border-bottom-width: 2px !important;
+  border-bottom-style: solid !important;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.29) !important;
+
+  &--info {
+    border-bottom-color: $primary-color !important;
+
+    button {
+      color: $primary-color !important;
+    }
+  }
+  &--warning {
+    border-bottom-color: $warning-color !important;
+
+    button {
+      color: $warning-color !important;
+    }
+  }
+  &--error {
+    border-bottom-color: $danger-color !important;
+
+    button {
+      color: $danger-color !important;
+    }
+  }
+}
