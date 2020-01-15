@@ -10,12 +10,13 @@ const Badge = ({
   className,
   color,
   outline,
+  size,
   backgroundColor,
   weight,
   type
 }) => (
   <span
-    className={`badge  ${
+    className={`badge badge--${size}  ${
       !backgroundColor ? (outline ? `border border-${type} text-${type}` : `bg-${type}`) : null
     } text-${color || getAlternateColor(type, outline)} font-weight-${weight} ${
       block ? 'd-block' : 'd-inline-flex'
@@ -39,6 +40,7 @@ Badge.defaultProps = {
   className: '',
   color: null,
   outline: false,
+  size: 'md',
   weight: 'normal',
   type: 'primary'
 };
@@ -50,6 +52,7 @@ Badge.propTypes = {
   className: PropTypes.string,
   color: PropTypes.string,
   outline: PropTypes.bool,
+  size: PropTypes.oneOf(['sm', 'md', 'lg']),
   weight: PropTypes.oneOf(['bold', 'normal', 'light']),
   type: PropTypes.oneOf(['primary', 'secondary', 'success', 'danger', 'warning', 'light', 'dark'])
 };

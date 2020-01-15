@@ -34,6 +34,10 @@
         "url": "cards"
       },
       {
+        "name": "Carousels",
+        "url": "carousels"
+      },
+      {
         "name": "Collapsible lists",
         "url": "collapsible-lists"
       },
@@ -90,6 +94,10 @@
       {
         "name": "Loading spinners",
         "url": "loading-spinners"
+      },
+      {
+        "name": "Maps",
+        "url": "maps"
       },
       {
         "name": "Modals",

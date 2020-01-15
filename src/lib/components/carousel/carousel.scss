@@ -1,0 +1,45 @@
+.carousel {
+  margin-left: -10px;
+  margin-right: -10px;
+}
+
+.slick-slider {
+  .slick-track {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .slick-arrow {
+    top: 50%;
+    z-index: 100;
+    background-color: $white-color;
+    border-radius: 50%;
+    opacity: 0.75;
+
+    &::before {
+      color: $secondary-color;
+      opacity: 1;
+      font-size: 23px;
+    }
+
+    &.slick-disabled {
+      display: none !important;
+    }
+
+    &.slick-prev {
+      left: 0;
+
+      &::before {
+        margin-left: -1px;
+      }
+    }
+
+    &.slick-next {
+      right: 0;
+
+      &::before {
+        margin-left: -2px;
+      }
+    }
+  }
+}

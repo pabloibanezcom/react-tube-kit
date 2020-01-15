@@ -8,6 +8,14 @@
     }
   }
 
+  &--xs {
+    .country-flag {
+      zoom: 0.3;
+      margin-right: 10px;
+    }
+    font-size: 10px;
+  }
+
   &--sm {
     .country-flag {
       zoom: 0.35;

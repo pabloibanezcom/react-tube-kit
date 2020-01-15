@@ -12,6 +12,7 @@ const Button = ({
   className,
   icon,
   iconColor,
+  id,
   inverse,
   hover,
   onClick,
@@ -51,7 +52,7 @@ const Button = ({
 
   if (to) {
     return (
-      <Link to={to} className={classStr} disabled={disabled}>
+      <Link id={id} to={to} className={classStr} disabled={disabled}>
         {content}
       </Link>
     );
@@ -60,6 +61,7 @@ const Button = ({
     return (
       /* eslint-disable-next-line react/button-has-type */
       <button
+        id={id}
         type={submit ? 'submit' : 'button'}
         className={classStr}
         disabled={disabled}
@@ -74,6 +76,7 @@ const Button = ({
     return (
       /* eslint-disable-next-line react/button-has-type */
       <a
+        id={id}
         type={submit ? 'submit' : 'button'}
         className={classStr}
         disabled={disabled}
@@ -87,7 +90,7 @@ const Button = ({
   }
   if (type === 'link' && !href) {
     return (
-      <a className={classStr} onClick={onClick} disabled={disabled}>
+      <a id={id} className={classStr} onClick={onClick} disabled={disabled}>
         {content}
       </a>
     );
@@ -104,6 +107,7 @@ Button.defaultProps = {
   className: '',
   icon: '',
   iconColor: null,
+  id: null,
   inverse: false,
   outline: false,
   size: 'sm',
@@ -127,6 +131,7 @@ Button.propTypes = {
   inverse: PropTypes.bool,
   icon: PropTypes.string,
   iconColor: PropTypes.string,
+  id: PropTypes.string,
   outline: PropTypes.bool,
   size: PropTypes.oneOf(['sm', 'lg']),
   color: PropTypes.oneOf(['primary', 'secondary', 'light', 'warning', 'danger', 'transparent']),

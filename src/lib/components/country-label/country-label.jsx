@@ -64,7 +64,7 @@ CountryLabel.propTypes = {
     code: PropTypes.string,
     name: PropTypes.string
   }).isRequired,
-  size: PropTypes.oneOf(['sm', 'md', 'lg']),
+  size: PropTypes.oneOf(['xs', 'sm', 'md', 'lg']),
   weight: PropTypes.oneOf(['bold', 'normal', 'light']),
   type: PropTypes.oneOf(['primary', 'secondary', 'success', 'danger', 'warning'])
 };

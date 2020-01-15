@@ -3,6 +3,7 @@ import {
   BottomMenu,
   Button,
   Card,
+  Carousel,
   CollapsibleList,
   ColorLabel,
   ColorSelector,
@@ -14,6 +15,7 @@ import {
   Label,
   LayoutWrapper,
   LoadingSpinner,
+  Map,
   Modal,
   Pagination,
   Panel,
@@ -41,6 +43,8 @@ const getComponentFromName = componentName => {
       return Button;
     case 'Card':
       return Card;
+    case 'Carousel':
+      return Carousel;
     case 'CollapsibleList':
       return CollapsibleList;
     case 'CountryLabel':
@@ -63,6 +67,8 @@ const getComponentFromName = componentName => {
       return LayoutWrapper;
     case 'LoadingSpinner':
       return LoadingSpinner;
+    case 'Map':
+      return Map;
     case 'Modal':
       return Modal;
     case 'Pagination':
