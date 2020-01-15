@@ -47,9 +47,9 @@ Carousel.defaultProps = {
   elements: [],
   infinite: false,
   slidesToShow: [
-    { breakpoint: 1200, slidesToShow: 4 },
-    { breakpoint: 992, slidesToShow: 3 },
-    { breakpoint: 768, slidesToShow: 1 }
+    { breakpoint: 1199, slidesToShow: 4 },
+    { breakpoint: 991, slidesToShow: 3 },
+    { breakpoint: 767, slidesToShow: 1 }
   ]
 };
 
