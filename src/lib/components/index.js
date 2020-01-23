@@ -7,6 +7,7 @@ import ColorLabel from './color-label/color-label';
 import ColorSelector from './color-selector/color-selector';
 import CountryLabel from './country-label/country-label';
 import Dropdown from './dropdown/dropdown';
+import FileUpload from './file-upload/file-upload';
 import Footer from './footer/footer';
 import Form from './form/form';
 import Icon from './icon/icon';
@@ -35,6 +36,7 @@ export {
   ColorSelector,
   CountryLabel,
   Dropdown,
+  FileUpload,
   Footer,
   Form,
   Header,

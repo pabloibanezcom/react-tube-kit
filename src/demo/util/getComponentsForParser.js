@@ -9,6 +9,7 @@ import {
   ColorSelector,
   CountryLabel,
   Dropdown,
+  FileUpload,
   Form,
   Header,
   Icon,
@@ -58,6 +59,8 @@ const getComponentFromName = componentName => {
       return Dropdown;
     case 'Header':
       return Header;
+    case 'FileUpload':
+      return FileUpload;
     case 'Form':
       return Form;
     case 'Icon':

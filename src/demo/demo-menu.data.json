@@ -58,6 +58,10 @@
         "url": "dropdowns"
       },
       {
+        "name": "File upload",
+        "url": "file-upload"
+      },
+      {
         "name": "Forms",
         "url": "forms"
       },

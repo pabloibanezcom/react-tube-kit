@@ -9,6 +9,7 @@ export {
   ColorSelector,
   CountryLabel,
   Dropdown,
+  FileUpload,
   Footer,
   Form,
   Header,

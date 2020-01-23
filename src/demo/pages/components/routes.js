@@ -9,6 +9,7 @@ import ColorLabels from './color-labels/color-labels';
 import ColorSelectors from './color-selectors/color-selectors';
 import CountryLabels from './country-labels/country-labels';
 import Dropdowns from './dropdowns/dropdowns';
+import FileUpload from './file-upload/file-upload';
 import Forms from './forms/forms';
 import Icons from './icons/icons';
 import Inputs from './inputs/inputs';
@@ -34,6 +35,7 @@ const routes = path => (
     <Route path={`${path}/color-selectors`} component={ColorSelectors} />
     <Route path={`${path}/country-labels`} component={CountryLabels} />
     <Route path={`${path}/dropdowns`} component={Dropdowns} />
+    <Route path={`${path}/file-upload`} component={FileUpload} />
     <Route path={`${path}/forms`} component={Forms} />
     <Route path={`${path}/icons`} component={Icons} />
     <Route path={`${path}/inputs`} component={Inputs} />
