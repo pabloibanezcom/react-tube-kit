@@ -14,16 +14,21 @@
       "default": "null",
       "description": ""
     },
-    "header": {
-      "type": "string",
-      "default": "null",
-      "description": ""
-    },
     "headerColor": {
       "type": [
         "primary",
         "secondary"
       ],
+      "default": "null",
+      "description": ""
+    },
+    "headerIcon": {
+      "type": "string",
+      "default": "null",
+      "description": ""
+    },
+    "headerText": {
+      "type": "string",
       "default": "null",
       "description": ""
     },

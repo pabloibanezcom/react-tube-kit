@@ -1,5 +1,21 @@
 const html = `<div className="d-flex flex-row flex-wrap">
   <div className="d-flex flex-column text-center mb-5 mr-2" style={{width: 120}}>
+    <span className="font-weight-normal text-black-50 mb-1">male</span>
+    <Icon name="male" />
+  </div>
+  <div className="d-flex flex-column text-center mb-5 mr-2" style={{width: 120}}>
+    <span className="font-weight-normal text-black-50 mb-1">female</span>
+    <Icon name="female" />
+  </div>
+  <div className="d-flex flex-column text-center mb-5 mr-2" style={{width: 120}}>
+    <span className="font-weight-normal text-black-50 mb-1">login</span>
+    <Icon name="login" />
+  </div>
+  <div className="d-flex flex-column text-center mb-5 mr-2" style={{width: 120}}>
+    <span className="font-weight-normal text-black-50 mb-1">logout</span>
+    <Icon name="logout" />
+  </div>
+  <div className="d-flex flex-column text-center mb-5 mr-2" style={{width: 120}}>
     <span className="font-weight-normal text-black-50 mb-1">add</span>
     <Icon name="add" />
   </div>

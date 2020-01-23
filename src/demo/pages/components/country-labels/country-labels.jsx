@@ -3,10 +3,11 @@ import { DemoElement, DemoPropsTable, DemoSectionsMenu } from '../../../componen
 import properties from './country-labels.properties.json';
 import basic from './examples/basic';
 import countriesList from './examples/countries-list';
+import customName from './examples/custom-name';
 import withBadge from './examples/with-badge';
 import withBadgeSecondary from './examples/with-badge-secondary';
 
-const examples = [basic, withBadge, withBadgeSecondary, countriesList];
+const examples = [basic, customName, withBadge, withBadgeSecondary, countriesList];
 
 const CountryLabels = () => (
   <div className="row">

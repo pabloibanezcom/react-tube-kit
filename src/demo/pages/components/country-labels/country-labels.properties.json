@@ -35,6 +35,11 @@
       "isRequired": true,
       "description": "{ code: string, name: string }"
     },
+    "customName": {
+      "type": "string",
+      "default": "null",
+      "description": ""
+    },
     "weight": {
       "type": [
         "bold",

@@ -1,11 +1,15 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import Icon from '../icon/icon';
 
-const panel = ({ background, children, className, header, headerColor, width }) => (
+const panel = ({ background, children, className, headerColor, headerIcon, headerText, width }) => (
   <div className={`panel ${className}`}>
-    {header ? (
+    {headerText ? (
       <div className={`panel-header panel-${headerColor}`}>
-        <h4 className="mb-0 mt-0">{header}</h4>
+        <span className="mb-0 mt-0 d-flex align-items-center font-weight-normal">
+          {headerIcon ? <Icon name={headerIcon} className="mr-2" /> : null}
+          {headerText}
+        </span>
       </div>
     ) : null}
     <div className={`panel-content panel-${background}`} style={width ? { width } : null}>
@@ -17,16 +21,18 @@ const panel = ({ background, children, className, header, headerColor, width }) 
 panel.defaultProps = {
   background: 'white',
   className: '',
-  header: null,
-  headerColor: null,
+  headerColor: 'primary',
+  headerIcon: null,
+  headerText: null,
   width: null
 };
 
 panel.propTypes = {
   background: PropTypes.oneOf(['white', 'primary', 'secondary']),
   className: PropTypes.string,
-  header: PropTypes.string,
   headerColor: PropTypes.oneOf(['primary', 'secondary']),
+  headerIcon: PropTypes.string,
+  headerText: PropTypes.string,
   width: PropTypes.number
 };
 

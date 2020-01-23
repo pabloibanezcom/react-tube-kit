@@ -34,8 +34,8 @@
             'dehaze': '&#xe3c7;',
             'directions_subway': '&#xe535;',
             'directions_transit': '&#xe535;',
-            'person': '&#xe7fd;',
             'search': '&#xe8b6;',
+            'settings': '&#xe8b8;',
             'share': '&#xe80d;',
           '0': 0
         };

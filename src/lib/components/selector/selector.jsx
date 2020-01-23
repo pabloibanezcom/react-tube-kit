@@ -130,7 +130,6 @@ const Selector = ({
   const optionHtml = (opt, isOptionSelected) => {
     if (custom && customProp) {
       const dynamicProps = { [customProp]: opt };
-
       return (
         <Custom
           // eslint-disable-next-line react/jsx-props-no-spreading
@@ -215,6 +214,8 @@ const Selector = ({
       <Icon className="selector-icon" name="angle-down" size="sm" />
     </div>
   );
+
+  console.log(optionsWithNull);
 
   return (
     <>

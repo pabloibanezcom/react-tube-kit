@@ -1,9 +1,9 @@
 @font-face {
   font-family: 'icomoon';
   src:
-    url('fonts/icomoon.ttf?n3tndd') format('truetype'),
-    url('fonts/icomoon.woff?n3tndd') format('woff'),
-    url('fonts/icomoon.svg?n3tndd#icomoon') format('svg');
+    url('fonts/icomoon.ttf?afv0en') format('truetype'),
+    url('fonts/icomoon.woff?afv0en') format('woff'),
+    url('fonts/icomoon.svg?afv0en#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -34,8 +34,26 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-female:before {
+  content: "\e907";
+}
+.icon-user:before {
+  content: "\e90f";
+}
+.icon-person:before {
+  content: "\e90f";
+}
+.icon-male:before {
+  content: "\e90f";
+}
 .icon-screen-full:before {
   content: "\e904";
+}
+.icon-logout:before {
+  content: "\e90a";
+}
+.icon-login:before {
+  content: "\e906";
 }
 .icon-code:before {
   content: "\e905";
@@ -148,11 +166,11 @@
 .icon-underground:before {
   content: "\e535";
 }
-.icon-person:before {
-  content: "\e7fd";
-}
 .icon-search:before {
   content: "\e8b6";
+}
+.icon-settings:before {
+  content: "\e8b8";
 }
 .icon-share:before {
   content: "\e80d";

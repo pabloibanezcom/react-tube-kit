@@ -10,6 +10,7 @@ const CountryLabel = ({
   className,
   color,
   country: { code, name },
+  customName,
   size,
   weight,
   type
@@ -17,7 +18,7 @@ const CountryLabel = ({
   const basicLabel = (
     <Fragment>
       <div className={`country-flag flag-${code.toLowerCase()} ${badge ? 'flag-small' : null}`} />
-      <span className="country-name">{name}</span>
+      <span className="country-name">{customName || name}</span>
     </Fragment>
   );
 
@@ -48,6 +49,7 @@ CountryLabel.defaultProps = {
   border: false,
   className: '',
   color: null,
+  customName: null,
   size: 'md',
   weight: 'normal',
   type: 'primary'
@@ -64,6 +66,7 @@ CountryLabel.propTypes = {
     code: PropTypes.string,
     name: PropTypes.string
   }).isRequired,
+  customName: PropTypes.string,
   size: PropTypes.oneOf(['xs', 'sm', 'md', 'lg']),
   weight: PropTypes.oneOf(['bold', 'normal', 'light']),
   type: PropTypes.oneOf(['primary', 'secondary', 'success', 'danger', 'warning'])

@@ -2,7 +2,6 @@ import React from 'react';
 import { DemoElement, DemoPropsTable, DemoSectionsMenu } from '../../../components';
 import properties from './button.properties.json';
 import buttonInverse from './examples/button-inverse';
-import buttonLarge from './examples/button-large';
 import buttonLight from './examples/button-light';
 import buttonLink from './examples/button-link';
 import buttonNoBlock from './examples/button-no-block';
@@ -10,6 +9,7 @@ import buttonNoTextTransformation from './examples/button-no-text-transformation
 import buttonOutline from './examples/button-outline';
 import buttonPrimary from './examples/button-primary';
 import buttonSecondary from './examples/button-secondary';
+import buttonSizes from './examples/button-sizes';
 import buttonTransparent from './examples/button-transparent';
 import buttonWithIcon from './examples/button-with-icon';
 
@@ -20,7 +20,7 @@ const examples = [
   buttonTransparent,
   buttonOutline,
   buttonInverse,
-  buttonLarge,
+  buttonSizes,
   buttonNoTextTransformation,
   buttonNoBlock,
   buttonWithIcon,

@@ -35,7 +35,7 @@ const Input = ({
         type={type}
         className={`input input-underline-${bgColor} ${
           bgShow ? 'input-underline-show' : ''
-        } text-${color} ${icon ? 'input-with-icon' : ''} ${className}`}
+        } text-${color} ${icon ? 'input-with-icon' : ''} px-1 ${className}`}
         name={name}
         value={value}
         placeholder={placeholder}

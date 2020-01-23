@@ -1,5 +1,5 @@
 const html = `<Panel
-  header="Header primary"
+  headerText="Header primary"
   headerColor="primary"
 >
  This is a panel

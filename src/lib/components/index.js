@@ -6,6 +6,7 @@ import CollapsibleList from './collapsible-list/collapsible-list';
 import ColorLabel from './color-label/color-label';
 import ColorSelector from './color-selector/color-selector';
 import CountryLabel from './country-label/country-label';
+import Dropdown from './dropdown/dropdown';
 import Footer from './footer/footer';
 import Form from './form/form';
 import Icon from './icon/icon';
@@ -31,8 +32,9 @@ export {
   Carousel,
   CollapsibleList,
   ColorLabel,
-  CountryLabel,
   ColorSelector,
+  CountryLabel,
+  Dropdown,
   Footer,
   Form,
   Header,

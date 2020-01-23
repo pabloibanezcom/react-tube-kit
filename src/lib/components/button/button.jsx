@@ -4,9 +4,12 @@ import { Link } from 'react-router-dom';
 import Icon from '../icon/icon';
 
 const Button = ({
+  ariaExpanded,
+  ariaHaspopup,
   fontColor,
   backgroundColor,
   block,
+  dataToggle,
   disabled,
   children,
   className,
@@ -23,6 +26,7 @@ const Button = ({
   color,
   uppercase,
   submit,
+  textAlignment,
   to,
   type
 }) => {
@@ -32,7 +36,10 @@ const Button = ({
       outline ? 'btn-outline' : ''
     } ${block ? 'btn-block' : ''}`;
   }
-  const classStr = `${type} ${type}-${size} ${type}-${color} ${
+
+  const _textAlginment = textAlignment || (type === 'btn' ? 'center' : 'left');
+
+  const classStr = `${type} ${type}--${size} ${type}-${color} text-${_textAlginment} ${
     hover ? `btn-hover-${hover}` : ''
   } ${buttonClasses} ${className}`;
   const style = { color: fontColor, backgroundColor, borderColor: backgroundColor };
@@ -40,8 +47,12 @@ const Button = ({
   const content = (
     <>
       {icon ? (
-        <div className="d-flex justify-content-center align-items-center">
-          <Icon name={icon} type={iconColor} className={!children ? 'm-0' : ''} />
+        <div className={`d-flex justify-content-${_textAlginment} align-items-center`}>
+          <Icon
+            name={icon}
+            type={iconColor}
+            className={`${!children ? 'm-0' : ''} ${type === 'link' ? 'mr-2' : ''}`}
+          />
           {children}
         </div>
       ) : (
@@ -66,6 +77,9 @@ const Button = ({
         className={classStr}
         disabled={disabled}
         style={style}
+        data-toggle={dataToggle}
+        aria-haspopup={ariaHaspopup}
+        aria-expanded={ariaExpanded}
         onClick={onClick}
       >
         {content}
@@ -99,10 +113,13 @@ const Button = ({
 };
 
 Button.defaultProps = {
+  ariaExpanded: null,
+  ariaHaspopup: null,
   fontColor: null,
   backgroundColor: null,
   hover: null,
   block: false,
+  dataToggle: null,
   disabled: false,
   className: '',
   icon: '',
@@ -110,22 +127,26 @@ Button.defaultProps = {
   id: null,
   inverse: false,
   outline: false,
-  size: 'sm',
+  size: 'md',
   color: 'primary',
   uppercase: true,
   href: null,
   newPage: false,
   submit: false,
+  textAlignment: null,
   to: null,
   type: 'btn',
   onClick: () => {}
 };
 
 Button.propTypes = {
+  ariaExpanded: PropTypes.bool,
+  ariaHaspopup: PropTypes.bool,
   fontColor: PropTypes.string,
   backgroundColor: PropTypes.string,
   hover: PropTypes.oneOf(['primary', 'secondary']),
   block: PropTypes.bool,
+  dataToggle: PropTypes.string,
   disabled: PropTypes.bool,
   className: PropTypes.string,
   inverse: PropTypes.bool,
@@ -133,12 +154,22 @@ Button.propTypes = {
   iconColor: PropTypes.string,
   id: PropTypes.string,
   outline: PropTypes.bool,
-  size: PropTypes.oneOf(['sm', 'lg']),
-  color: PropTypes.oneOf(['primary', 'secondary', 'light', 'warning', 'danger', 'transparent']),
+  size: PropTypes.oneOf(['sm', 'md', 'lg']),
+  color: PropTypes.oneOf([
+    'primary',
+    'secondary',
+    'primary-alt',
+    'secondary-alt',
+    'light',
+    'warning',
+    'danger',
+    'transparent'
+  ]),
   uppercase: PropTypes.bool,
   href: PropTypes.string,
   newPage: PropTypes.bool,
   submit: PropTypes.bool,
+  textAlignment: PropTypes.string,
   to: PropTypes.string,
   type: PropTypes.oneOf(['link', 'btn']),
   onClick: PropTypes.func

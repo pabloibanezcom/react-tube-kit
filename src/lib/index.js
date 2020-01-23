@@ -8,6 +8,7 @@ export {
   ColorLabel,
   ColorSelector,
   CountryLabel,
+  Dropdown,
   Footer,
   Form,
   Header,

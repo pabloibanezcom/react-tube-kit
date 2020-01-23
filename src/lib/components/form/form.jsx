@@ -105,14 +105,14 @@ const Form = ({
       })}
       {!autoSubmit ? (
         <div className="row mt-2">
-          <div className="col-md-6 mb-3 mb-0-md">
+          <div className={onCancel ? 'col-6' : 'col-12'}>
             <Button submit {...submitBtnProps} block color="secondary" inverse>
               {submitText}
             </Button>
           </div>
 
           {onCancel ? (
-            <div className="col-md-6">
+            <div className="col-6">
               <Button block color="secondary" outline onClick={onCancel}>
                 Cancel
               </Button>

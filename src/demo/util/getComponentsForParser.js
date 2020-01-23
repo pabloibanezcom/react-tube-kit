@@ -8,6 +8,7 @@ import {
   ColorLabel,
   ColorSelector,
   CountryLabel,
+  Dropdown,
   Form,
   Header,
   Icon,
@@ -53,6 +54,8 @@ const getComponentFromName = componentName => {
       return ColorLabel;
     case 'ColorSelector':
       return ColorSelector;
+    case 'Dropdown':
+      return Dropdown;
     case 'Header':
       return Header;
     case 'Form':

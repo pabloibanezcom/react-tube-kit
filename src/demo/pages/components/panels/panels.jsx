@@ -1,5 +1,6 @@
 import React from 'react';
 import { DemoElement, DemoPropsTable, DemoSectionsMenu } from '../../../components';
+import panelHeaderIcon from './examples/panel-header-icon';
 import panelPrimary from './examples/panel-primary';
 import panelPrimaryHeader from './examples/panel-primary-header';
 import panelSecondary from './examples/panel-secondary';
@@ -12,7 +13,8 @@ const examples = [
   panelPrimary,
   panelSecondary,
   panelPrimaryHeader,
-  panelSecondaryHeader
+  panelSecondaryHeader,
+  panelHeaderIcon
 ];
 
 const Panels = () => (

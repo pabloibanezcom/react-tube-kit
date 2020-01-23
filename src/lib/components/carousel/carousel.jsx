@@ -5,7 +5,7 @@ import Slider from 'react-slick';
 
 const defaultSettings = {
   speed: 700,
-  slidesToShow: 5,
+  slidesToShow: 6,
   slidesToScroll: 1
 };
 
@@ -47,6 +47,7 @@ Carousel.defaultProps = {
   elements: [],
   infinite: false,
   slidesToShow: [
+    { breakpoint: 1579, slidesToShow: 5 },
     { breakpoint: 1199, slidesToShow: 4 },
     { breakpoint: 991, slidesToShow: 3 },
     { breakpoint: 767, slidesToShow: 1 }

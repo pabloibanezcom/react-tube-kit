@@ -1,28 +1,35 @@
+@function getColor($color) {
+  @if $color==primary {
+    @return $primary-color;
+  }
+
+  @if $color==secondary {
+    @return $secondary-color;
+  }
+
+  @if $color==primary-alt {
+    @return $primary-alt-color;
+  }
+
+  @if $color==secondary-alt {
+    @return $secondary-alt-color;
+  }
+
+  @if $color==white {
+    @return $white-color;
+  }
+
+  @if $color==black {
+    @return $black-color;
+  }
+}
+
 @mixin color($base, $hover: null) {
-  $font-color: null;
-  $hover-font-color: null;
-
-  @if $base==primary {
-    $font-color: $primary-color;
-  }
-
-  @if $base==secondary {
-    $font-color: $secondary-color;
-  }
-
-  color: $font-color !important;
+  color: getColor($base) !important;
 
   @if $hover {
-    @if $hover==primary {
-      $hover-font-color: $primary-color;
-    }
-
-    @if $hover==secondary {
-      $hover-font-color: $secondary-color;
-    }
-
     &:hover {
-      color: $hover-font-color !important;
+      color: getColor($hover) !important;
     }
   }
 }
