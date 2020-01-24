@@ -1,12 +1,19 @@
 import React from 'react';
 import { DemoElement, DemoPropsTable, DemoSectionsMenu } from '../../../components';
+import fileUploadAcceptType from './examples/file-upload-accept-type';
 import fileUploadBasic from './examples/file-upload-basic';
 import fileUploadMultiple from './examples/file-upload-multiple';
 import fileUploadPreview from './examples/file-upload-preview';
 import fileUploadPreviewMulti from './examples/file-upload-preview-multi';
 import properties from './file-upload.properties.json';
 
-const examples = [fileUploadBasic, fileUploadMultiple, fileUploadPreview, fileUploadPreviewMulti];
+const examples = [
+  fileUploadBasic,
+  fileUploadAcceptType,
+  fileUploadMultiple,
+  fileUploadPreview,
+  fileUploadPreviewMulti
+];
 
 const FileUpload = () => (
   <div className="row">

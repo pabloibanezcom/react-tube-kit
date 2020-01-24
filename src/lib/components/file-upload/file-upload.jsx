@@ -6,7 +6,7 @@ import Button from '../button/button';
 import Icon from '../icon/icon';
 import Input from '../input/input';
 
-const FileUpload = ({ className, filesLimit, showPreview, onChange }) => {
+const FileUpload = ({ accept, className, filesLimit, showPreview, onChange }) => {
   const inputFileEl = useRef(null);
 
   const [files, setFiles] = useState([]);
@@ -103,6 +103,7 @@ const FileUpload = ({ className, filesLimit, showPreview, onChange }) => {
       <Input
         className="d-none"
         type="file"
+        accept={accept}
         resetValue
         ref={inputFileEl}
         multiple={filesLimit > 1}
@@ -115,6 +116,7 @@ const FileUpload = ({ className, filesLimit, showPreview, onChange }) => {
 };
 
 FileUpload.defaultProps = {
+  accept: null,
   className: '',
   filesLimit: 1,
   showPreview: false,
@@ -122,6 +124,7 @@ FileUpload.defaultProps = {
 };
 
 FileUpload.propTypes = {
+  accept: PropTypes.string,
   className: PropTypes.string,
   filesLimit: PropTypes.number,
   showPreview: PropTypes.bool,

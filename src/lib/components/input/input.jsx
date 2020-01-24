@@ -5,6 +5,7 @@ import Icon from '../icon/icon';
 const Input = React.forwardRef(
   (
     {
+      accept,
       bgColor,
       bgShow,
       className,
@@ -48,6 +49,7 @@ const Input = React.forwardRef(
         <input
           ref={ref}
           type={type}
+          accept={accept}
           className={`input input-underline-${bgColor} ${
             bgShow ? 'input-underline-show' : ''
           } text-${color} ${icon ? 'input-with-icon' : ''} px-1 ${className}`}
@@ -72,6 +74,7 @@ const Input = React.forwardRef(
 );
 
 Input.defaultProps = {
+  accept: null,
   bgColor: 'primary',
   bgShow: false,
   className: '',
@@ -92,6 +95,7 @@ Input.defaultProps = {
 };
 
 Input.propTypes = {
+  accept: PropTypes.string,
   bgColor: PropTypes.oneOf([
     'primary',
     'secondary',
