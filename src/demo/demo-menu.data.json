@@ -70,6 +70,10 @@
         "url": "icons"
       },
       {
+        "name": "Image action",
+        "url": "image-action"
+      },
+      {
         "name": "Inputs",
         "url": "inputs"
       },

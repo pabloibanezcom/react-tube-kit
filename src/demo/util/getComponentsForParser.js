@@ -13,6 +13,7 @@ import {
   Form,
   Header,
   Icon,
+  ImageAction,
   Input,
   Label,
   LayoutWrapper,
@@ -65,6 +66,8 @@ const getComponentFromName = componentName => {
       return Form;
     case 'Icon':
       return Icon;
+    case 'ImageAction':
+      return ImageAction;
     case 'Input':
       return Input;
     case 'Label':

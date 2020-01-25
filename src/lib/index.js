@@ -14,6 +14,7 @@ export {
   Form,
   Header,
   Icon,
+  ImageAction,
   Input,
   Label,
   LayoutWrapper,

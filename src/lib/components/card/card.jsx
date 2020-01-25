@@ -1,27 +1,14 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import getDisplayClass from '../../util/getDisplayClass';
-import Button from '../button/button';
+import ImageAction from '../image-action/image-action';
 
 const Card = ({ children, className, color, imgButtonText, imgSrc, showImage, onImageClick }) => (
   <div className={`card ${className}`}>
     {imgSrc ? (
       <div className={`card__image-wrapper ${getDisplayClass(showImage)}`}>
         {imgButtonText ? (
-          <div className="card__image-wrapper__zoom">
-            <div className="card__image-wrapper__zoom__link-wrapper d-flex justify-content-center align-items-center">
-              <Button
-                id="card-button"
-                className="w-100 h-100 p-0 font-weight-bold"
-                color="transparent"
-                onClick={onImageClick}
-              >
-                {imgButtonText}
-              </Button>
-            </div>
-            <div className="card__image-wrapper__zoom__overlay" />
-            <img src={imgSrc} alt="cardImage" />
-          </div>
+          <ImageAction actionText={imgButtonText} src={imgSrc} onClick={onImageClick} />
         ) : (
           <img src={imgSrc} alt="cardImage" />
         )}

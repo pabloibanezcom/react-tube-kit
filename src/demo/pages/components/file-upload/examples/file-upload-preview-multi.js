@@ -1,6 +1,7 @@
 const html = `<FileUpload 
   showPreview
-  filesLimit={3}
+  filesLimit={6}
+  previewsPerRow={2}
 />`;
 
 const fileUploadPreviewMulti = {

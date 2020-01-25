@@ -2,6 +2,7 @@ import React from 'react';
 import { DemoElement, DemoPropsTable, DemoSectionsMenu } from '../../../components';
 import fileUploadAcceptType from './examples/file-upload-accept-type';
 import fileUploadBasic from './examples/file-upload-basic';
+import fileUploadImageCropper from './examples/file-upload-image-cropper';
 import fileUploadMultiple from './examples/file-upload-multiple';
 import fileUploadPreview from './examples/file-upload-preview';
 import fileUploadPreviewMulti from './examples/file-upload-preview-multi';
@@ -12,7 +13,8 @@ const examples = [
   fileUploadAcceptType,
   fileUploadMultiple,
   fileUploadPreview,
-  fileUploadPreviewMulti
+  fileUploadPreviewMulti,
+  fileUploadImageCropper
 ];
 
 const FileUpload = () => (

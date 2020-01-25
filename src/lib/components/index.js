@@ -11,6 +11,7 @@ import FileUpload from './file-upload/file-upload';
 import Footer from './footer/footer';
 import Form from './form/form';
 import Icon from './icon/icon';
+import ImageAction from './image-action/image-action';
 import Input from './input/input';
 import Label from './label/label';
 import BottomMenu from './layout/bottom-menu/bottom-menu';
@@ -41,6 +42,7 @@ export {
   Form,
   Header,
   Icon,
+  ImageAction,
   Input,
   Label,
   LayoutWrapper,
