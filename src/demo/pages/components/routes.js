@@ -12,6 +12,7 @@ import Dropdowns from './dropdowns/dropdowns';
 import FileUpload from './file-upload/file-upload';
 import Forms from './forms/forms';
 import Icons from './icons/icons';
+import ImageAction from './image-action/image-action';
 import Inputs from './inputs/inputs';
 import Labels from './labels/labels';
 import Layout from './layout/layout';
@@ -38,6 +39,7 @@ const routes = path => (
     <Route path={`${path}/file-upload`} component={FileUpload} />
     <Route path={`${path}/forms`} component={Forms} />
     <Route path={`${path}/icons`} component={Icons} />
+    <Route path={`${path}/image-action`} component={ImageAction} />
     <Route path={`${path}/inputs`} component={Inputs} />
     <Route path={`${path}/labels`} component={Labels} />
     <Route path={`${path}/layout`} component={Layout} />

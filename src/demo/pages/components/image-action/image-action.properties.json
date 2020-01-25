@@ -1,0 +1,14 @@
+{
+  "options": {
+    "className": {
+      "type": "string",
+      "default": "''",
+      "description": ""
+    },
+    "id": {
+      "type": "string",
+      "default": "null",
+      "description": ""
+    }
+  }
+}

@@ -1,16 +1,28 @@
 /* eslint-disable no-unneeded-ternary */
 import PropTypes from 'prop-types';
 import React, { Fragment, useRef, useState } from 'react';
+import { chunkArray } from '../../util/array';
 import getFileIconName from '../../util/getFileIconName';
 import Button from '../button/button';
 import Icon from '../icon/icon';
+import ImageAction from '../image-action/image-action';
 import Input from '../input/input';
 
-const FileUpload = ({ accept, className, filesLimit, showPreview, onChange }) => {
+const FileUpload = ({
+  accept,
+  className,
+  cropperMode,
+  filesLimit,
+  previewsPerRow,
+  showPreview,
+  onChange
+}) => {
   const inputFileEl = useRef(null);
 
   const [files, setFiles] = useState([]);
   const [error, setError] = useState(null);
+
+  console.log(cropperMode);
 
   const getFilesArray = _files => {
     const result = [];
@@ -63,30 +75,33 @@ const FileUpload = ({ accept, className, filesLimit, showPreview, onChange }) =>
 
   const renderFilePreview = file => {
     return (
-      <div className="position-relative">
-        <img
-          className="w-100 mt-4 border rounded"
-          src={URL.createObjectURL(file)}
-          alt={file.name}
-        />
-        <Button
-          className="position-absolute"
-          type="link"
-          color="secondary"
-          onClick={() => handleRemoveFile(file.name)}
-        >
-          <Icon name="close" size="sm" />
-        </Button>
-      </div>
+      <ImageAction
+        className="mt-2"
+        actionText="Remove image"
+        src={URL.createObjectURL(file)}
+        onClick={() => handleRemoveFile(file.name)}
+      />
     );
   };
 
-  const renderFile = file => {
-    return !showPreview ? renderFileName(file) : renderFilePreview(file);
-  };
-
   const renderFiles = () => {
-    return files.map(file => <Fragment key={file.name}>{renderFile(file)}</Fragment>);
+    const renderRow = row => {
+      return (
+        <div className="row">
+          {row.map(file => (
+            <div key={file.name} className={`col-${12 / previewsPerRow}`}>
+              {renderFilePreview(file)}
+            </div>
+          ))}
+        </div>
+      );
+    };
+
+    return !showPreview
+      ? files.map(file => <Fragment key={file.name}>{renderFileName(file)}</Fragment>)
+      : chunkArray(files, previewsPerRow).map((row, i) => {
+          return <Fragment key={i}>{renderRow(row)}</Fragment>;
+        });
   };
 
   return (
@@ -118,7 +133,9 @@ const FileUpload = ({ accept, className, filesLimit, showPreview, onChange }) =>
 FileUpload.defaultProps = {
   accept: null,
   className: '',
+  cropperMode: false,
   filesLimit: 1,
+  previewsPerRow: 1,
   showPreview: false,
   onChange: () => {}
 };
@@ -126,7 +143,9 @@ FileUpload.defaultProps = {
 FileUpload.propTypes = {
   accept: PropTypes.string,
   className: PropTypes.string,
+  cropperMode: PropTypes.bool,
   filesLimit: PropTypes.number,
+  previewsPerRow: PropTypes.number,
   showPreview: PropTypes.bool,
   onChange: PropTypes.func
 };

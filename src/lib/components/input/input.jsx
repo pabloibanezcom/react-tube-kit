@@ -21,6 +21,7 @@ const Input = React.forwardRef(
       resetValue,
       value,
       type,
+      onBlur,
       onChange,
       onClick
     },
@@ -59,6 +60,7 @@ const Input = React.forwardRef(
           disabled={disabled}
           readOnly={readOnly}
           multiple={multiple}
+          onBlur={onBlur}
           onChange={evt => handleOnChange(evt.target.value)}
           onClick={onClick}
         />
@@ -90,6 +92,7 @@ Input.defaultProps = {
   resetValue: false,
   value: '',
   type: 'text',
+  onBlur: () => {},
   onChange: () => {},
   onClick: () => {}
 };
@@ -130,6 +133,7 @@ Input.propTypes = {
   resetValue: PropTypes.bool,
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   type: PropTypes.oneOf(['text', 'number', 'email', 'password', 'tel', 'file']),
+  onBlur: PropTypes.func,
   onChange: PropTypes.func,
   onClick: PropTypes.func
 };
