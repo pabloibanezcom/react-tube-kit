@@ -1,7 +1,8 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import PropTypes from 'prop-types';
 import React from 'react';
 import Slider from 'react-slick';
+import generateComponentProps from '../../util/generateComponentProps';
+import componentData from './carousel.data.json';
 
 const defaultSettings = {
   speed: 700,
@@ -42,28 +43,6 @@ const Carousel = ({ elements, className, infinite, slidesToShow }) => {
   );
 };
 
-Carousel.defaultProps = {
-  className: '',
-  elements: [],
-  infinite: false,
-  slidesToShow: [
-    { breakpoint: 1579, slidesToShow: 5 },
-    { breakpoint: 1199, slidesToShow: 4 },
-    { breakpoint: 991, slidesToShow: 3 },
-    { breakpoint: 767, slidesToShow: 1 }
-  ]
-};
-
-Carousel.propTypes = {
-  className: PropTypes.string,
-  elements: PropTypes.array,
-  infinite: PropTypes.bool,
-  slidesToShow: PropTypes.oneOfType([
-    PropTypes.number,
-    PropTypes.arrayOf(
-      PropTypes.shape({ breakpoint: PropTypes.number, slidesToShow: PropTypes.number })
-    )
-  ])
-};
+Object.assign(Carousel, generateComponentProps(componentData));
 
 export default Carousel;

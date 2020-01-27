@@ -1,6 +1,7 @@
-import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 import { ChromePicker } from 'react-color';
+import generateComponentProps from '../../util/generateComponentProps';
+import componentData from './color-selector.data.json';
 
 const ColorSelector = ({ className, color, onChange }) => {
   const [showColorMenu, setShowColorMenu] = useState(false);
@@ -33,16 +34,6 @@ const ColorSelector = ({ className, color, onChange }) => {
   );
 };
 
-ColorSelector.defaultProps = {
-  className: '',
-  color: null,
-  onChange: () => {}
-};
-
-ColorSelector.propTypes = {
-  className: PropTypes.string,
-  color: PropTypes.string,
-  onChange: PropTypes.func
-};
+Object.assign(ColorSelector, generateComponentProps(componentData));
 
 export default ColorSelector;

@@ -1,7 +1,8 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import PropTypes from 'prop-types';
 import React, { useState } from 'react';
+import generateComponentProps from '../../util/generateComponentProps';
 import Icon from '../icon/icon';
+import componentData from './collapsible-list.data.json';
 
 const CollapsibleList = ({
   bindings,
@@ -45,22 +46,6 @@ const CollapsibleList = ({
   );
 };
 
-CollapsibleList.defaultProps = {
-  bindings: null,
-  className: '',
-  color: 'light',
-  elements: [],
-  onElementSelected: () => {}
-};
-
-CollapsibleList.propTypes = {
-  bindings: PropTypes.any,
-  className: PropTypes.string,
-  color: PropTypes.oneOf(['light', 'primary', 'secondary']),
-  content: PropTypes.oneOfType([PropTypes.string, PropTypes.func]).isRequired,
-  elements: PropTypes.array,
-  header: PropTypes.oneOfType([PropTypes.string, PropTypes.func]).isRequired,
-  onElementSelected: PropTypes.func
-};
+Object.assign(CollapsibleList, generateComponentProps(componentData));
 
 export default CollapsibleList;

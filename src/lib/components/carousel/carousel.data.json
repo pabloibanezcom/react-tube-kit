@@ -1,0 +1,55 @@
+{
+  "name": "Carousel",
+  "component": "Carousel",
+  "description": "A slideshow component for cycling through elements—images or slides of text—like a carousel.",
+  "created": "1.0.0",
+  "lastModified": "1.0.0",
+  "dependencies": [
+    "ImageAction"
+  ],
+  "libraryDependencies": [],
+  "properties": {
+    "className": {
+      "type": "string",
+      "default": "",
+      "description": "Mock description for className"
+    },
+    "elements": {
+      "type": "array",
+      "default": [],
+      "description": "Mock description for elements"
+    },
+    "infinite": {
+      "type": "bool",
+      "default": false,
+      "description": "Mock description for infinite"
+    },
+    "slidesToShow": {
+      "type": [
+        "number",
+        "array"
+      ],
+      "default": [
+        {
+          "breakpoint": 1579,
+          "slidesToShow": 5
+        },
+        {
+          "breakpoint": 1199,
+          "slidesToShow": 4
+        },
+        {
+          "breakpoint": 991,
+          "slidesToShow": 3
+        },
+        {
+          "breakpoint": 767,
+          "slidesToShow": 1
+        }
+      ],
+      "description": "Mock description for imgSrc"
+    }
+  },
+  "methods": {},
+  "events": {}
+}

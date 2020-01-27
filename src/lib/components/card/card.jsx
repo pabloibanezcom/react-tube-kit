@@ -1,7 +1,8 @@
-import PropTypes from 'prop-types';
 import React from 'react';
+import generateComponentProps from '../../util/generateComponentProps';
 import getDisplayClass from '../../util/getDisplayClass';
 import ImageAction from '../image-action/image-action';
+import componentData from './card.data.json';
 
 const Card = ({ children, className, color, imgButtonText, imgSrc, showImage, onImageClick }) => (
   <div className={`card ${className}`}>
@@ -18,22 +19,6 @@ const Card = ({ children, className, color, imgButtonText, imgSrc, showImage, on
   </div>
 );
 
-Card.defaultProps = {
-  className: '',
-  color: 'white',
-  imgButtonText: null,
-  imgSrc: null,
-  showImage: 'xs-',
-  onImageClick: () => {}
-};
-
-Card.propTypes = {
-  className: PropTypes.string,
-  color: PropTypes.oneOf(['white', 'primary', 'secondary']),
-  imgButtonText: PropTypes.string,
-  imgSrc: PropTypes.string,
-  showImage: PropTypes.string,
-  onImageClick: PropTypes.func
-};
+Object.assign(Card, generateComponentProps(componentData));
 
 export default Card;

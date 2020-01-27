@@ -1,0 +1,23 @@
+{
+  "name": "Color Label",
+  "component": "ColorLabel",
+  "description": "Simpe label with color name and background.",
+  "created": "1.0.0",
+  "lastModified": "1.0.0",
+  "dependencies": [],
+  "libraryDependencies": [],
+  "properties": {
+    "className": {
+      "type": "string",
+      "default": "",
+      "description": "Mock description for className"
+    },
+    "color": {
+      "type": "string",
+      "isRequired": true,
+      "description": "Mock description for color"
+    }
+  },
+  "methods": {},
+  "events": {}
+}

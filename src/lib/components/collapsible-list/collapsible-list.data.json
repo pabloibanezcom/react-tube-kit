@@ -1,0 +1,61 @@
+{
+  "name": "Collapsible List",
+  "component": "CollapsibleList",
+  "description": "Collapsible List allows user to show and hide content dynamically.",
+  "created": "1.0.0",
+  "lastModified": "1.0.0",
+  "dependencies": [
+    "Icon"
+  ],
+  "libraryDependencies": [],
+  "properties": {
+    "bindings": {
+      "type": "any",
+      "default": null,
+      "description": "Mock description for bindings"
+    },
+    "className": {
+      "type": "string",
+      "default": "",
+      "description": "Mock description for className"
+    },
+    "color": {
+      "type": [
+        "light",
+        "primary",
+        "secondary"
+      ],
+      "default": "light",
+      "description": "Mock description for color"
+    },
+    "content": {
+      "type": [
+        "string",
+        "func"
+      ],
+      "isRequired": true,
+      "description": "Mock description for content"
+    },
+    "elements": {
+      "type": "array",
+      "default": [],
+      "description": "Mock description for elements"
+    },
+    "header": {
+      "type": [
+        "string",
+        "func"
+      ],
+      "isRequired": true,
+      "description": "Mock description for header"
+    }
+  },
+  "methods": {
+    "onElementSelected": {
+      "type": "func",
+      "default": "emptyFunc",
+      "description": "Mock description for onElementSelected"
+    }
+  },
+  "events": {}
+}

@@ -21,6 +21,16 @@
     vertical-align: middle;
   }
 
+  &--xs {
+    padding: 1px 5px;
+    font-size: 1rem;
+
+    .icon {
+      font-size: 1.2rem;
+      margin-right: 0.4rem;
+    }
+  }
+
   &--sm {
     padding: 3px 10px;
     font-size: 1rem;

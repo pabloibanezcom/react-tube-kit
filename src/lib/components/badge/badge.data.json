@@ -1,0 +1,69 @@
+{
+  "name": "Badge",
+  "component": "Badge",
+  "description": "Badge allows users to show a piece of data in a different label.",
+  "created": "1.0.0",
+  "lastModified": "1.0.0",
+  "dependencies": [],
+  "libraryDependencies": [],
+  "properties": {
+    "backgroundColor": {
+      "type": "string",
+      "default": null,
+      "description": "Mock description for backgroundColor"
+    },
+    "block": {
+      "type": "bool",
+      "default": false,
+      "description": "Mock description for block"
+    },
+    "className": {
+      "type": "string",
+      "default": "",
+      "description": "Mock description for className"
+    },
+    "color": {
+      "type": "string",
+      "default": null,
+      "description": "Mock description for color"
+    },
+    "outline": {
+      "type": "bool",
+      "default": false,
+      "description": "Mock description for outline"
+    },
+    "size": {
+      "type": [
+        "sm",
+        "md",
+        "lg"
+      ],
+      "default": "md",
+      "description": "Mock description for size"
+    },
+    "weight": {
+      "type": [
+        "bold",
+        "normal",
+        "light"
+      ],
+      "default": "normal",
+      "description": "Mock description for weight"
+    },
+    "type": {
+      "type": [
+        "primary",
+        "secondary",
+        "success",
+        "danger",
+        "warning",
+        "light",
+        "dark"
+      ],
+      "default": "primary",
+      "description": "Mock description for type"
+    }
+  },
+  "methods": {},
+  "events": {}
+}

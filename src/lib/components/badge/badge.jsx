@@ -1,7 +1,8 @@
 /* eslint-disable no-nested-ternary */
-import PropTypes from 'prop-types';
 import React from 'react';
 import { getAlternateColor } from '../../util/color';
+import generateComponentProps from '../../util/generateComponentProps';
+import componentData from './badge.data.json';
 
 const Badge = ({
   children,
@@ -33,28 +34,6 @@ const Badge = ({
   </span>
 );
 
-Badge.defaultProps = {
-  backgroundColor: null,
-  block: false,
-  border: false,
-  className: '',
-  color: null,
-  outline: false,
-  size: 'md',
-  weight: 'normal',
-  type: 'primary'
-};
-
-Badge.propTypes = {
-  backgroundColor: PropTypes.string,
-  block: PropTypes.bool,
-  border: PropTypes.bool,
-  className: PropTypes.string,
-  color: PropTypes.string,
-  outline: PropTypes.bool,
-  size: PropTypes.oneOf(['sm', 'md', 'lg']),
-  weight: PropTypes.oneOf(['bold', 'normal', 'light']),
-  type: PropTypes.oneOf(['primary', 'secondary', 'success', 'danger', 'warning', 'light', 'dark'])
-};
+Object.assign(Badge, generateComponentProps(componentData));
 
 export default Badge;

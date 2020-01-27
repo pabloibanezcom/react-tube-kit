@@ -1,6 +1,7 @@
-import PropTypes from 'prop-types';
 import React, { Fragment } from 'react';
+import generateComponentProps from '../../util/generateComponentProps';
 import Badge from '../badge/badge';
+import componentData from './country-label.data.json';
 
 const CountryLabel = ({
   backgroundColor,
@@ -42,34 +43,6 @@ const CountryLabel = ({
   );
 };
 
-CountryLabel.defaultProps = {
-  backgroundColor: null,
-  badge: false,
-  block: false,
-  border: false,
-  className: '',
-  color: null,
-  customName: null,
-  size: 'md',
-  weight: 'normal',
-  type: 'primary'
-};
-
-CountryLabel.propTypes = {
-  backgroundColor: PropTypes.string,
-  badge: PropTypes.bool,
-  block: PropTypes.bool,
-  border: PropTypes.bool,
-  className: PropTypes.string,
-  color: PropTypes.string,
-  country: PropTypes.shape({
-    code: PropTypes.string,
-    name: PropTypes.string
-  }).isRequired,
-  customName: PropTypes.string,
-  size: PropTypes.oneOf(['xs', 'sm', 'md', 'lg']),
-  weight: PropTypes.oneOf(['bold', 'normal', 'light']),
-  type: PropTypes.oneOf(['primary', 'secondary', 'success', 'danger', 'warning'])
-};
+Object.assign(CountryLabel, generateComponentProps(componentData));
 
 export default CountryLabel;

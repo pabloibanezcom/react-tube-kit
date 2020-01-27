@@ -1,0 +1,156 @@
+{
+  "name": "Button",
+  "component": "Button",
+  "description": "Button renders either a html button or a link.",
+  "created": "1.0.0",
+  "lastModified": "1.0.0",
+  "dependencies": [
+    "Icon"
+  ],
+  "libraryDependencies": [],
+  "properties": {
+    "ariaExpanded": {
+      "type": "bool",
+      "default": null,
+      "description": "Mock description for ariaExpanded"
+    },
+    "ariaHaspopup": {
+      "type": "bool",
+      "default": null,
+      "description": "Mock description for ariaHaspopup"
+    },
+    "backgroundColor": {
+      "type": "string",
+      "default": null,
+      "description": "Mock description for backgroundColor"
+    },
+    "block": {
+      "type": "bool",
+      "default": false,
+      "description": "Mock description for block"
+    },
+    "className": {
+      "type": "string",
+      "default": "",
+      "description": "Mock description for className"
+    },
+    "color": {
+      "type": [
+        "primary",
+        "secondary",
+        "primary-alt",
+        "secondary-alt",
+        "light",
+        "warning",
+        "danger",
+        "transparent"
+      ],
+      "default": "primary",
+      "description": "Mock description for color"
+    },
+    "dataToggle": {
+      "type": "string",
+      "default": null,
+      "description": "Mock description for dataToggle"
+    },
+    "disabled": {
+      "type": "bool",
+      "default": false,
+      "description": "Mock description for disabled"
+    },
+    "fontColor": {
+      "type": "string",
+      "default": null,
+      "description": "Mock description for fontColor"
+    },
+    "hover": {
+      "type": [
+        "primary",
+        "secondary"
+      ],
+      "default": null,
+      "description": "Mock description for hover"
+    },
+    "href": {
+      "type": "string",
+      "default": null,
+      "description": "Mock description for href"
+    },
+    "icon": {
+      "type": "string",
+      "default": "",
+      "description": "Mock description for icon"
+    },
+    "iconColor": {
+      "type": "string",
+      "default": null,
+      "description": "Mock description for iconColor"
+    },
+    "id": {
+      "type": "string",
+      "default": null,
+      "description": "Mock description for id"
+    },
+    "inverse": {
+      "type": "bool",
+      "default": false,
+      "description": "Mock description for inverse"
+    },
+    "newPage": {
+      "type": "bool",
+      "default": false,
+      "description": "Mock description for newPage"
+    },
+    "outline": {
+      "type": "bool",
+      "default": false,
+      "description": "Mock description for outline"
+    },
+    "size": {
+      "type": [
+        "xs",
+        "sm",
+        "md",
+        "lg"
+      ],
+      "default": "md",
+      "description": "Mock description for size"
+    },
+    "submit": {
+      "type": "bool",
+      "default": false,
+      "description": "Mock description for submit"
+    },
+    "textAlignment": {
+      "type": "string",
+      "default": null,
+      "description": "Mock description for textAlignment"
+    },
+    "to": {
+      "type": "string",
+      "default": null,
+      "description": "Mock description for to"
+    },
+    "type": {
+      "type": [
+        "btn",
+        "link"
+      ],
+      "default": "btn",
+      "description": "Mock description for type"
+    },
+    "uppercase": {
+      "type": "bool",
+      "default": true,
+      "description": "Mock description for uppercase"
+    }
+  },
+  "methods": {
+    "onClick": {
+      "type": "func",
+      "default": "emptyFunc",
+      "description": "Mock description for onClick"
+    }
+  },
+  "events": {}
+}

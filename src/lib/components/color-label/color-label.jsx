@@ -1,5 +1,6 @@
-import PropTypes from 'prop-types';
 import React from 'react';
+import generateComponentProps from '../../util/generateComponentProps';
+import componentData from './color-label.data.json';
 
 const ColorLabel = ({ className, color }) => (
   <div className={`d-flex align-items-center color-label ${className}`}>
@@ -9,13 +10,7 @@ const ColorLabel = ({ className, color }) => (
     {color}
   </div>
 );
-ColorLabel.defaultProps = {
-  className: ''
-};
 
-ColorLabel.propTypes = {
-  className: PropTypes.string,
-  color: PropTypes.string.isRequired
-};
+Object.assign(ColorLabel, generateComponentProps(componentData));
 
 export default ColorLabel;

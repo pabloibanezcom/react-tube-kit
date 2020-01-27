@@ -22,36 +22,44 @@
     "url": "components",
     "children": [
       {
-        "name": "Badges",
-        "url": "badges"
+        "name": "Badge",
+        "url": "badge",
+        "component": "Badge"
       },
       {
-        "name": "Buttons & Links",
-        "url": "buttons"
+        "name": "Button & Link",
+        "url": "button",
+        "component": "Button"
       },
       {
-        "name": "Cards",
-        "url": "cards"
+        "name": "Card",
+        "url": "card",
+        "component": "Card"
       },
       {
-        "name": "Carousels",
-        "url": "carousels"
+        "name": "Carousel",
+        "url": "carousel",
+        "component": "Carousel"
       },
       {
-        "name": "Collapsible lists",
-        "url": "collapsible-lists"
+        "name": "Collapsible list",
+        "url": "collapsible-list",
+        "component": "CollapsibleList"
       },
       {
-        "name": "Color labels",
-        "url": "color-labels"
+        "name": "Color label",
+        "url": "color-label",
+        "component": "ColorLabel"
       },
       {
-        "name": "Color selectors",
-        "url": "color-selectors"
+        "name": "Color selector",
+        "url": "color-selector",
+        "component": "ColorSelector"
       },
       {
-        "name": "Country labels",
-        "url": "country-labels"
+        "name": "Country label",
+        "url": "country-label",
+        "component": "CountryLabel"
       },
       {
         "name": "Dropdowns",
@@ -59,7 +67,8 @@
       },
       {
         "name": "File upload",
-        "url": "file-upload"
+        "url": "file-upload",
+        "component": "FileUpload"
       },
       {
         "name": "Forms",

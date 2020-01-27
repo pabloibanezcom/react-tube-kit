@@ -1,28 +1,19 @@
 /* eslint-disable no-unneeded-ternary */
-import PropTypes from 'prop-types';
 import React, { Fragment, useRef, useState } from 'react';
 import { chunkArray } from '../../util/array';
+import generateComponentProps from '../../util/generateComponentProps';
 import getFileIconName from '../../util/getFileIconName';
 import Button from '../button/button';
 import Icon from '../icon/icon';
 import ImageAction from '../image-action/image-action';
 import Input from '../input/input';
+import componentData from './file-upload.data.json';
 
-const FileUpload = ({
-  accept,
-  className,
-  cropperMode,
-  filesLimit,
-  previewsPerRow,
-  showPreview,
-  onChange
-}) => {
+const FileUpload = ({ accept, className, filesLimit, previewsPerRow, showPreview, onChange }) => {
   const inputFileEl = useRef(null);
 
   const [files, setFiles] = useState([]);
   const [error, setError] = useState(null);
-
-  console.log(cropperMode);
 
   const getFilesArray = _files => {
     const result = [];
@@ -130,24 +121,6 @@ const FileUpload = ({
   );
 };
 
-FileUpload.defaultProps = {
-  accept: null,
-  className: '',
-  cropperMode: false,
-  filesLimit: 1,
-  previewsPerRow: 1,
-  showPreview: false,
-  onChange: () => {}
-};
-
-FileUpload.propTypes = {
-  accept: PropTypes.string,
-  className: PropTypes.string,
-  cropperMode: PropTypes.bool,
-  filesLimit: PropTypes.number,
-  previewsPerRow: PropTypes.number,
-  showPreview: PropTypes.bool,
-  onChange: PropTypes.func
-};
+Object.assign(FileUpload, generateComponentProps(componentData));
 
 export default FileUpload;

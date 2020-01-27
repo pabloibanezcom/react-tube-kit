@@ -1,7 +1,8 @@
-import PropTypes from 'prop-types';
 import React from 'react';
 import { Link } from 'react-router-dom';
+import generateComponentProps from '../../util/generateComponentProps';
 import Icon from '../icon/icon';
+import componentData from './button.data.json';
 
 const Button = ({
   ariaExpanded,
@@ -89,7 +90,7 @@ const Button = ({
   if (type === 'btn' && href) {
     return (
       /* eslint-disable-next-line react/button-has-type */
-      <a
+      <button
         id={id}
         type={submit ? 'submit' : 'button'}
         className={classStr}
@@ -99,7 +100,7 @@ const Button = ({
         target={newPage ? '_blank' : null}
       >
         {content}
-      </a>
+      </button>
     );
   }
   if (type === 'link' && !href) {
@@ -112,67 +113,6 @@ const Button = ({
   return null;
 };
 
-Button.defaultProps = {
-  ariaExpanded: null,
-  ariaHaspopup: null,
-  fontColor: null,
-  backgroundColor: null,
-  hover: null,
-  block: false,
-  dataToggle: null,
-  disabled: false,
-  className: '',
-  icon: '',
-  iconColor: null,
-  id: null,
-  inverse: false,
-  outline: false,
-  size: 'md',
-  color: 'primary',
-  uppercase: true,
-  href: null,
-  newPage: false,
-  submit: false,
-  textAlignment: null,
-  to: null,
-  type: 'btn',
-  onClick: () => {}
-};
-
-Button.propTypes = {
-  ariaExpanded: PropTypes.bool,
-  ariaHaspopup: PropTypes.bool,
-  fontColor: PropTypes.string,
-  backgroundColor: PropTypes.string,
-  hover: PropTypes.oneOf(['primary', 'secondary']),
-  block: PropTypes.bool,
-  dataToggle: PropTypes.string,
-  disabled: PropTypes.bool,
-  className: PropTypes.string,
-  inverse: PropTypes.bool,
-  icon: PropTypes.string,
-  iconColor: PropTypes.string,
-  id: PropTypes.string,
-  outline: PropTypes.bool,
-  size: PropTypes.oneOf(['sm', 'md', 'lg']),
-  color: PropTypes.oneOf([
-    'primary',
-    'secondary',
-    'primary-alt',
-    'secondary-alt',
-    'light',
-    'warning',
-    'danger',
-    'transparent'
-  ]),
-  uppercase: PropTypes.bool,
-  href: PropTypes.string,
-  newPage: PropTypes.bool,
-  submit: PropTypes.bool,
-  textAlignment: PropTypes.string,
-  to: PropTypes.string,
-  type: PropTypes.oneOf(['link', 'btn']),
-  onClick: PropTypes.func
-};
+Object.assign(Button, generateComponentProps(componentData));
 
 export default Button;

@@ -1,0 +1,86 @@
+{
+  "name": "Country label",
+  "component": "CountryLabel",
+  "description": "Simpe label with country name and flag.",
+  "created": "1.0.0",
+  "lastModified": "1.0.0",
+  "dependencies": [
+    "Badge"
+  ],
+  "libraryDependencies": [],
+  "properties": {
+    "backgroundColor": {
+      "type": "string",
+      "default": null,
+      "description": "Mock description for backgroundColor"
+    },
+    "badge": {
+      "type": "bool",
+      "default": false,
+      "description": "Mock description for badge"
+    },
+    "block": {
+      "type": "bool",
+      "default": false,
+      "description": "Mock description for block"
+    },
+    "border": {
+      "type": "bool",
+      "default": false,
+      "description": "Mock description for border"
+    },
+    "className": {
+      "type": "string",
+      "default": "",
+      "description": "Mock description for className"
+    },
+    "color": {
+      "type": "string",
+      "default": null,
+      "description": "Mock description for color"
+    },
+    "country": {
+      "type": "object",
+      "isRequired": true,
+      "description": "Mock description for country"
+    },
+    "customName": {
+      "type": "string",
+      "default": null,
+      "description": "Mock description for customName"
+    },
+    "size": {
+      "type": [
+        "xs",
+        "sm",
+        "md",
+        "lg"
+      ],
+      "default": "md",
+      "description": "Mock description for size"
+    },
+    "weight": {
+      "type": [
+        "light",
+        "normal",
+        "bold"
+      ],
+      "default": "normal",
+      "description": "Mock description for weight"
+    },
+    "type": {
+      "type": [
+        "primary",
+        "secondary",
+        "success",
+        "danger",
+        "warning",
+        "light"
+      ],
+      "default": "primary",
+      "description": "Mock description for type"
+    }
+  },
+  "methods": {},
+  "events": {}
+}
