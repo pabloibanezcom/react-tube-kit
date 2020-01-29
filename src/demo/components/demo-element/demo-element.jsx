@@ -10,15 +10,13 @@ require('codemirror/mode/xml/xml');
 
 const DemoElement = ({
   history,
-  actions,
   component,
-  example: { id, name, html, multi, disableCode, disableExample, url },
-  bindings,
+  example: { id, name, html, multi, bindings, actions, disableCode, disableExample, url },
   options
 }) => {
   const [showCode, setShowCode] = useState(false);
   const [actionFlags, setActionFlags] = useState(
-    actions.length ? Object.assign(...actions.map(act => ({ [act.propName]: false }))) : null
+    actions ? Object.assign(...actions.map(act => ({ [act.propName]: false }))) : null
   );
 
   const fireAction = action => {
@@ -33,6 +31,19 @@ const DemoElement = ({
     }
   };
 
+  const actionButtons = () =>
+    actions.map((act, i) => (
+      <button
+        key={i}
+        type="button"
+        className="demo-element__btn d-flex align-items-center"
+        onClick={() => fireAction(act)}
+      >
+        <Icon name={act.icon} className="mr-2 opacity-7" size="sm" />
+        {actionFlags[act.propName] && act.textActive ? act.textActive : act.text}
+      </button>
+    ));
+
   return (
     <div name={id} className="demo-element">
       <h3 className="mb-2">{name}</h3>
@@ -46,7 +57,7 @@ const DemoElement = ({
             <JsxParser
               bindings={{ ...bindings, ...actionFlags }}
               components={getComponentsForParser(component)}
-              jsx={`<div>${html}</div>`}
+              jsx={`${html}`}
               blacklistedAttrs={[]}
             />
           ) : null}
@@ -54,17 +65,7 @@ const DemoElement = ({
         {!disableCode ? (
           <div className="demo-element__code">
             <div className="demo-element__buttons d-flex">
-              {actions.map((act, i) => (
-                <button
-                  key={i}
-                  type="button"
-                  className="demo-element__btn d-flex align-items-center"
-                  onClick={() => fireAction(act)}
-                >
-                  <Icon name={act.icon} className="mr-2 opacity-7" size="sm" />
-                  {actionFlags[act.propName] ? act.textActive : act.text}
-                </button>
-              ))}
+              {actions ? actionButtons() : null}
               <button
                 type="button"
                 className="demo-element__btn demo-show-code-btn d-flex align-items-center"
@@ -96,24 +97,22 @@ const DemoElement = ({
 };
 
 DemoElement.defaultProps = {
-  actions: [],
-  bindings: null,
   options: {
     width: 'default'
   }
 };
 
 DemoElement.propTypes = {
-  actions: PropTypes.arrayOf(
-    PropTypes.shape({
-      text: PropTypes.string,
-      textActive: PropTypes.string,
-      propName: PropTypes.string
-    })
-  ),
-  bindings: PropTypes.object,
   component: PropTypes.string.isRequired,
   example: PropTypes.shape({
+    actions: PropTypes.arrayOf(
+      PropTypes.shape({
+        text: PropTypes.string,
+        textActive: PropTypes.string,
+        propName: PropTypes.string
+      })
+    ),
+    bindings: PropTypes.object,
     disableCode: PropTypes.bool,
     disableExample: PropTypes.bool,
     id: PropTypes.string,

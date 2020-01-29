@@ -1,0 +1,138 @@
+{
+  "name": "Input",
+  "component": "Input",
+  "description": "Input allows user to enter data.",
+  "created": "0.1.1",
+  "lastModified": "0.1.1",
+  "dependencies": [
+    "Icon"
+  ],
+  "libraryDependencies": [],
+  "properties": {
+    "accept": {
+      "type": "string",
+      "default": null,
+      "description": "Mock description for accept"
+    },
+    "bgColor": {
+      "type": [
+        "primary",
+        "secondary",
+        "success",
+        "danger",
+        "warning",
+        "light",
+        "dark",
+        "white"
+      ],
+      "default": "primary",
+      "description": "Mock description for bgColor"
+    },
+    "bgShow": {
+      "type": [
+        "bool",
+        "string"
+      ],
+      "default": false,
+      "description": "Mock description for bgShow"
+    },
+    "className": {
+      "type": "string",
+      "default": "",
+      "description": "Mock description for className"
+    },
+    "clearable": {
+      "type": "bool",
+      "default": false,
+      "description": "Mock description for clearable"
+    },
+    "color": {
+      "type": [
+        "primary",
+        "secondary",
+        "success",
+        "danger",
+        "warning",
+        "light",
+        "dark",
+        "muted",
+        "white"
+      ],
+      "default": "secondary",
+      "description": "Mock description for color"
+    },
+    "disabled": {
+      "type": "bool",
+      "default": false,
+      "description": "Mock description for disabled"
+    },
+    "icon": {
+      "type": "string",
+      "default": null,
+      "description": "Mock description for icon"
+    },
+    "multiple": {
+      "type": "bool",
+      "default": null,
+      "description": "Mock description for multiple"
+    },
+    "name": {
+      "type": "string",
+      "default": null,
+      "description": "Mock description for name"
+    },
+    "placeholder": {
+      "type": "string",
+      "default": null,
+      "description": "Mock description for placeholder"
+    },
+    "readOnly": {
+      "type": "bool",
+      "default": false,
+      "description": "Mock description for readOnly"
+    },
+    "resetValue": {
+      "type": "bool",
+      "default": false,
+      "description": "Mock description for resetValue"
+    },
+    "value": {
+      "type": [
+        "number",
+        "string"
+      ],
+      "default": "",
+      "description": "Mock description for value"
+    },
+    "type": {
+      "type": [
+        "text",
+        "number",
+        "email",
+        "password",
+        "tel",
+        "file"
+      ],
+      "default": "text",
+      "description": "Mock description for type"
+    }
+  },
+  "methods": {
+    "onBlur": {
+      "type": "func",
+      "default": "emptyFunc",
+      "description": "Mock description for onBlur"
+    },
+    "onChange": {
+      "type": "func",
+      "default": "emptyFunc",
+      "description": "Mock description for onChange"
+    },
+    "onClick": {
+      "type": "func",
+      "default": "emptyFunc",
+      "description": "Mock description for onClick"
+    }
+  },
+  "events": {}
+}

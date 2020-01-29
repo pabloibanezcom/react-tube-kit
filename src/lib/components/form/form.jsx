@@ -1,10 +1,11 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import PropTypes from 'prop-types';
 import React, { useEffect } from 'react';
 import useForm from 'react-hook-form';
+import generateComponentProps from '../../util/generateComponentProps';
 import randomName from '../../util/randomName';
 import Button from '../button/button';
-import FormField from './form-field/form-field';
+import FormField from '../form-field/form-field';
+import componentData from './form.data.json';
 
 const Form = ({
   autoComplete,
@@ -89,7 +90,7 @@ const Form = ({
           <FormField
             key={field.name}
             label={field.label}
-            valueProp={field.valueProp || 'defaultValue'}
+            valueProp={field.valueProp || 'value'}
             value={getFieldValue(field, value)}
             name={!autoComplete ? randomNamesMap[field.name] : field.name}
             fieldProps={field.fieldProps}
@@ -124,50 +125,6 @@ const Form = ({
   );
 };
 
-Form.defaultProps = {
-  autoComplete: false,
-  autoSubmit: false,
-  className: '',
-  direction: 'vertical',
-  errorClassName: 'text-danger font-weight-normal',
-  externalErrors: [],
-  fields: [],
-  labelClassName: 'font-weight-normal',
-  showLabel: true,
-  submitText: 'Confirm',
-  submitBtnProps: {},
-  value: null,
-  onCancel: null,
-  onSubmit: () => {}
-};
-
-Form.propTypes = {
-  autoComplete: PropTypes.bool,
-  autoSubmit: PropTypes.bool,
-  className: PropTypes.string,
-  direction: PropTypes.oneOf(['horizontal', 'vertical']),
-  errorClassName: PropTypes.string,
-  externalErrors: PropTypes.arrayOf(
-    PropTypes.shape({
-      name: PropTypes.string,
-      type: PropTypes.string,
-      message: PropTypes.string
-    })
-  ),
-  fields: PropTypes.arrayOf(
-    PropTypes.shape({
-      label: PropTypes.string,
-      name: PropTypes.string,
-      type: PropTypes.oneOf(['input', 'selector', 'colorSelector'])
-    })
-  ),
-  labelClassName: PropTypes.string,
-  showLabel: PropTypes.bool,
-  submitText: PropTypes.string,
-  submitBtnProps: PropTypes.any,
-  value: PropTypes.object,
-  onCancel: PropTypes.func,
-  onSubmit: PropTypes.func
-};
+Object.assign(Form, generateComponentProps(componentData));
 
 export default Form;

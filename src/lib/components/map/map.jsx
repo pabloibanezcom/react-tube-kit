@@ -1,8 +1,10 @@
-import PropTypes from 'prop-types';
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react';
+import generateComponentProps from '../../util/generateComponentProps';
 import LoadingSpinner from '../loading-spinner/loading-spinner';
 // import basicStyles from './styles';
 import generateMarker from './generateMarker';
+import componentData from './map.data.json';
 
 const Map = ({
   center,
@@ -23,33 +25,41 @@ const Map = ({
   const [currentMarkers, setCurrentMarkers] = useState([]);
   let openInfoWindow = null;
 
+  const loadGoogleMaps = onLoad => {
+    const script = document.createElement(`script`);
+    script.src = `https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_GOOGLE_MAPS_API_KEY}&libraries=places`;
+    document.head.append(script);
+    script.addEventListener(`load`, onLoad);
+    return () => script.removeEventListener(`load`, onLoad);
+  };
+
   // Map
   useEffect(() => {
-    console.log('Loading changed!');
     if (!map) {
-      if (!loading && window.google && window.google.maps) {
-        const newMap = createMap();
-        if (markers) {
-          setMarkers(newMap, markers);
-        }
-        setMap(newMap);
+      if (!(window.google && window.google.maps)) {
+        loadGoogleMaps(initMap);
+      } else {
+        initMap();
       }
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [loading]);
 
   // Markers
   useEffect(() => {
-    console.log('Markers changed!', markers);
-
     if (map && markers) {
       setMarkers(map, markers);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [markers]);
 
+  const initMap = () => {
+    const newMap = createMap();
+    if (markers) {
+      setMarkers(newMap, markers);
+    }
+    setMap(newMap);
+  };
+
   const createMap = () => {
-    console.log('Creating Map!');
     return new window.google.maps.Map(document.getElementById(id), {
       center,
       zoom,
@@ -70,7 +80,6 @@ const Map = ({
   };
 
   const setMarkers = (_map, _markers) => {
-    console.log('Setting Markers!');
     clearMarkers();
     setCurrentMarkers(
       _markers.map(marker => {
@@ -123,46 +132,6 @@ const Map = ({
   );
 };
 
-Map.defaultProps = {
-  className: '',
-  dynamicCenter: false,
-  height: 200,
-  id: 'map',
-  loading: false,
-  markers: null,
-  maxZoom: null,
-  minZoom: null,
-  styles: null,
-  width: '100%',
-  zoom: 12
-};
-
-Map.propTypes = {
-  center: PropTypes.shape({
-    lat: PropTypes.number,
-    lng: PropTypes.number
-  }).isRequired,
-  className: PropTypes.string,
-  dynamicCenter: PropTypes.bool,
-  height: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  id: PropTypes.string,
-  loading: PropTypes.bool,
-  markers: PropTypes.arrayOf(
-    PropTypes.shape({
-      position: PropTypes.shape({
-        lat: PropTypes.number,
-        lng: PropTypes.number
-      }),
-      title: PropTypes.string,
-      color: PropTypes.string,
-      infoWindow: PropTypes.oneOfType([PropTypes.string, PropTypes.node])
-    })
-  ),
-  maxZoom: PropTypes.number,
-  minZoom: PropTypes.number,
-  styles: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
-  width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  zoom: PropTypes.number
-};
+Object.assign(Map, generateComponentProps(componentData));
 
 export default Map;

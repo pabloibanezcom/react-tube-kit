@@ -11,7 +11,6 @@ import {
   Dropdown,
   FileUpload,
   Form,
-  Header,
   Icon,
   ImageAction,
   Input,
@@ -24,7 +23,8 @@ import {
   Panel,
   Selector,
   SideNavbar,
-  TabMenu
+  TabMenu,
+  TopNavbar
 } from '../../lib';
 
 const getComponentsForParser = componentsString => {
@@ -58,8 +58,6 @@ const getComponentFromName = componentName => {
       return ColorSelector;
     case 'Dropdown':
       return Dropdown;
-    case 'Header':
-      return Header;
     case 'FileUpload':
       return FileUpload;
     case 'Form':
@@ -90,6 +88,8 @@ const getComponentFromName = componentName => {
       return SideNavbar;
     case 'TabMenu':
       return TabMenu;
+    case 'TopNavbar':
+      return TopNavbar;
     default:
       return null;
   }

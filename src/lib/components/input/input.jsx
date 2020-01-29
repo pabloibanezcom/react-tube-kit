@@ -1,6 +1,7 @@
-import PropTypes from 'prop-types';
 import React, { useEffect, useState } from 'react';
+import generateComponentProps from '../../util/generateComponentProps';
 import Icon from '../icon/icon';
+import componentData from './input.data.json';
 
 const Input = React.forwardRef(
   (
@@ -11,7 +12,6 @@ const Input = React.forwardRef(
       className,
       clearable,
       color,
-      defaultValue,
       disabled,
       icon,
       multiple,
@@ -27,7 +27,7 @@ const Input = React.forwardRef(
     },
     ref
   ) => {
-    const [currentValue, setCurrentValue] = useState(defaultValue || '');
+    const [currentValue, setCurrentValue] = useState(value || '');
 
     useEffect(() => {
       setCurrentValue(value || '');
@@ -75,67 +75,6 @@ const Input = React.forwardRef(
   }
 );
 
-Input.defaultProps = {
-  accept: null,
-  bgColor: 'primary',
-  bgShow: false,
-  className: '',
-  clearable: false,
-  color: 'secondary',
-  defaultValue: '',
-  disabled: false,
-  icon: null,
-  multiple: null,
-  name: null,
-  placeholder: null,
-  readOnly: false,
-  resetValue: false,
-  value: '',
-  type: 'text',
-  onBlur: () => {},
-  onChange: () => {},
-  onClick: () => {}
-};
-
-Input.propTypes = {
-  accept: PropTypes.string,
-  bgColor: PropTypes.oneOf([
-    'primary',
-    'secondary',
-    'success',
-    'danger',
-    'warning',
-    'light',
-    'dark',
-    'white'
-  ]),
-  bgShow: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
-  className: PropTypes.string,
-  clearable: PropTypes.bool,
-  color: PropTypes.oneOf([
-    'primary',
-    'secondary',
-    'success',
-    'danger',
-    'warning',
-    'light',
-    'dark',
-    'muted',
-    'white'
-  ]),
-  defaultValue: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  disabled: PropTypes.bool,
-  icon: PropTypes.string,
-  multiple: PropTypes.bool,
-  name: PropTypes.string,
-  placeholder: PropTypes.string,
-  readOnly: PropTypes.bool,
-  resetValue: PropTypes.bool,
-  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  type: PropTypes.oneOf(['text', 'number', 'email', 'password', 'tel', 'file']),
-  onBlur: PropTypes.func,
-  onChange: PropTypes.func,
-  onClick: PropTypes.func
-};
+Object.assign(Input, generateComponentProps(componentData));
 
 export default Input;

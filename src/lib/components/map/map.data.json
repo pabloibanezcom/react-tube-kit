@@ -1,0 +1,90 @@
+{
+  "name": "Map",
+  "component": "Map",
+  "description": "Map renders a Google Maps map.",
+  "created": "0.1.1",
+  "lastModified": "0.1.1",
+  "dependencies": [],
+  "libraryDependencies": [
+    {
+      "name": "Google Maps",
+      "url": "https://cloud.google.com/maps-platform"
+    }
+  ],
+  "properties": {
+    "center": {
+      "type": {
+        "lat": "number",
+        "lng": "number"
+      },
+      "isRequired": true,
+      "description": "Mock description for center"
+    },
+    "className": {
+      "type": "string",
+      "default": "",
+      "description": "Mock description for className"
+    },
+    "dynamicCenter": {
+      "type": "bool",
+      "default": false,
+      "description": "Mock description for dynamicCenter"
+    },
+    "height": {
+      "type": [
+        "number",
+        "string"
+      ],
+      "default": 200,
+      "description": "Mock description for height"
+    },
+    "id": {
+      "type": "string",
+      "default": "map",
+      "description": "Mock description for id"
+    },
+    "loading": {
+      "type": "bool",
+      "default": false,
+      "description": "Mock description for loading"
+    },
+    "markers": {
+      "type": "array",
+      "default": null,
+      "description": "Mock description for markers"
+    },
+    "maxZoom": {
+      "type": "number",
+      "default": null,
+      "description": "Mock description for maxZoom"
+    },
+    "minZoom": {
+      "type": "number",
+      "default": null,
+      "description": "Mock description for minZoom"
+    },
+    "styles": {
+      "type": [
+        "array",
+        "object"
+      ],
+      "default": null,
+      "description": "Mock description for styles"
+    },
+    "width": {
+      "type": [
+        "number",
+        "string"
+      ],
+      "default": "100%",
+      "description": "Mock description for width"
+    },
+    "zoom": {
+      "type": "number",
+      "default": 12,
+      "description": "Mock description for zoom"
+    }
+  },
+  "methods": {},
+  "events": {}
+}

@@ -1,8 +1,9 @@
-import PropTypes from 'prop-types';
 import React from 'react';
 import ReactPaginate from 'react-paginate';
+import generateComponentProps from '../../util/generateComponentProps';
+import componentData from './pagination.data.json';
 
-const paginationComponent = ({
+const Pagination = ({
   background,
   className,
   color,
@@ -43,27 +44,6 @@ const paginationComponent = ({
   );
 };
 
-paginationComponent.defaultProps = {
-  background: 'light',
-  className: '',
-  color: 'primary',
-  pagination: null,
-  pageRangeDisplayed: 4,
-  size: 'lg',
-  onPageChange: () => {}
-};
+Object.assign(Pagination, generateComponentProps(componentData));
 
-paginationComponent.propTypes = {
-  background: PropTypes.oneOf(['light', 'primary', 'secondary']),
-  className: PropTypes.string,
-  color: PropTypes.oneOf(['primary', 'secondary']),
-  pagination: PropTypes.shape({
-    page: PropTypes.number,
-    pages: PropTypes.number
-  }),
-  pageRangeDisplayed: PropTypes.number,
-  size: PropTypes.oneOf(['sm', 'lg']),
-  onPageChange: PropTypes.func
-};
-
-export default paginationComponent;
+export default Pagination;

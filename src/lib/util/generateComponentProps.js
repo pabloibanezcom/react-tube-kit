@@ -1,5 +1,6 @@
 /* eslint-disable react/forbid-foreign-prop-types */
 import PropTypes from 'prop-types';
+import { isObject } from './object';
 
 const generateComponentProps = componentData => {
   const result = {
@@ -23,6 +24,15 @@ const generateComponentProps = componentData => {
 };
 
 const generatePropType = (type, isRequired) => {
+  if (isObject(type)) {
+    // return applyIsRequired(PropTypes.shape({}), isRequired);
+    const objShape = {};
+    Object.keys(type).forEach(key => {
+      objShape[key] = PropTypes[type[key]];
+    });
+    const objType = PropTypes.shape(objShape);
+    return applyIsRequired(objType, isRequired);
+  }
   if (Array.isArray(type)) {
     if (!checkIfNativeType(type[0])) {
       return applyIsRequired(PropTypes.oneOf(type), isRequired);

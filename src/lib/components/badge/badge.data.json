@@ -2,8 +2,8 @@
   "name": "Badge",
   "component": "Badge",
   "description": "Badge allows users to show a piece of data in a different label.",
-  "created": "1.0.0",
-  "lastModified": "1.0.0",
+  "created": "0.1.1",
+  "lastModified": "0.1.1",
   "dependencies": [],
   "libraryDependencies": [],
   "properties": {

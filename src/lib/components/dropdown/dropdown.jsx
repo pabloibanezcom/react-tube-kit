@@ -1,9 +1,10 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import PropTypes from 'prop-types';
 import React, { useEffect, useState } from 'react';
+import generateComponentProps from '../../util/generateComponentProps';
 import randomId from '../../util/randomId';
 import Button from '../button/button';
 import Icon from '../icon/icon';
+import componentData from './dropdown.data.json';
 
 const Dropdown = ({ buttonProps, children, className, id, menuMarginTop, showArrow, text }) => {
   const [expanded, setExpanded] = useState(false);
@@ -57,21 +58,6 @@ const Dropdown = ({ buttonProps, children, className, id, menuMarginTop, showArr
   );
 };
 
-Dropdown.defaultProps = {
-  buttonProps: null,
-  className: '',
-  id: null,
-  menuMarginTop: null,
-  showArrow: false
-};
-
-Dropdown.propTypes = {
-  buttonProps: PropTypes.object,
-  className: PropTypes.string,
-  id: PropTypes.string,
-  menuMarginTop: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-  showArrow: PropTypes.bool,
-  text: PropTypes.string.isRequired
-};
+Object.assign(Dropdown, generateComponentProps(componentData));
 
 export default Dropdown;

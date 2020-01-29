@@ -2,8 +2,8 @@
   "name": "Button",
   "component": "Button",
   "description": "Button renders either a html button or a link.",
-  "created": "1.0.0",
-  "lastModified": "1.0.0",
+  "created": "0.1.1",
+  "lastModified": "0.1.1",
   "dependencies": [
     "Icon"
   ],

@@ -2,12 +2,17 @@
   "name": "Carousel",
   "component": "Carousel",
   "description": "A slideshow component for cycling through elements—images or slides of text—like a carousel.",
-  "created": "1.0.0",
-  "lastModified": "1.0.0",
+  "created": "0.1.1",
+  "lastModified": "0.1.1",
   "dependencies": [
     "ImageAction"
   ],
-  "libraryDependencies": [],
+  "libraryDependencies": [
+    {
+      "name": "react-slick",
+      "url": "https://www.npmjs.com/package/react-slick"
+    }
+  ],
   "properties": {
     "className": {
       "type": "string",

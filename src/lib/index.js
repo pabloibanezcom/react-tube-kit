@@ -12,19 +12,19 @@ export {
   FileUpload,
   Footer,
   Form,
-  Header,
   Icon,
   ImageAction,
   Input,
   Label,
   LayoutWrapper,
   LoadingSpinner,
+  Map,
   Modal,
   Pagination,
   Panel,
   Selector,
   SideNavbar,
-  TabMenu
+  TabMenu,
+  TopNavbar
 } from './components';
-export { Map } from './components/map';
 export { error, info, warning } from './util/notification';

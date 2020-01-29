@@ -1,0 +1,51 @@
+{
+  "name": "Icon",
+  "component": "Icon",
+  "description": "Basic icon to be show in application.",
+  "created": "0.1.1",
+  "lastModified": "0.1.1",
+  "dependencies": [],
+  "libraryDependencies": [],
+  "properties": {
+    "className": {
+      "type": "string",
+      "default": "",
+      "description": "Mock description for className"
+    },
+    "color": {
+      "type": "string",
+      "default": null,
+      "description": "Mock description for color"
+    },
+    "name": {
+      "type": "string",
+      "isRequired": true,
+      "description": "Mock description for name"
+    },
+    "size": {
+      "type": [
+        "sm",
+        "md",
+        "lg"
+      ],
+      "default": "md",
+      "description": "Mock description for size"
+    },
+    "type": {
+      "type": [
+        "primary",
+        "secondary",
+        "success",
+        "danger",
+        "warning",
+        "light",
+        "dark",
+        "white"
+      ],
+      "default": null,
+      "description": "Mock description for type"
+    }
+  },
+  "methods": {},
+  "events": {}
+}

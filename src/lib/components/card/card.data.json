@@ -2,8 +2,8 @@
   "name": "Card",
   "component": "Card",
   "description": "Cards provide a flexible and extensible content container with multiple variants and options.",
-  "created": "1.0.0",
-  "lastModified": "1.0.0",
+  "created": "0.1.1",
+  "lastModified": "0.1.1",
   "dependencies": [
     "ImageAction"
   ],

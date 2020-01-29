@@ -27,6 +27,11 @@
         "component": "Badge"
       },
       {
+        "name": "Bottom menu",
+        "url": "bottom-menu",
+        "component": "BottomMenu"
+      },
+      {
         "name": "Button & Link",
         "url": "button",
         "component": "Button"
@@ -62,8 +67,9 @@
         "component": "CountryLabel"
       },
       {
-        "name": "Dropdowns",
-        "url": "dropdowns"
+        "name": "Dropdown",
+        "url": "dropdown",
+        "component": "Dropdown"
       },
       {
         "name": "File upload",
@@ -71,78 +77,84 @@
         "component": "FileUpload"
       },
       {
-        "name": "Forms",
-        "url": "forms"
+        "name": "Form",
+        "url": "form",
+        "component": "Form"
       },
       {
-        "name": "Icons",
-        "url": "icons"
+        "name": "Form Field",
+        "url": "form-field",
+        "component": "FormField"
+      },
+      {
+        "name": "Icon",
+        "url": "icon",
+        "component": "Icon"
       },
       {
         "name": "Image action",
-        "url": "image-action"
+        "url": "image-action",
+        "component": "ImageAction"
       },
       {
-        "name": "Inputs",
-        "url": "inputs"
+        "name": "Input",
+        "url": "input",
+        "component": "Input"
       },
       {
-        "name": "Labels",
-        "url": "labels"
+        "name": "Label",
+        "url": "label",
+        "component": "Label"
       },
       {
-        "name": "Layout",
-        "url": "layout",
-        "children": [
-          {
-            "name": "Layout wrappers",
-            "url": "layout-wrappers"
-          },
-          {
-            "name": "Headers",
-            "url": "headers"
-          },
-          {
-            "name": "Bottom menus",
-            "url": "bottom-menus"
-          },
-          {
-            "name": "Side navbars",
-            "url": "side-navbars"
-          }
-        ]
+        "name": "Layout wrapper",
+        "url": "layout-wrapper",
+        "component": "LayoutWrapper"
       },
       {
-        "name": "Loading spinners",
-        "url": "loading-spinners"
+        "name": "Loading spinner",
+        "url": "loading-spinner",
+        "component": "LoadingSpinner"
       },
       {
-        "name": "Maps",
-        "url": "maps"
+        "name": "Map",
+        "url": "map",
+        "component": "Map"
       },
       {
-        "name": "Modals",
-        "url": "modals"
+        "name": "Modal",
+        "url": "modal",
+        "component": "Modal"
       },
       {
-        "name": "Notifications",
-        "url": "notifications"
+        "name": "Pagination",
+        "url": "pagination",
+        "component": "Pagination"
       },
       {
-        "name": "Paginations",
-        "url": "paginations"
+        "name": "Panel",
+        "url": "panel",
+        "component": "Panel"
       },
       {
-        "name": "Panels",
-        "url": "panels"
+        "name": "Selector",
+        "url": "selector",
+        "component": "Selector"
       },
       {
-        "name": "Selectors",
-        "url": "selectors"
+        "name": "Side navbar",
+        "url": "side-navbar",
+        "component": "SideNavbar"
       },
       {
-        "name": "Tab menus",
-        "url": "tab-menus"
+        "name": "Tab menu",
+        "url": "tab-menu",
+        "component": "TabMenu"
+      },
+      {
+        "name": "Top Navbar",
+        "url": "top-navbar",
+        "component": "TopNavbar"
       }
     ]
   },

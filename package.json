@@ -27,7 +27,8 @@
     "statics": "npm run fonts && npm run icons && npm run img",
     "fonts": "cpx src/lib/assets/fonts/fonts/**/*.woff2 temp/scss/assets/fonts/fonts && cpx src/lib/assets/fonts/fonts/**/*.woff2 temp/fonts",
     "icons": "cpx src/lib/assets/icons/css/fonts/**/*.{svg,ttf,woff} temp/scss/assets/icons/css/fonts && cpx src/lib/assets/icons/fonts/**/*.{svg,ttf,woff} temp/fonts",
-    "img": "cpx src/lib/assets/img/**/*.{png,jpg} temp/assets/img && cpx src/lib/assets/img/countries/countries.png temp/scss/assets/img/countries"
+    "img": "cpx src/lib/assets/img/**/*.{png,jpg} temp/assets/img && cpx src/lib/assets/img/countries/countries.png temp/scss/assets/img/countries",
+    "release": "node scripts/release.js"
   },
   "dependencies": {
     "@babel/core": "7.6.0",
@@ -104,6 +105,7 @@
   },
   "devDependencies": {
     "@babel/cli": "^7.6.2",
+    "@octokit/rest": "^16.39.0",
     "concurrently": "^4.1.2",
     "cpx": "^1.5.0",
     "cross-env": "^6.0.0",

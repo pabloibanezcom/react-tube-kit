@@ -1,8 +1,9 @@
-import PropTypes from 'prop-types';
 import React, { createRef, useEffect, useState } from 'react';
+import generateComponentProps from '../../util/generateComponentProps';
 import getDisplayClass from '../../util/getDisplayClass';
 import Icon from '../icon/icon';
 import Panel from '../panel/panel';
+import componentData from './tab-menu.data.json';
 
 const TabMenu = ({
   activeTab,
@@ -71,34 +72,6 @@ const TabMenu = ({
   );
 };
 
-TabMenu.defaultProps = {
-  activeTab: 0,
-  className: '',
-  color: 'primary',
-  content: null,
-  panel: 'white',
-  showIcon: 'md-',
-  showTitle: 'xs-',
-  onTabChange: () => {}
-};
-
-TabMenu.propTypes = {
-  activeTab: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-  className: PropTypes.string,
-  color: PropTypes.oneOf(['primary', 'secondary']),
-  content: PropTypes.any,
-  panel: PropTypes.oneOf(['white', 'primary', 'secondary']),
-  tabs: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string,
-      name: PropTypes.string,
-      icon: PropTypes.string,
-      content: PropTypes.any
-    })
-  ).isRequired,
-  showIcon: PropTypes.string,
-  showTitle: PropTypes.string,
-  onTabChange: PropTypes.func
-};
+Object.assign(TabMenu, generateComponentProps(componentData));
 
 export default TabMenu;

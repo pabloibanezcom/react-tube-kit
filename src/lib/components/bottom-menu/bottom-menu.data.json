@@ -1,0 +1,35 @@
+{
+  "name": "Bottom Menu",
+  "component": "BottomMenu",
+  "description": "Bottom Menu is a very nice way to show a global menu in mobile interfaces.",
+  "created": "0.1.1",
+  "lastModified": "0.1.1",
+  "dependencies": [
+    "Icon"
+  ],
+  "libraryDependencies": [],
+  "properties": {
+    "className": {
+      "type": "string",
+      "default": "",
+      "description": "Mock description for className"
+    },
+    "display": {
+      "type": "string",
+      "default": "-md",
+      "description": "Mock description for display"
+    },
+    "elements": {
+      "type": "array",
+      "default": [],
+      "description": "Mock description for array"
+    },
+    "scrollHide": {
+      "type": "bool",
+      "default": false,
+      "description": "Mock description for scrollHide"
+    }
+  },
+  "methods": {},
+  "events": {}
+}

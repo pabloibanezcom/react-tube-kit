@@ -1,0 +1,61 @@
+{
+  "name": "Top Navbar",
+  "component": "TopNavbar",
+  "description": "TopNavbar description.",
+  "created": "0.1.1",
+  "lastModified": "0.1.1",
+  "dependencies": [
+    "Button"
+  ],
+  "libraryDependencies": [],
+  "properties": {
+    "animated": {
+      "type": "bool",
+      "default": false,
+      "description": "Mock description for animated"
+    },
+    "className": {
+      "type": "string",
+      "default": "",
+      "description": "Mock description for className"
+    },
+    "logo": {
+      "type": "node",
+      "default": null,
+      "description": "Mock description for logo"
+    },
+    "menuButtonDisplay": {
+      "type": "string",
+      "default": "-md",
+      "description": "Mock description for menuButtonDisplay"
+    },
+    "rightContent": {
+      "type": "element",
+      "default": null,
+      "description": "Mock description for rightContent"
+    },
+    "subtitle": {
+      "type": "string",
+      "default": null,
+      "description": "Mock description for subtitle"
+    },
+    "title": {
+      "type": "string",
+      "default": null,
+      "description": "Mock description for title"
+    },
+    "titleDisplay": {
+      "type": "string",
+      "default": "md-",
+      "description": "Mock description for titleDisplay"
+    }
+  },
+  "methods": {
+    "onMenuClick": {
+      "type": "func",
+      "default": "emptyFunc",
+      "description": "Mock description for onMenuClick"
+    }
+  },
+  "events": {}
+}

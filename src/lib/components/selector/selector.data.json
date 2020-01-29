@@ -1,0 +1,102 @@
+{
+  "name": "Selector",
+  "component": "Selector",
+  "description": "Selector allows you to find and select an item from a range or list.",
+  "created": "0.1.1",
+  "lastModified": "0.1.1",
+  "dependencies": [
+    "Button",
+    "Icon",
+    "Input"
+  ],
+  "libraryDependencies": [],
+  "properties": {
+    "className": {
+      "type": "string",
+      "default": "",
+      "description": "Mock description for className"
+    },
+    "custom": {
+      "type": "elementType",
+      "default": null,
+      "description": "Mock description for custom"
+    },
+    "customProp": {
+      "type": "string",
+      "default": null,
+      "description": "Mock description for customProp"
+    },
+    "defaultValue": {
+      "type": "any",
+      "default": null,
+      "description": "Mock description for defaultValue"
+    },
+    "minLengthSearch": {
+      "type": "number",
+      "default": 2,
+      "description": "Mock description for minLengthSearch"
+    },
+    "maxOptions": {
+      "type": "number",
+      "default": 10,
+      "description": "Mock description for maxOptions"
+    },
+    "nameProp": {
+      "type": "string",
+      "default": "name",
+      "description": "Mock description for nameProp"
+    },
+    "native": {
+      "type": [
+        true,
+        false,
+        "mobileOnly"
+      ],
+      "default": "mobileOnly",
+      "description": "Mock description for native"
+    },
+    "nullOption": {
+      "type": "object",
+      "default": null,
+      "description": "Mock description for nullOption"
+    },
+    "options": {
+      "type": "array",
+      "default": [],
+      "description": "Mock description for options"
+    },
+    "optionClassName": {
+      "type": "string",
+      "default": "",
+      "description": "Mock description for optionClassName"
+    },
+    "placeholder": {
+      "type": "string",
+      "default": "Please select an option",
+      "description": "Mock description for placeholder"
+    },
+    "remoteOptions": {
+      "type": "object",
+      "default": null,
+      "description": "Mock description for remoteOptions"
+    },
+    "search": {
+      "type": "bool",
+      "default": false,
+      "description": "Mock description for search"
+    },
+    "valueProp": {
+      "type": "string",
+      "default": "value",
+      "description": "Mock description for valueProp"
+    }
+  },
+  "methods": {
+    "onChange": {
+      "type": "func",
+      "default": "emptyFunc",
+      "description": "Mock description for onChange"
+    }
+  },
+  "events": {}
+}

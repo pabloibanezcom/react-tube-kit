@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import Button from '../../../lib/components/button/button';
-import DemoElement from '../demo-element-new/demo-element';
-import DemoPropsTable from '../demo-props-table-new/demo-props-table';
-import DemoSectionsMenu from '../demo-sections-menu-new/demo-sections-menu';
+import DemoElement from '../demo-element/demo-element';
+import DemoPropsTable from '../demo-props-table/demo-props-table';
+import DemoSectionsMenu from '../demo-sections-menu/demo-sections-menu';
 
 const ComponentPage = ({ componentData, examples }) => {
   const overviewSection = (
@@ -28,10 +28,10 @@ const ComponentPage = ({ componentData, examples }) => {
         ) : (
           componentData.dependencies.map(dep => (
             <Button
-              key={dep.name}
+              key={dep}
               className="mr-1"
               color="secondary"
-              outline
+              inverse
               size="xs"
               uppercase={false}
             >
@@ -56,12 +56,16 @@ const ComponentPage = ({ componentData, examples }) => {
   );
 
   const examplesSection = (
-    <div name="examples" className="mt-6">
-      <h2 className="mb-2">Examples</h2>
-      {examples.map(example => (
-        <DemoElement key={example.id} component={componentData.component} example={example} />
-      ))}
-    </div>
+    <Fragment>
+      {examples ? (
+        <div name="examples" className="mt-6">
+          <h2 className="mb-2">Examples</h2>
+          {examples.map(example => (
+            <DemoElement key={example.id} component={componentData.component} example={example} />
+          ))}
+        </div>
+      ) : null}
+    </Fragment>
   );
 
   const apiSection = (

@@ -2,8 +2,8 @@
   "name": "Color Label",
   "component": "ColorLabel",
   "description": "Simpe label with color name and background.",
-  "created": "1.0.0",
-  "lastModified": "1.0.0",
+  "created": "0.1.1",
+  "lastModified": "0.1.1",
   "dependencies": [],
   "libraryDependencies": [],
   "properties": {

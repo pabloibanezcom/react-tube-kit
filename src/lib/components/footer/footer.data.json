@@ -1,0 +1,23 @@
+{
+  "name": "Footer",
+  "component": "Footer",
+  "description": "Footer defines the last section of the page. As a rule it contains copyright information, contact details, navigation links,...",
+  "created": "0.1.1",
+  "lastModified": "0.1.1",
+  "dependencies": [],
+  "libraryDependencies": [],
+  "properties": {
+    "className": {
+      "type": "string",
+      "default": "",
+      "description": "Mock description for className"
+    },
+    "text": {
+      "type": "string",
+      "isRequired": true,
+      "description": "Mock description for text"
+    }
+  },
+  "methods": {},
+  "events": {}
+}

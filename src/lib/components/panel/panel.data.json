@@ -1,0 +1,52 @@
+{
+  "name": "Panel",
+  "component": "Panel",
+  "description": "Panel is a simple container to wrap other components/elements.",
+  "created": "0.1.1",
+  "lastModified": "0.1.1",
+  "dependencies": [
+    "Icon"
+  ],
+  "libraryDependencies": [],
+  "properties": {
+    "background": {
+      "type": [
+        "white",
+        "primary",
+        "secondary"
+      ],
+      "default": "white",
+      "description": "Mock description for background"
+    },
+    "className": {
+      "type": "string",
+      "default": "",
+      "description": "Mock description for className"
+    },
+    "headerColor": {
+      "type": [
+        "primary",
+        "secondary"
+      ],
+      "default": "primary",
+      "description": "Mock description for headerColor"
+    },
+    "headerIcon": {
+      "type": "string",
+      "default": null,
+      "description": "Mock description for headerIcon"
+    },
+    "headerText": {
+      "type": "string",
+      "default": null,
+      "description": "Mock description for headerText"
+    },
+    "width": {
+      "type": "number",
+      "default": null,
+      "description": "Mock description for width"
+    }
+  },
+  "methods": {},
+  "events": {}
+}

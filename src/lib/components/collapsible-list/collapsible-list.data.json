@@ -2,8 +2,8 @@
   "name": "Collapsible List",
   "component": "CollapsibleList",
   "description": "Collapsible List allows user to show and hide content dynamically.",
-  "created": "1.0.0",
-  "lastModified": "1.0.0",
+  "created": "0.1.1",
+  "lastModified": "0.1.1",
   "dependencies": [
     "Icon"
   ],

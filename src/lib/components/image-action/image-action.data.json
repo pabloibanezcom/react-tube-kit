@@ -1,0 +1,51 @@
+{
+  "name": "Image Action",
+  "component": "ImageAction",
+  "description": "Clickable image with zoom and shadow effect.",
+  "created": "0.1.1",
+  "lastModified": "0.1.1",
+  "dependencies": [
+    "Button"
+  ],
+  "libraryDependencies": [],
+  "properties": {
+    "actionText": {
+      "type": "string",
+      "default": "",
+      "description": "Mock description for actionText"
+    },
+    "alt": {
+      "type": "string",
+      "default": "",
+      "description": "Mock description for alt"
+    },
+    "className": {
+      "type": "string",
+      "default": "",
+      "description": "Mock description for className"
+    },
+    "id": {
+      "type": "string",
+      "default": null,
+      "description": "Mock description for id"
+    },
+    "src": {
+      "type": "string",
+      "default": null,
+      "description": "Mock description for src"
+    },
+    "style": {
+      "type": "object",
+      "default": null,
+      "description": "Mock description for style"
+    }
+  },
+  "methods": {
+    "onClick": {
+      "type": "func",
+      "default": "emptyFunc",
+      "description": "Mock description for onClick"
+    }
+  },
+  "events": {}
+}

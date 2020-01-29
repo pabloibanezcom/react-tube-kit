@@ -1,6 +1,7 @@
-import PropTypes from 'prop-types';
 import React from 'react';
+import generateComponentProps from '../../util/generateComponentProps';
 import Button from '../button/button';
+import componentData from './image-action.data.json';
 
 const ImageAction = ({ actionText, alt, className, id, src, style, onClick }) => {
   return (
@@ -21,24 +22,6 @@ const ImageAction = ({ actionText, alt, className, id, src, style, onClick }) =>
   );
 };
 
+Object.assign(ImageAction, generateComponentProps(componentData));
+
 export default ImageAction;
-
-ImageAction.defaultProps = {
-  actionText: '',
-  alt: '',
-  className: '',
-  id: null,
-  src: null,
-  style: null,
-  onClick: () => {}
-};
-
-ImageAction.propTypes = {
-  actionText: PropTypes.string,
-  alt: PropTypes.string,
-  className: PropTypes.string,
-  id: PropTypes.string,
-  src: PropTypes.string,
-  style: PropTypes.object,
-  onClick: PropTypes.func
-};

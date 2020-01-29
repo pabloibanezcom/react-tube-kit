@@ -2,8 +2,8 @@
   "name": "Country label",
   "component": "CountryLabel",
   "description": "Simpe label with country name and flag.",
-  "created": "1.0.0",
-  "lastModified": "1.0.0",
+  "created": "0.1.1",
+  "lastModified": "0.1.1",
   "dependencies": [
     "Badge"
   ],

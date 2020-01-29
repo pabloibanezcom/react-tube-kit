@@ -1,10 +1,11 @@
-import PropTypes from 'prop-types';
 import React, { useRef, useState } from 'react';
+import generateComponentProps from '../../util/generateComponentProps';
 import useOutsideClick from '../../util/useOutsideClick';
 import useWindowSize from '../../util/useWindowSize';
 import Button from '../button/button';
 import Icon from '../icon/icon';
 import Input from '../input/input';
+import componentData from './selector.data.json';
 
 const Selector = ({
   className,
@@ -215,8 +216,6 @@ const Selector = ({
     </div>
   );
 
-  console.log(optionsWithNull);
-
   return (
     <>
       <div className={`selector d-flex flex-column w-100 ${className}`}>
@@ -230,45 +229,6 @@ const Selector = ({
   );
 };
 
-Selector.defaultProps = {
-  className: '',
-  custom: null,
-  customProp: null,
-  defaultValue: null,
-  minLengthSearch: 2,
-  maxOptions: 10,
-  nameProp: 'name',
-  native: 'mobileOnly',
-  nullOption: null,
-  placeholder: 'Please select an option',
-  options: [],
-  optionClassName: '',
-  remoteOptions: null,
-  search: false,
-  valueProp: 'value',
-  onChange: () => {}
-};
-
-Selector.propTypes = {
-  className: PropTypes.string,
-  custom: PropTypes.elementType,
-  customProp: PropTypes.string,
-  defaultValue: PropTypes.any,
-  minLengthSearch: PropTypes.number,
-  maxOptions: PropTypes.number,
-  nameProp: PropTypes.string,
-  native: PropTypes.oneOf([true, false, 'mobileOnly']),
-  nullOption: PropTypes.object,
-  options: PropTypes.array,
-  optionClassName: PropTypes.string,
-  placeholder: PropTypes.string,
-  remoteOptions: PropTypes.shape({
-    apiMethod: PropTypes.func,
-    dataProp: PropTypes.string
-  }),
-  search: PropTypes.bool,
-  valueProp: PropTypes.string,
-  onChange: PropTypes.func
-};
+Object.assign(Selector, generateComponentProps(componentData));
 
 export default Selector;

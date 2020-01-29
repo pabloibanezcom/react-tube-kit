@@ -2,8 +2,8 @@
   "name": "File Upload",
   "component": "FileUpload",
   "description": "FileUpload allows users to select files to be uploaded. Also provides a preview mode for image files.",
-  "created": "1.0.0",
-  "lastModified": "1.0.0",
+  "created": "0.1.1",
+  "lastModified": "0.1.1",
   "dependencies": [
     "Button",
     "Icon",

@@ -1,9 +1,0 @@
-{
-  "options": {
-    "className": {
-      "type": "string",
-      "default": "''",
-      "description": ""
-    }
-  }
-}

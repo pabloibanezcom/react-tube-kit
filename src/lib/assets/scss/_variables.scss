@@ -37,11 +37,11 @@ $custom-container-max-widths: (
 
 // z-index
 $z-layout-wrapper: 100 !default;
-$z-header: 200 !default;
+$z-top-navbar: 200 !default;
 $z-side-navbar: 300 !default;
 
 // Layout
-$header-height: 56px !default;
+$top-navbar-height: 56px !default;
 $side-navbar-width: 230px !default;
 $layout-transitions-duration: 0.2s !default;
 $overlay-opacity: 0.75 !default;

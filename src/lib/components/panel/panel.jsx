@@ -1,6 +1,7 @@
-import PropTypes from 'prop-types';
 import React from 'react';
+import generateComponentProps from '../../util/generateComponentProps';
 import Icon from '../icon/icon';
+import componentData from './panel.data.json';
 
 const panel = ({ background, children, className, headerColor, headerIcon, headerText, width }) => (
   <div className={`panel ${className}`}>
@@ -18,22 +19,6 @@ const panel = ({ background, children, className, headerColor, headerIcon, heade
   </div>
 );
 
-panel.defaultProps = {
-  background: 'white',
-  className: '',
-  headerColor: 'primary',
-  headerIcon: null,
-  headerText: null,
-  width: null
-};
-
-panel.propTypes = {
-  background: PropTypes.oneOf(['white', 'primary', 'secondary']),
-  className: PropTypes.string,
-  headerColor: PropTypes.oneOf(['primary', 'secondary']),
-  headerIcon: PropTypes.string,
-  headerText: PropTypes.string,
-  width: PropTypes.number
-};
+Object.assign(panel, generateComponentProps(componentData));
 
 export default panel;

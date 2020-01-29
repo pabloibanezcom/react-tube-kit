@@ -1,0 +1,49 @@
+.layout {
+  &__container {
+    flex: 1 1;
+  }
+
+  &__main {
+    position: relative;
+    margin-top: $top-navbar-height;
+  }
+
+  &__container {
+    &--left {
+      margin-left: 0;
+      transition: margin-left $layout-transitions-duration;
+    }
+
+    &--right {
+      margin-right: 0;
+      transition: margin-right $layout-transitions-duration;
+    }
+
+    &--stretch-left {
+      margin-left: $side-navbar-width;
+    }
+
+    &--stretch-right {
+      margin-right: $side-navbar-width;
+    }
+  }
+
+  &__overlay {
+    position: absolute;
+    overflow: auto;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    z-index: $z-layout-wrapper;
+    background-color: black;
+    opacity: $overlay-opacity;
+    transition: opacity $layout-transitions-duration ease-in-out,
+      z-index $layout-transitions-duration;
+
+    &--hidden {
+      opacity: 0;
+      z-index: -5;
+    }
+  }
+}
