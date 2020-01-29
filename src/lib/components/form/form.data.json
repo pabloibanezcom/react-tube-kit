@@ -1,0 +1,90 @@
+{
+  "name": "Form",
+  "component": "Form",
+  "description": "Form contains form elements. Form elements are different types of input elements, like text fields, checkboxes, radio buttons, submit buttons, and more.",
+  "created": "0.1.1",
+  "lastModified": "0.1.1",
+  "dependencies": [
+    "Button",
+    "FormField"
+  ],
+  "libraryDependencies": [],
+  "properties": {
+    "autoComplete": {
+      "type": "bool",
+      "default": false,
+      "description": "Mock description for autoComplete"
+    },
+    "autoSubmit": {
+      "type": "bool",
+      "default": false,
+      "description": "Mock description for autoSubmit"
+    },
+    "className": {
+      "type": "string",
+      "default": "",
+      "description": "Mock description for className"
+    },
+    "direction": {
+      "type": [
+        "horizontal",
+        "vertical"
+      ],
+      "default": "vertical",
+      "description": "Mock description for direction"
+    },
+    "errorClassName": {
+      "type": "string",
+      "default": "text-danger font-weight-normal",
+      "description": "Mock description for errorClassName"
+    },
+    "externalErrors": {
+      "type": "array",
+      "default": [],
+      "description": "Mock description for externalErrors"
+    },
+    "fields": {
+      "type": "array",
+      "default": [],
+      "description": "Mock description for fields"
+    },
+    "labelClassName": {
+      "type": "string",
+      "default": "font-weight-normal",
+      "description": "Mock description for labelClassName"
+    },
+    "showLabel": {
+      "type": "bool",
+      "default": true,
+      "description": "Mock description for showLabel"
+    },
+    "submitText": {
+      "type": "string",
+      "default": "Confirm",
+      "description": "Mock description for submitText"
+    },
+    "submitBtnProps": {
+      "type": "any",
+      "default": {},
+      "description": "Mock description for submitBtnProps"
+    },
+    "value": {
+      "type": "object",
+      "default": null,
+      "description": "Mock description for value"
+    }
+  },
+  "methods": {
+    "onCancel": {
+      "type": "func",
+      "default": null,
+      "description": "Mock description for onCancel"
+    },
+    "onSubmit": {
+      "type": "func",
+      "default": "emptyFunc",
+      "description": "Mock description for onSubmit"
+    }
+  },
+  "events": {}
+}

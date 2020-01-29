@@ -1,9 +1,9 @@
 @font-face {
   font-family: 'icomoon';
   src:
-    url('fonts/icomoon.ttf?n3tndd') format('truetype'),
-    url('fonts/icomoon.woff?n3tndd') format('woff'),
-    url('fonts/icomoon.svg?n3tndd#icomoon') format('svg');
+    url('fonts/icomoon.ttf?oos2xi') format('truetype'),
+    url('fonts/icomoon.woff?oos2xi') format('woff'),
+    url('fonts/icomoon.svg?oos2xi#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -34,8 +34,26 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-female:before {
+  content: "\e907";
+}
+.icon-user:before {
+  content: "\e90f";
+}
+.icon-person:before {
+  content: "\e90f";
+}
+.icon-male:before {
+  content: "\e90f";
+}
 .icon-screen-full:before {
   content: "\e904";
+}
+.icon-logout:before {
+  content: "\e90a";
+}
+.icon-login:before {
+  content: "\e906";
 }
 .icon-code:before {
   content: "\e905";
@@ -73,6 +91,9 @@
 .icon-delete:before {
   content: "\f014";
 }
+.icon-file-o:before {
+  content: "\f016";
+}
 .icon-image:before {
   content: "\f03e";
 }
@@ -106,6 +127,15 @@
 .icon-globe:before {
   content: "\f0ac";
 }
+.icon-copy:before {
+  content: "\f0c5";
+}
+.icon-files-o:before {
+  content: "\f0c5";
+}
+.icon-file-text-o:before {
+  content: "\f0f6";
+}
 .icon-angle-left:before {
   content: "\f104";
 }
@@ -130,6 +160,48 @@
 .icon-long-arrow-right:before {
   content: "\f178";
 }
+.icon-file-pdf-o:before {
+  content: "\f1c1";
+}
+.icon-file-word-o:before {
+  content: "\f1c2";
+}
+.icon-file-excel-o:before {
+  content: "\f1c3";
+}
+.icon-file-powerpoint-o:before {
+  content: "\f1c4";
+}
+.icon-file-image-o:before {
+  content: "\f1c5";
+}
+.icon-file-photo-o:before {
+  content: "\f1c5";
+}
+.icon-file-picture-o:before {
+  content: "\f1c5";
+}
+.icon-file-archive-o:before {
+  content: "\f1c6";
+}
+.icon-file-zip-o:before {
+  content: "\f1c6";
+}
+.icon-file-audio-o:before {
+  content: "\f1c7";
+}
+.icon-file-sound-o:before {
+  content: "\f1c7";
+}
+.icon-file-movie-o:before {
+  content: "\f1c8";
+}
+.icon-file-video-o:before {
+  content: "\f1c8";
+}
+.icon-file-code-o:before {
+  content: "\f1c9";
+}
 .icon-add:before {
   content: "\e145";
 }
@@ -148,11 +220,11 @@
 .icon-underground:before {
   content: "\e535";
 }
-.icon-person:before {
-  content: "\e7fd";
-}
 .icon-search:before {
   content: "\e8b6";
+}
+.icon-settings:before {
+  content: "\e8b8";
 }
 .icon-share:before {
   content: "\e80d";

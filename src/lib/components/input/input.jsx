@@ -1,110 +1,80 @@
-import PropTypes from 'prop-types';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import generateComponentProps from '../../util/generateComponentProps';
 import Icon from '../icon/icon';
+import componentData from './input.data.json';
 
-const Input = ({
-  bgColor,
-  bgShow,
-  className,
-  clearable,
-  color,
-  defaultValue,
-  disabled,
-  icon,
-  name,
-  placeholder,
-  readOnly,
-  type,
-  onChange,
-  onClick
-}) => {
-  const [value, setValue] = useState(defaultValue);
+const Input = React.forwardRef(
+  (
+    {
+      accept,
+      bgColor,
+      bgShow,
+      className,
+      clearable,
+      color,
+      disabled,
+      icon,
+      multiple,
+      name,
+      placeholder,
+      readOnly,
+      resetValue,
+      value,
+      type,
+      onBlur,
+      onChange,
+      onClick
+    },
+    ref
+  ) => {
+    const [currentValue, setCurrentValue] = useState(value || '');
 
-  const handleOnChange = newValue => {
-    setValue(newValue);
-    onChange(newValue);
-  };
+    useEffect(() => {
+      setCurrentValue(value || '');
+    }, [value]);
 
-  const clearValue = () => {
-    handleOnChange('');
-  };
+    const handleOnChange = newValue => {
+      setCurrentValue(newValue);
+      onChange(newValue);
+      if (resetValue) {
+        setCurrentValue('');
+      }
+    };
 
-  return (
-    <div className="input-wrapper">
-      <input
-        type={type}
-        className={`input input-underline-${bgColor} ${
-          bgShow ? 'input-underline-show' : ''
-        } text-${color} ${icon ? 'input-with-icon' : ''} ${className}`}
-        name={name}
-        value={value}
-        placeholder={placeholder}
-        disabled={disabled}
-        readOnly={readOnly}
-        onChange={evt => handleOnChange(evt.target.value)}
-        onClick={onClick}
-      />
-      {icon ? <Icon className="input-icon" name={icon} /> : null}
-      {clearable && value ? (
-        <button className="input-clearable-btn" type="button" onClick={clearValue}>
-          <Icon name="close" size="sm" />
-        </button>
-      ) : null}
-    </div>
-  );
-};
+    const clearValue = () => {
+      handleOnChange('');
+    };
 
-Input.defaultProps = {
-  bgColor: 'primary',
-  bgShow: false,
-  className: '',
-  clearable: false,
-  color: 'secondary',
-  defaultValue: '',
-  disabled: false,
-  icon: null,
-  name: null,
-  placeholder: null,
-  readOnly: false,
-  type: 'text',
-  onChange: () => {},
-  onClick: () => {}
-};
+    return (
+      <div className="input-wrapper">
+        <input
+          ref={ref}
+          type={type}
+          accept={accept}
+          className={`input input-underline-${bgColor} ${
+            bgShow ? 'input-underline-show' : ''
+          } text-${color} ${icon ? 'input-with-icon' : ''} px-1 ${className}`}
+          name={name}
+          value={currentValue}
+          placeholder={placeholder}
+          disabled={disabled}
+          readOnly={readOnly}
+          multiple={multiple}
+          onBlur={onBlur}
+          onChange={evt => handleOnChange(evt.target.value)}
+          onClick={onClick}
+        />
+        {icon ? <Icon className="input-icon" name={icon} /> : null}
+        {clearable && currentValue ? (
+          <button className="input-clearable-btn" type="button" onClick={clearValue}>
+            <Icon name="close" size="sm" />
+          </button>
+        ) : null}
+      </div>
+    );
+  }
+);
 
-Input.propTypes = {
-  bgColor: PropTypes.oneOf([
-    'primary',
-    'secondary',
-    'success',
-    'danger',
-    'warning',
-    'light',
-    'dark',
-    'white'
-  ]),
-  bgShow: PropTypes.bool,
-  className: PropTypes.string,
-  clearable: PropTypes.bool,
-  color: PropTypes.oneOf([
-    'primary',
-    'secondary',
-    'success',
-    'danger',
-    'warning',
-    'light',
-    'dark',
-    'muted',
-    'white'
-  ]),
-  defaultValue: PropTypes.string,
-  disabled: PropTypes.bool,
-  icon: PropTypes.string,
-  name: PropTypes.string,
-  placeholder: PropTypes.string,
-  readOnly: PropTypes.bool,
-  type: PropTypes.oneOf(['text', 'number', 'email', 'password', 'tel']),
-  onChange: PropTypes.func,
-  onClick: PropTypes.func
-};
+Object.assign(Input, generateComponentProps(componentData));
 
 export default Input;

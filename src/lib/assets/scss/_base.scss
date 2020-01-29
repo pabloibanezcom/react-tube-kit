@@ -23,8 +23,10 @@ body {
 }
 
 .container {
-  @media (min-width: 1600px) {
-    max-width: 1615px;
+  @each $breakpoint, $container-max-width in $custom-container-max-widths {
+    @media (min-width: $breakpoint) {
+      max-width: $container-max-width;
+    }
   }
 }
 
@@ -46,10 +48,19 @@ a {
     text-decoration: none;
     color: $primary-color;
   }
+
+  &.disabled {
+    opacity: 0.55;
+    pointer-events: none;
+  }
 }
 
 ul {
   padding: 0;
   margin: 0;
   list-style-type: none;
+}
+
+:focus {
+  outline: 0;
 }

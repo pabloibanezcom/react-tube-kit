@@ -1,0 +1,54 @@
+{
+  "name": "Loading Spinner",
+  "component": "LoadingSpinner",
+  "description": "Loading Spinner shows an animation while something is loading in background.",
+  "created": "0.1.1",
+  "lastModified": "0.1.1",
+  "dependencies": [],
+  "libraryDependencies": [
+    {
+      "name": "react-spinners",
+      "url": "https://www.npmjs.com/package/react-spinners"
+    }
+  ],
+  "properties": {
+    "background": {
+      "type": [
+        "light",
+        "dark"
+      ],
+      "default": "light",
+      "description": "Mock description for background"
+    },
+    "className": {
+      "type": "string",
+      "default": "",
+      "description": "Mock description for className"
+    },
+    "color": {
+      "type": [
+        "primary",
+        "secondary"
+      ],
+      "default": "primary",
+      "description": "Mock description for color"
+    },
+    "inverse": {
+      "type": "bool",
+      "default": false,
+      "description": "Mock description for inverse"
+    },
+    "loading": {
+      "type": "bool",
+      "default": false,
+      "description": "Mock description for loading"
+    },
+    "noSpinner": {
+      "type": "bool",
+      "default": false,
+      "description": "Mock description for noSpinner"
+    }
+  },
+  "methods": {},
+  "events": {}
+}

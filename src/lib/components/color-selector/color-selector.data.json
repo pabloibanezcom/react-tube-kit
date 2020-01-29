@@ -1,0 +1,34 @@
+{
+  "name": "Color Selector",
+  "component": "ColorSelector",
+  "description": "Color Selector allows user to select a color in a visual way.",
+  "created": "0.1.1",
+  "lastModified": "0.1.1",
+  "dependencies": [],
+  "libraryDependencies": [
+    {
+      "name": "react-color",
+      "url": "https://www.npmjs.com/package/react-color"
+    }
+  ],
+  "properties": {
+    "className": {
+      "type": "string",
+      "default": "",
+      "description": "Mock description for className"
+    },
+    "color": {
+      "type": "string",
+      "default": null,
+      "description": "Mock description for color"
+    }
+  },
+  "methods": {
+    "onChange": {
+      "type": "func",
+      "default": "emptyFunc",
+      "description": "Mock description for onChange"
+    }
+  },
+  "events": {}
+}

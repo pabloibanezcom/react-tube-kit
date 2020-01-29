@@ -1,6 +1,7 @@
-import PropTypes from 'prop-types';
 import React, { Fragment } from 'react';
 import { BarLoader } from 'react-spinners';
+import generateComponentProps from '../../util/generateComponentProps';
+import componentData from './loading-spinner.data.json';
 
 const LoadingSpinner = props => {
   const { background, className, color, inverse, loading, noSpinner } = props;
@@ -22,22 +23,6 @@ const LoadingSpinner = props => {
   );
 };
 
-LoadingSpinner.defaultProps = {
-  background: 'light',
-  className: '',
-  color: 'primary',
-  inverse: false,
-  loading: false,
-  noSpinner: false
-};
-
-LoadingSpinner.propTypes = {
-  background: PropTypes.oneOf(['light', 'dark']),
-  className: PropTypes.string,
-  color: PropTypes.oneOf(['primary', 'secondary']),
-  inverse: PropTypes.bool,
-  loading: PropTypes.bool,
-  noSpinner: PropTypes.bool
-};
+Object.assign(LoadingSpinner, generateComponentProps(componentData));
 
 export default LoadingSpinner;

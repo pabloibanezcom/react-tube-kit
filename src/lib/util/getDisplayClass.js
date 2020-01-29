@@ -12,7 +12,7 @@ const getDisplayClass = (displayStr, displayMode) => {
     classes.push(`d-${displaySizes[1]}-${displayMode || 'none'}`);
   }
 
-  return classes.join(' ');
+  return classes.map(c => c.replace('-xs', '')).join(' ');
 };
 
 export default getDisplayClass;

@@ -1,0 +1,41 @@
+{
+  "name": "Modal",
+  "component": "Modal",
+  "description": "Modal is a dialog box/popup window that is displayed on top of the current page.",
+  "created": "0.1.1",
+  "lastModified": "0.1.1",
+  "dependencies": [
+    "Button"
+  ],
+  "libraryDependencies": [
+    {
+      "name": "react-modal",
+      "url": "https://www.npmjs.com/package/react-modal"
+    }
+  ],
+  "properties": {
+    "className": {
+      "type": "string",
+      "default": "",
+      "description": "Mock description for className"
+    },
+    "content": {
+      "type": "func",
+      "isRequired": true,
+      "description": "Mock description for content"
+    },
+    "isOpen": {
+      "type": "bool",
+      "default": false,
+      "description": "Mock description for isOpen"
+    }
+  },
+  "methods": {
+    "onClose": {
+      "type": "func",
+      "default": "emptyFunc",
+      "description": "Mock description for onClose"
+    }
+  },
+  "events": {}
+}

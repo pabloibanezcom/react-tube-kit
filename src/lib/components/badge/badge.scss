@@ -1,4 +1,16 @@
 .badge {
+  &--sm {
+    padding: 2px 5px;
+  }
+
+  &--md {
+    padding: 3px 5px;
+  }
+
+  &--lg {
+    padding: 4px 7px;
+  }
+
   &--with-border {
     border: 1px solid $white-color;
   }

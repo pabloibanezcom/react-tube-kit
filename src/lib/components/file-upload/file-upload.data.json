@@ -1,0 +1,49 @@
+{
+  "name": "File Upload",
+  "component": "FileUpload",
+  "description": "FileUpload allows users to select files to be uploaded. Also provides a preview mode for image files.",
+  "created": "0.1.1",
+  "lastModified": "0.1.1",
+  "dependencies": [
+    "Button",
+    "Icon",
+    "ImageAction",
+    "Input"
+  ],
+  "libraryDependencies": [],
+  "properties": {
+    "accept": {
+      "type": "string",
+      "default": null,
+      "description": "Mock description for accept"
+    },
+    "className": {
+      "type": "string",
+      "default": "",
+      "description": "Mock description for className"
+    },
+    "filesLimit": {
+      "type": "number",
+      "default": 1,
+      "description": "Mock description for filesLimit"
+    },
+    "previewsPerRow": {
+      "type": "number",
+      "default": 1,
+      "description": "Mock description for previewsPerRow"
+    },
+    "showPreview": {
+      "type": "bool",
+      "default": false,
+      "description": "Mock description for showPreview"
+    }
+  },
+  "methods": {
+    "onChange": {
+      "type": "func",
+      "default": "emptyFunc",
+      "description": "Mock description for onChange"
+    }
+  },
+  "events": {}
+}

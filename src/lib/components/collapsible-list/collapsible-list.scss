@@ -60,12 +60,16 @@
     .collapsible-list-element {
       &.shown {
         .collapsible-list-header {
-          @include background-color(light);
+          @include background-color(secondary);
         }
       }
 
       .collapsible-list-header {
         @include background-color(light, light);
+
+        &:hover {
+          @include background-color(secondary);
+        }
       }
     }
   }
@@ -80,6 +84,10 @@
 
       .collapsible-list-header {
         @include background-color(primary, secondary);
+
+        &:hover {
+          @include background-color(secondary);
+        }
       }
     }
   }
@@ -94,6 +102,10 @@
 
       .collapsible-list-header {
         @include background-color(secondary, primary);
+
+        &:hover {
+          @include background-color(primary);
+        }
       }
     }
   }

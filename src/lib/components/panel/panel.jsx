@@ -1,11 +1,16 @@
-import PropTypes from 'prop-types';
 import React from 'react';
+import generateComponentProps from '../../util/generateComponentProps';
+import Icon from '../icon/icon';
+import componentData from './panel.data.json';
 
-const panel = ({ background, children, className, header, headerColor, width }) => (
+const panel = ({ background, children, className, headerColor, headerIcon, headerText, width }) => (
   <div className={`panel ${className}`}>
-    {header ? (
+    {headerText ? (
       <div className={`panel-header panel-${headerColor}`}>
-        <h4 className="mb-0 mt-0">{header}</h4>
+        <span className="mb-0 mt-0 d-flex align-items-center font-weight-normal">
+          {headerIcon ? <Icon name={headerIcon} className="mr-2" /> : null}
+          {headerText}
+        </span>
       </div>
     ) : null}
     <div className={`panel-content panel-${background}`} style={width ? { width } : null}>
@@ -14,20 +19,6 @@ const panel = ({ background, children, className, header, headerColor, width }) 
   </div>
 );
 
-panel.defaultProps = {
-  background: 'white',
-  className: null,
-  header: null,
-  headerColor: null,
-  width: null
-};
-
-panel.propTypes = {
-  background: PropTypes.oneOf(['white', 'primary', 'secondary']),
-  className: PropTypes.string,
-  header: PropTypes.string,
-  headerColor: PropTypes.oneOf(['primary', 'secondary']),
-  width: PropTypes.number
-};
+Object.assign(panel, generateComponentProps(componentData));
 
 export default panel;

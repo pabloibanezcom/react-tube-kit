@@ -1,0 +1,87 @@
+{
+  "name": "Layout Wrapper",
+  "component": "LayoutWrapper",
+  "description": "Layout Wrapper contains the basic layout for the page (TopNavbar, SideNavbar & BottomMenu).",
+  "created": "0.1.1",
+  "lastModified": "0.1.1",
+  "dependencies": [
+    "BottomMenu",
+    "LoadingSpinner",
+    "SideNavbar",
+    "TopNavbar"
+  ],
+  "libraryDependencies": [],
+  "properties": {
+    "bottomMenuEnabled": {
+      "type": "bool",
+      "default": false,
+      "description": "Mock description for bottomMenuEnabled"
+    },
+    "bottomMenuOptions": {
+      "type": "object",
+      "default": null,
+      "description": "Mock description for bottomMenuOptions"
+    },
+    "className": {
+      "type": "string",
+      "default": "",
+      "description": "Mock description for className"
+    },
+    "currentPage": {
+      "type": "string",
+      "default": null,
+      "description": "Mock description for currentPage"
+    },
+    "loading": {
+      "type": "bool",
+      "default": false,
+      "description": "Mock description for loading"
+    },
+    "sideNavbarAlign": {
+      "type": [
+        "left",
+        "right"
+      ],
+      "default": "left",
+      "description": "Mock description for sideNavbarAlign"
+    },
+    "sideNavbarEnabled": {
+      "type": "bool",
+      "default": true,
+      "description": "Mock description for sideNavbarEnabled"
+    },
+    "sideNavbarOptions": {
+      "type": "object",
+      "default": null,
+      "description": "Mock description for sideNavbarOptions"
+    },
+    "sideNavbarShown": {
+      "type": "string",
+      "default": "md-",
+      "description": "Mock description for sideNavbarShown"
+    },
+    "sideNavbarSticky": {
+      "type": [
+        "bool",
+        "string"
+      ],
+      "default": false,
+      "description": "Mock description for sideNavbarSticky"
+    },
+    "sideNavbarStretch": {
+      "type": [
+        "bool",
+        "string"
+      ],
+      "default": "md-",
+      "description": "Mock description for sideNavbarSticky"
+    },
+    "topNavbarOptions": {
+      "type": "object",
+      "default": null,
+      "description": "Mock description for topNavbarOptions"
+    }
+  },
+  "methods": {},
+  "events": {}
+}

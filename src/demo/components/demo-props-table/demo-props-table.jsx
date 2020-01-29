@@ -1,19 +1,21 @@
 import React from 'react';
 import JsxParser from 'react-jsx-parser';
 import { Link } from 'react-router-dom';
+import { isObject } from 'util/object';
+import { isEmpty } from '../../../lib/util/object';
 
 const getRenderHtml = str => {
   return <JsxParser components={{ Link }} jsx={str} />;
 };
 
-const DemoPropsTable = ({ properties: { options, methods } }) => {
+const DemoPropsTable = ({ componentData: { properties, methods } }) => {
   return (
-    <div className="demo-props-table mt-12">
-      {options ? (
+    <div className="demo-props-table">
+      {properties ? (
         <div>
-          <h2 name="options" className="mb-4">
-            Options
-          </h2>
+          <h3 name="properties" className="mb-4">
+            Properties
+          </h3>
           <div className="table-wrapper">
             <table>
               <thead>
@@ -26,13 +28,20 @@ const DemoPropsTable = ({ properties: { options, methods } }) => {
                 </tr>
               </thead>
               <tbody>
-                {Object.keys(options).map(propName => (
+                {Object.keys(properties).map(propName => (
                   <tr key={propName}>
                     <td>{propName}</td>
-                    <td>{getTypeLabel(options[propName].type)}</td>
-                    <td>{getRequiredLabel(options[propName].isRequired)}</td>
-                    <td>{options[propName].default}</td>
-                    <td>{getRenderHtml(options[propName].description)}</td>
+                    <td>{getTypeLabel(properties[propName].type)}</td>
+                    <td>{getRequiredLabel(properties[propName].isRequired)}</td>
+                    <td>
+                      {!(
+                        Array.isArray(properties[propName].default) ||
+                        typeof properties[propName].default === 'object'
+                      )
+                        ? properties[propName].default
+                        : JSON.stringify(properties[propName].default)}
+                    </td>
+                    <td>{getRenderHtml(properties[propName].description)}</td>
                   </tr>
                 ))}
               </tbody>
@@ -40,11 +49,11 @@ const DemoPropsTable = ({ properties: { options, methods } }) => {
           </div>
         </div>
       ) : null}
-      {methods ? (
+      {!isEmpty(methods) ? (
         <div className="mt-8">
-          <h2 name="methods" className="mb-4">
+          <h3 name="methods" className="mb-4">
             Methods
-          </h2>
+          </h3>
           <div className="table-wrapper">
             <table>
               <thead>
@@ -80,7 +89,9 @@ const getTypeLabel = type => {
     ) {
       return <span className="primary-type">{typeStr}</span>;
     }
-    return <span className="custom-type">{typeStr}</span>;
+    return (
+      <span className="custom-type">{isObject(typeStr) ? JSON.stringify(typeStr) : typeStr}</span>
+    );
   };
 
   if (!Array.isArray(type)) {

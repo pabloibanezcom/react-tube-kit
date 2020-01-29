@@ -1,0 +1,50 @@
+{
+  "name": "Card",
+  "component": "Card",
+  "description": "Cards provide a flexible and extensible content container with multiple variants and options.",
+  "created": "0.1.1",
+  "lastModified": "0.1.1",
+  "dependencies": [
+    "ImageAction"
+  ],
+  "libraryDependencies": [],
+  "properties": {
+    "className": {
+      "type": "string",
+      "default": "",
+      "description": "Mock description for className"
+    },
+    "color": {
+      "type": [
+        "white",
+        "primary",
+        "secondary"
+      ],
+      "default": "white",
+      "description": "Mock description for color"
+    },
+    "imgButtonText": {
+      "type": "string",
+      "default": null,
+      "description": "Mock description for imgButtonText"
+    },
+    "imgSrc": {
+      "type": "string",
+      "default": null,
+      "description": "Mock description for imgSrc"
+    },
+    "showImage": {
+      "type": "string",
+      "default": "xs-",
+      "description": "Mock description for showImage"
+    }
+  },
+  "methods": {
+    "onImageClick": {
+      "type": "func",
+      "default": "emptyFunc",
+      "description": "Mock description for onImageClick"
+    }
+  },
+  "events": {}
+}

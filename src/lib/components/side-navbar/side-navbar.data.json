@@ -1,0 +1,64 @@
+{
+  "name": "Side Navbar",
+  "component": "SideNavbar",
+  "description": "SideNavbar description.",
+  "created": "0.1.1",
+  "lastModified": "0.1.1",
+  "dependencies": [
+    "Icon"
+  ],
+  "libraryDependencies": [
+    {
+      "name": "react-custom-scrollbars",
+      "url": "https://www.npmjs.com/package/react-custom-scrollbars"
+    }
+  ],
+  "properties": {
+    "align": {
+      "type": [
+        "left",
+        "right"
+      ],
+      "default": "left",
+      "description": "Mock description for align"
+    },
+    "className": {
+      "type": "string",
+      "default": "",
+      "description": "Mock description for className"
+    },
+    "currentPage": {
+      "type": "string",
+      "default": null,
+      "description": "Mock description for currentPage"
+    },
+    "elements": {
+      "type": "array",
+      "default": [],
+      "description": "Mock description for elements"
+    },
+    "isSticky": {
+      "type": "bool",
+      "default": false,
+      "description": "Mock description for isSticky"
+    },
+    "isStretch": {
+      "type": "bool",
+      "default": false,
+      "description": "Mock description for isStretch"
+    },
+    "shown": {
+      "type": "bool",
+      "default": false,
+      "description": "Mock description for shown"
+    }
+  },
+  "methods": {
+    "onClose": {
+      "type": "func",
+      "default": "emptyFunc",
+      "description": "Mock description for onClose"
+    }
+  },
+  "events": {}
+}

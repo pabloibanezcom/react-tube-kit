@@ -1,0 +1,87 @@
+{
+  "name": "Form Field",
+  "component": "FormField",
+  "description": "Form field must be inside a Form.",
+  "created": "0.1.1",
+  "lastModified": "0.1.1",
+  "dependencies": [
+    "ColorSelector",
+    "Input",
+    "Selector"
+  ],
+  "libraryDependencies": [],
+  "properties": {
+    "className": {
+      "type": "string",
+      "default": "",
+      "description": "Mock description for className"
+    },
+    "error": {
+      "type": "string",
+      "default": null,
+      "description": "Mock description for error"
+    },
+    "errorClassName": {
+      "type": "string",
+      "default": "text-danger font-weight-normal",
+      "description": "Mock description for errorClassName"
+    },
+    "fieldClassName": {
+      "type": "string",
+      "default": "font-weight-normal",
+      "description": "Mock description for fieldClassName"
+    },
+    "label": {
+      "type": "string",
+      "default": null,
+      "description": "Mock description for label"
+    },
+    "labelClassName": {
+      "type": "string",
+      "default": "font-weight-normal",
+      "description": "Mock description for labelClassName"
+    },
+    "name": {
+      "type": "string",
+      "default": null,
+      "description": "Mock description for name"
+    },
+    "fieldProps": {
+      "type": "any",
+      "default": null,
+      "description": "Mock description for fieldProps"
+    },
+    "showLabel": {
+      "type": "bool",
+      "default": true,
+      "description": "Mock description for showLabel"
+    },
+    "type": {
+      "type": [
+        "colorSelector",
+        "input",
+        "selector"
+      ],
+      "default": "input",
+      "description": "Mock description for type"
+    },
+    "value": {
+      "type": "any",
+      "default": null,
+      "description": "Mock description for value"
+    },
+    "valueProp": {
+      "type": "string",
+      "default": "defaultValue",
+      "description": "Mock description for valueProp"
+    }
+  },
+  "methods": {
+    "onChange": {
+      "type": "func",
+      "default": "emptyFunc",
+      "description": "Mock description for onChange"
+    }
+  },
+  "events": {}
+}

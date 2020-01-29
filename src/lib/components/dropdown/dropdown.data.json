@@ -1,0 +1,49 @@
+{
+  "name": "Dropdown",
+  "component": "Dropdown",
+  "description": "Dropdowns are toggleable, contextual overlays for displaying lists of links and more.",
+  "created": "0.1.1",
+  "lastModified": "0.1.1",
+  "dependencies": [
+    "Button",
+    "Icon"
+  ],
+  "libraryDependencies": [],
+  "properties": {
+    "buttonProps": {
+      "type": "object",
+      "default": null,
+      "description": "Mock description for buttonProps"
+    },
+    "className": {
+      "type": "string",
+      "default": "",
+      "description": "Mock description for className"
+    },
+    "id": {
+      "type": "string",
+      "default": null,
+      "description": "Mock description for id"
+    },
+    "menuMarginTop": {
+      "type": [
+        "number",
+        "string"
+      ],
+      "default": null,
+      "description": "Mock description for menuMarginTop"
+    },
+    "showArrow": {
+      "type": "bool",
+      "default": false,
+      "description": "Mock description for showArrow"
+    },
+    "text": {
+      "type": "string",
+      "isRequired": true,
+      "description": "Mock description for text"
+    }
+  },
+  "methods": {},
+  "events": {}
+}

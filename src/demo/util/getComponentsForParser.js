@@ -2,23 +2,29 @@ import {
   Badge,
   BottomMenu,
   Button,
+  Card,
+  Carousel,
   CollapsibleList,
   ColorLabel,
   ColorSelector,
   CountryLabel,
+  Dropdown,
+  FileUpload,
   Form,
-  Header,
   Icon,
+  ImageAction,
   Input,
   Label,
   LayoutWrapper,
   LoadingSpinner,
+  Map,
   Modal,
   Pagination,
   Panel,
   Selector,
   SideNavbar,
-  TabMenu
+  TabMenu,
+  TopNavbar
 } from '../../lib';
 
 const getComponentsForParser = componentsString => {
@@ -38,6 +44,10 @@ const getComponentFromName = componentName => {
       return BottomMenu;
     case 'Button':
       return Button;
+    case 'Card':
+      return Card;
+    case 'Carousel':
+      return Carousel;
     case 'CollapsibleList':
       return CollapsibleList;
     case 'CountryLabel':
@@ -46,12 +56,16 @@ const getComponentFromName = componentName => {
       return ColorLabel;
     case 'ColorSelector':
       return ColorSelector;
-    case 'Header':
-      return Header;
+    case 'Dropdown':
+      return Dropdown;
+    case 'FileUpload':
+      return FileUpload;
     case 'Form':
       return Form;
     case 'Icon':
       return Icon;
+    case 'ImageAction':
+      return ImageAction;
     case 'Input':
       return Input;
     case 'Label':
@@ -60,6 +74,8 @@ const getComponentFromName = componentName => {
       return LayoutWrapper;
     case 'LoadingSpinner':
       return LoadingSpinner;
+    case 'Map':
+      return Map;
     case 'Modal':
       return Modal;
     case 'Pagination':
@@ -72,6 +88,8 @@ const getComponentFromName = componentName => {
       return SideNavbar;
     case 'TabMenu':
       return TabMenu;
+    case 'TopNavbar':
+      return TopNavbar;
     default:
       return null;
   }

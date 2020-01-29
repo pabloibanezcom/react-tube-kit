@@ -7,12 +7,12 @@ export const getContrastColor = hexcolor => {
   return yiq >= 128 ? '#000000' : '#ffffff';
 };
 
-export const getAlternateColor = color => {
+export const getAlternateColor = (color, isOutline) => {
   switch (color) {
     case 'primary':
       return 'primary-alt';
     case 'secondary':
-      return 'secondary-alt';
+      return !isOutline ? 'secondary-alt' : 'secondary';
     case 'success':
       return 'white';
     case 'danger':
@@ -25,5 +25,32 @@ export const getAlternateColor = color => {
       return 'white';
     default:
       return 'white';
+  }
+};
+
+export const getColor = type => {
+  switch (type) {
+    case 'primary':
+      return '#e6c300';
+    case 'secondary':
+      return '#002c41';
+    case 'success':
+      return '#28a745';
+    case 'danger':
+      return '#d2372c';
+    case 'warning':
+      return '#eb8c00';
+    case 'white':
+      return '#ffffff';
+    case 'black':
+      return '#000000';
+    case 'grey-dark':
+      return '#9e9e9e';
+    case 'light':
+      return '#f8f9fa';
+    case 'dark':
+      return '#343a40';
+    default:
+      return type;
   }
 };

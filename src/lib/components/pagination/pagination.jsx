@@ -1,8 +1,9 @@
-import PropTypes from 'prop-types';
 import React from 'react';
 import ReactPaginate from 'react-paginate';
+import generateComponentProps from '../../util/generateComponentProps';
+import componentData from './pagination.data.json';
 
-const paginationComponent = ({
+const Pagination = ({
   background,
   className,
   color,
@@ -18,46 +19,31 @@ const paginationComponent = ({
   return (
     <div className={`pagination-container pagination-container-${background} ${className}`}>
       <nav className="navigation" aria-label="Page navigation">
-        <ReactPaginate
-          pageCount={pagination.pages}
-          pageRangeDisplayed={pageRangeDisplayed}
-          marginPagesDisplayed={1}
-          forcePage={pagination.page - 1}
-          onPageChange={handlePageChange}
-          containerClassName={`pagination pagination-round pagination-plain ${
-            background === 'light' ? `pagination-${color}` : ''
-          } pagination-bg-${background} ${size !== 'lg' ? `pagination-${size}` : ''}`}
-          pageClassName="page-item"
-          previousClassName="page-item"
-          nextClassName="page-item"
-          pageLinkClassName="page-link"
-          previousLinkClassName="page-link"
-          nextLinkClassName="page-link"
-          previousLabel="«"
-          nextLabel="»"
-        />
+        {pagination ? (
+          <ReactPaginate
+            pageCount={pagination.pages}
+            pageRangeDisplayed={pageRangeDisplayed}
+            marginPagesDisplayed={1}
+            forcePage={pagination.page - 1}
+            onPageChange={handlePageChange}
+            containerClassName={`pagination pagination-round pagination-plain ${
+              background === 'light' ? `pagination-${color}` : ''
+            } pagination-bg-${background} ${size !== 'lg' ? `pagination-${size}` : ''}`}
+            pageClassName="page-item"
+            previousClassName="page-item"
+            nextClassName="page-item"
+            pageLinkClassName="page-link"
+            previousLinkClassName="page-link"
+            nextLinkClassName="page-link"
+            previousLabel="«"
+            nextLabel="»"
+          />
+        ) : null}
       </nav>
     </div>
   );
 };
 
-paginationComponent.defaultProps = {
-  background: 'light',
-  className: '',
-  color: 'primary',
-  pageRangeDisplayed: 4,
-  size: 'lg',
-  onPageChange: () => {}
-};
+Object.assign(Pagination, generateComponentProps(componentData));
 
-paginationComponent.propTypes = {
-  background: PropTypes.oneOf(['light', 'primary', 'secondary']),
-  className: PropTypes.string,
-  color: PropTypes.oneOf(['primary', 'secondary']),
-  pagination: PropTypes.object.isRequired,
-  pageRangeDisplayed: PropTypes.number,
-  size: PropTypes.oneOf(['sm', 'lg']),
-  onPageChange: PropTypes.func
-};
-
-export default paginationComponent;
+export default Pagination;

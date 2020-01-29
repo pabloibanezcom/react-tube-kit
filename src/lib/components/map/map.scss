@@ -1,0 +1,19 @@
+.gm-style-iw {
+  &.gm-style-iw-c {
+    padding: 0;
+  }
+
+  .gm-style-iw-d {
+    overflow: unset !important;
+  }
+}
+
+.gm-style-iw-t {
+  &::after {
+    background: none !important;
+  }
+}
+
+.gm-ui-hover-effect {
+  z-index: 10;
+}

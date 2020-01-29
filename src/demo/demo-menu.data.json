@@ -22,90 +22,139 @@
     "url": "components",
     "children": [
       {
-        "name": "Badges",
-        "url": "badges"
+        "name": "Badge",
+        "url": "badge",
+        "component": "Badge"
       },
       {
-        "name": "Buttons & Links",
-        "url": "buttons"
+        "name": "Bottom menu",
+        "url": "bottom-menu",
+        "component": "BottomMenu"
       },
       {
-        "name": "Collapsible lists",
-        "url": "collapsible-lists"
+        "name": "Button & Link",
+        "url": "button",
+        "component": "Button"
       },
       {
-        "name": "Color labels",
-        "url": "color-labels"
+        "name": "Card",
+        "url": "card",
+        "component": "Card"
       },
       {
-        "name": "Color selectors",
-        "url": "color-selectors"
+        "name": "Carousel",
+        "url": "carousel",
+        "component": "Carousel"
       },
       {
-        "name": "Country labels",
-        "url": "country-labels"
+        "name": "Collapsible list",
+        "url": "collapsible-list",
+        "component": "CollapsibleList"
       },
       {
-        "name": "Forms",
-        "url": "forms"
+        "name": "Color label",
+        "url": "color-label",
+        "component": "ColorLabel"
       },
       {
-        "name": "Icons",
-        "url": "icons"
+        "name": "Color selector",
+        "url": "color-selector",
+        "component": "ColorSelector"
       },
       {
-        "name": "Inputs",
-        "url": "inputs"
+        "name": "Country label",
+        "url": "country-label",
+        "component": "CountryLabel"
       },
       {
-        "name": "Labels",
-        "url": "labels"
+        "name": "Dropdown",
+        "url": "dropdown",
+        "component": "Dropdown"
       },
       {
-        "name": "Layout",
-        "url": "layout",
-        "children": [
-          {
-            "name": "Layout wrappers",
-            "url": "layout-wrappers"
-          },
-          {
-            "name": "Headers",
-            "url": "headers"
-          },
-          {
-            "name": "Bottom menus",
-            "url": "bottom-menus"
-          },
-          {
-            "name": "Side navbars",
-            "url": "side-navbars"
-          }
-        ]
+        "name": "File upload",
+        "url": "file-upload",
+        "component": "FileUpload"
       },
       {
-        "name": "Loading spinners",
-        "url": "loading-spinners"
+        "name": "Form",
+        "url": "form",
+        "component": "Form"
       },
       {
-        "name": "Modals",
-        "url": "modals"
+        "name": "Form Field",
+        "url": "form-field",
+        "component": "FormField"
       },
       {
-        "name": "Paginations",
-        "url": "paginations"
+        "name": "Icon",
+        "url": "icon",
+        "component": "Icon"
       },
       {
-        "name": "Panels",
-        "url": "panels"
+        "name": "Image action",
+        "url": "image-action",
+        "component": "ImageAction"
       },
       {
-        "name": "Selectors",
-        "url": "selectors"
+        "name": "Input",
+        "url": "input",
+        "component": "Input"
       },
       {
-        "name": "Tab menus",
-        "url": "tab-menus"
+        "name": "Label",
+        "url": "label",
+        "component": "Label"
+      },
+      {
+        "name": "Layout wrapper",
+        "url": "layout-wrapper",
+        "component": "LayoutWrapper"
+      },
+      {
+        "name": "Loading spinner",
+        "url": "loading-spinner",
+        "component": "LoadingSpinner"
+      },
+      {
+        "name": "Map",
+        "url": "map",
+        "component": "Map"
+      },
+      {
+        "name": "Modal",
+        "url": "modal",
+        "component": "Modal"
+      },
+      {
+        "name": "Pagination",
+        "url": "pagination",
+        "component": "Pagination"
+      },
+      {
+        "name": "Panel",
+        "url": "panel",
+        "component": "Panel"
+      },
+      {
+        "name": "Selector",
+        "url": "selector",
+        "component": "Selector"
+      },
+      {
+        "name": "Side navbar",
+        "url": "side-navbar",
+        "component": "SideNavbar"
+      },
+      {
+        "name": "Tab menu",
+        "url": "tab-menu",
+        "component": "TabMenu"
+      },
+      {
+        "name": "Top Navbar",
+        "url": "top-navbar",
+        "component": "TopNavbar"
       }
     ]
   },

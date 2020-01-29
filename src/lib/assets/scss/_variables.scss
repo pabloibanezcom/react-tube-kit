@@ -26,13 +26,25 @@ $secondary-alt-color: $white-color !default;
 
 $outline-font-color: $secondary-color;
 
+// container
+$custom-container-max-widths: (
+  576px: 540px,
+  768px: 720px,
+  992px: 960px,
+  1350px: 1290px,
+  1615px: 1600px
+) !default;
+
 // z-index
-$z-layout-wrapper: 100;
-$z-header: 200;
-$z-side-navbar: 300;
+$z-layout-wrapper: 100 !default;
+$z-top-navbar: 200 !default;
+$z-side-navbar: 300 !default;
 
 // Layout
-$header-height: 56px;
-$side-navbar-width: 230px;
-$layout-transitions-duration: 0.2s;
-$overlay-opacity: 0.75;
+$top-navbar-height: 56px !default;
+$side-navbar-width: 230px !default;
+$layout-transitions-duration: 0.2s !default;
+$overlay-opacity: 0.75 !default;
+
+// Radius
+$border-radius: 3px !default;

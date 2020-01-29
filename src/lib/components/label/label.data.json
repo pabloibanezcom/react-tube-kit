@@ -1,0 +1,51 @@
+{
+  "name": "Label",
+  "component": "Label",
+  "description": "Label is one of the very basic HTML elements. The label is an ordinary text, clicking on which, the user can select the form element.",
+  "created": "0.1.1",
+  "lastModified": "0.1.1",
+  "dependencies": [],
+  "libraryDependencies": [],
+  "properties": {
+    "className": {
+      "type": "string",
+      "default": "",
+      "description": "Mock description for className"
+    },
+    "color": {
+      "type": [
+        "primary",
+        "secondary",
+        "success",
+        "danger",
+        "warning",
+        "info",
+        "light",
+        "dark",
+        "body",
+        "muted",
+        "white",
+        "black-50",
+        "white-50"
+      ],
+      "default": "body",
+      "description": "Mock description for color"
+    },
+    "forhtml": {
+      "type": "string",
+      "default": null,
+      "description": "Mock description for forhtml"
+    },
+    "weight": {
+      "type": [
+        "bold",
+        "normal",
+        "light"
+      ],
+      "default": "normal",
+      "description": "Mock description for weight"
+    }
+  },
+  "methods": {},
+  "events": {}
+}

@@ -1,9 +1,10 @@
-import PropTypes from 'prop-types';
 import React from 'react';
+import generateComponentProps from '../../util/generateComponentProps';
+import componentData from './footer.data.json';
 
-const Footer = ({ text }) => {
+const Footer = ({ className, text }) => {
   return (
-    <footer className="footer">
+    <footer className={`footer ${className}`}>
       <div className="container">
         <span>{text}</span>
       </div>
@@ -11,8 +12,6 @@ const Footer = ({ text }) => {
   );
 };
 
-Footer.propTypes = {
-  text: PropTypes.string.isRequired
-};
+Object.assign(Footer, generateComponentProps(componentData));
 
 export default Footer;

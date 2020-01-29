@@ -24,6 +24,10 @@
 // animate
 @import 'node_modules/animate.css/animate.min';
 
+//react-slick
+@import 'node_modules/slick-carousel/slick/slick.scss';
+@import 'node_modules/slick-carousel/slick/slick-theme.scss';
+
 // fonts
 @import './fonts/scss/circular-airbnb';
 
@@ -41,9 +45,13 @@
 
 @import './scss/animations';
 @import './scss/base';
+@import './scss/borders';
 @import './scss/buttons';
 @import './scss/headers';
+@import './scss/notification';
 @import './scss/opacity';
+@import './scss/position';
 @import './scss/rounded';
 @import './scss/table';
 @import './scss/text';
+@import './scss/width';

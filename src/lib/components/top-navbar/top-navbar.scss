@@ -1,0 +1,51 @@
+@import './top-navbar-mobile-menu/top-navbar-mobile-menu.scss';
+
+.top-navbar {
+  position: fixed;
+  background-color: $secondary-color;
+  color: $secondary-alt-color;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.29);
+  border-bottom: 2px solid $primary-color;
+  height: $top-navbar-height;
+  width: 100%;
+  z-index: $z-top-navbar;
+
+  &__logo {
+    margin-right: 10px;
+    height: 36px;
+
+    @include media-breakpoint-up(md) {
+      height: 40px;
+    }
+  }
+
+  &__title {
+    font-size: 2.4rem;
+    display: inline-block;
+    font-weight: 200;
+    word-spacing: -6px;
+
+    @include media-breakpoint-up(md) {
+      font-size: 2.8rem;
+    }
+
+    span {
+      font-weight: 400;
+    }
+  }
+
+  &__subtitle {
+    color: $primary-color;
+    margin-left: 15px;
+    font-size: 2.2rem;
+    word-spacing: 0px;
+  }
+
+  &__menu-buttom {
+    color: $white-color;
+
+    i {
+      font-size: 3.2rem !important;
+    }
+  }
+}

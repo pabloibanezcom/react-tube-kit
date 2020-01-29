@@ -1,6 +1,5 @@
 .btn {
   display: inline-block;
-  text-align: center;
   border-radius: 2px;
   position: relative;
   box-shadow: none !important;
@@ -22,7 +21,27 @@
     vertical-align: middle;
   }
 
-  &.btn-sm {
+  &--xs {
+    padding: 1px 5px;
+    font-size: 1rem;
+
+    .icon {
+      font-size: 1.2rem;
+      margin-right: 0.4rem;
+    }
+  }
+
+  &--sm {
+    padding: 3px 10px;
+    font-size: 1rem;
+
+    .icon {
+      font-size: 1.2rem;
+      margin-right: 0.6rem;
+    }
+  }
+
+  &--md {
     padding: 5px 20px;
     font-size: 1.2rem;
 
@@ -32,7 +51,7 @@
     }
   }
 
-  &.btn-lg {
+  &--lg {
     padding: 8px 30px;
     font-size: 1.4rem;
 
@@ -123,5 +142,13 @@
 
   &.link-secondary {
     @include color(secondary, primary);
+  }
+
+  &.link-primary-alt {
+    @include color(primary-alt, secondary-alt);
+  }
+
+  &.link-secondary-alt {
+    @include color(secondary-alt, primary);
   }
 }

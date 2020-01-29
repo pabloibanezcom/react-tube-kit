@@ -8,15 +8,14 @@ import routes from './routes';
 const Demo = ({ history }) => (
   <Fragment>
     <LayoutWrapper
-      headerTitle="React Tube Kit"
-      headerLogo={logo}
-      className="demo"
       currentPage={history.location.pathname.replace('/demo/', '')}
-      sideNavbarElements={menuElements}
+      className="demo"
+      topNavbarOptions={{ title: 'React Tube Kit', logo }}
+      sideNavbarOptions={{ elements: menuElements }}
     >
-      {routes}
+      <div className="container layout-container pt-7 pb-7">{routes}</div>
     </LayoutWrapper>
-    <Footer text="Development & Design by Pablo Ibanez - 2019" />
+    <Footer text="Development & Design by Pablo Ibanez - 2020" />
   </Fragment>
 );
 

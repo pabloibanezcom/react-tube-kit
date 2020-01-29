@@ -1,6 +1,7 @@
-import PropTypes from 'prop-types';
 import React, { Fragment } from 'react';
+import generateComponentProps from '../../util/generateComponentProps';
 import Badge from '../badge/badge';
+import componentData from './country-label.data.json';
 
 const CountryLabel = ({
   backgroundColor,
@@ -10,18 +11,20 @@ const CountryLabel = ({
   className,
   color,
   country: { code, name },
+  customName,
+  size,
   weight,
   type
 }) => {
   const basicLabel = (
     <Fragment>
       <div className={`country-flag flag-${code.toLowerCase()} ${badge ? 'flag-small' : null}`} />
-      <span className="country-name">{name}</span>
+      <span className="country-name">{customName || name}</span>
     </Fragment>
   );
 
   return (
-    <div className={`d-flex align-items-center country-label ${className}`}>
+    <div className={`d-flex align-items-center country-label country-label--${size} ${className}`}>
       {!badge ? (
         basicLabel
       ) : (
@@ -40,30 +43,6 @@ const CountryLabel = ({
   );
 };
 
-CountryLabel.defaultProps = {
-  backgroundColor: null,
-  badge: false,
-  block: false,
-  border: false,
-  className: '',
-  color: null,
-  weight: 'normal',
-  type: 'primary'
-};
-
-CountryLabel.propTypes = {
-  backgroundColor: PropTypes.string,
-  badge: PropTypes.bool,
-  block: PropTypes.bool,
-  border: PropTypes.bool,
-  className: PropTypes.string,
-  color: PropTypes.string,
-  country: PropTypes.shape({
-    code: PropTypes.string,
-    name: PropTypes.string
-  }).isRequired,
-  weight: PropTypes.oneOf(['bold', 'normal', 'light']),
-  type: PropTypes.oneOf(['primary', 'secondary', 'success', 'danger', 'warning'])
-};
+Object.assign(CountryLabel, generateComponentProps(componentData));
 
 export default CountryLabel;

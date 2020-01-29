@@ -1,0 +1,64 @@
+{
+  "name": "Pagination",
+  "component": "Pagination",
+  "description": "Pagination allows you to make large amounts of content easy to find and breaks up several entries or web content into multiple pages, allowing you to toggle through content with ease.",
+  "created": "0.1.1",
+  "lastModified": "0.1.1",
+  "dependencies": [],
+  "libraryDependencies": [
+    {
+      "name": "react-paginate",
+      "url": "https://www.npmjs.com/package/react-paginate"
+    }
+  ],
+  "properties": {
+    "background": {
+      "type": [
+        "light",
+        "primary",
+        "secondary"
+      ],
+      "default": "light",
+      "description": "Mock description for background"
+    },
+    "className": {
+      "type": "string",
+      "default": "",
+      "description": "Mock description for className"
+    },
+    "color": {
+      "type": [
+        "primary",
+        "secondary"
+      ],
+      "default": "primary",
+      "description": "Mock description for color"
+    },
+    "pagination": {
+      "type": "object",
+      "default": null,
+      "description": "Mock description for pagination"
+    },
+    "pageRangeDisplayed": {
+      "type": "number",
+      "default": 4,
+      "description": "Mock description for pageRangeDisplayed"
+    },
+    "size": {
+      "type": [
+        "sm",
+        "lg"
+      ],
+      "default": "lg",
+      "description": "Mock description for size"
+    }
+  },
+  "methods": {
+    "onPageChange": {
+      "type": "func",
+      "default": "emptyFunc",
+      "description": "Mock description for onPageChange"
+    }
+  },
+  "events": {}
+}

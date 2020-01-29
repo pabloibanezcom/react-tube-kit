@@ -34,6 +34,18 @@
     .tab-menu__header-item {
       flex: 1;
 
+      &:first-of-type {
+        a {
+          border-top-left-radius: $border-radius;
+        }
+      }
+
+      &:last-of-type {
+        a {
+          border-top-right-radius: $border-radius;
+        }
+      }
+
       a {
         display: block;
         text-align: center;
