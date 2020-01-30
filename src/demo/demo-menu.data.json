@@ -179,5 +179,9 @@
         "url": "text"
       }
     ]
+  },
+  {
+    "name": "Releases",
+    "url": "releases"
   }
 ]

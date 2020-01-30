@@ -110,6 +110,20 @@ const Button = ({
       </a>
     );
   }
+  if (type === 'link' && href) {
+    return (
+      <a
+        id={id}
+        className={classStr}
+        onClick={onClick}
+        disabled={disabled}
+        href={href}
+        target={newPage ? '_blank' : null}
+      >
+        {content}
+      </a>
+    );
+  }
   return null;
 };
 

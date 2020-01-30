@@ -1,0 +1,38 @@
+[
+  {
+    "version": "0.1.1",
+    "date": "29-01-2020",
+    "added": [
+      "Badge",
+      "BottomMenu",
+      "Button",
+      "Card",
+      "Carousel",
+      "CollapsibleList",
+      "ColorLabel",
+      "ColorSelector",
+      "CountryLabel",
+      "Dropdown",
+      "FileUpload",
+      "Footer",
+      "Form",
+      "FormField",
+      "Icon",
+      "ImageAction",
+      "Input",
+      "Label",
+      "LayoutWrapper",
+      "LoadingSpinner",
+      "Map",
+      "Modal",
+      "Pagination",
+      "Panel",
+      "Selector",
+      "SideNavbar",
+      "TabMenu",
+      "TopNavbar"
+    ],
+    "modified": [],
+    "removed": []
+  }
+]
