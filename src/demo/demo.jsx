@@ -2,9 +2,12 @@ import { Button, Footer, LayoutWrapper } from 'components';
 import React, { Fragment } from 'react';
 import { withRouter } from 'react-router-dom';
 import logo from './assets/img/logo192.png';
+import components from './components.json';
 import menuElements from './demo-menu.data.json';
 import releases from './releases.json';
 import routes from './routes';
+
+menuElements.find(mEl => mEl.url === 'components').children = components;
 
 const Demo = ({ history }) => {
   const rightContent = () => {
