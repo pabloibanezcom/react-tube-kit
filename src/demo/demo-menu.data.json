@@ -19,144 +19,7 @@
   },
   {
     "name": "Components",
-    "url": "components",
-    "children": [
-      {
-        "name": "Badge",
-        "url": "badge",
-        "component": "Badge"
-      },
-      {
-        "name": "Bottom menu",
-        "url": "bottom-menu",
-        "component": "BottomMenu"
-      },
-      {
-        "name": "Button & Link",
-        "url": "button",
-        "component": "Button"
-      },
-      {
-        "name": "Card",
-        "url": "card",
-        "component": "Card"
-      },
-      {
-        "name": "Carousel",
-        "url": "carousel",
-        "component": "Carousel"
-      },
-      {
-        "name": "Collapsible list",
-        "url": "collapsible-list",
-        "component": "CollapsibleList"
-      },
-      {
-        "name": "Color label",
-        "url": "color-label",
-        "component": "ColorLabel"
-      },
-      {
-        "name": "Color selector",
-        "url": "color-selector",
-        "component": "ColorSelector"
-      },
-      {
-        "name": "Country label",
-        "url": "country-label",
-        "component": "CountryLabel"
-      },
-      {
-        "name": "Dropdown",
-        "url": "dropdown",
-        "component": "Dropdown"
-      },
-      {
-        "name": "File upload",
-        "url": "file-upload",
-        "component": "FileUpload"
-      },
-      {
-        "name": "Form",
-        "url": "form",
-        "component": "Form"
-      },
-      {
-        "name": "Form Field",
-        "url": "form-field",
-        "component": "FormField"
-      },
-      {
-        "name": "Icon",
-        "url": "icon",
-        "component": "Icon"
-      },
-      {
-        "name": "Image action",
-        "url": "image-action",
-        "component": "ImageAction"
-      },
-      {
-        "name": "Input",
-        "url": "input",
-        "component": "Input"
-      },
-      {
-        "name": "Label",
-        "url": "label",
-        "component": "Label"
-      },
-      {
-        "name": "Layout wrapper",
-        "url": "layout-wrapper",
-        "component": "LayoutWrapper"
-      },
-      {
-        "name": "Loading spinner",
-        "url": "loading-spinner",
-        "component": "LoadingSpinner"
-      },
-      {
-        "name": "Map",
-        "url": "map",
-        "component": "Map"
-      },
-      {
-        "name": "Modal",
-        "url": "modal",
-        "component": "Modal"
-      },
-      {
-        "name": "Pagination",
-        "url": "pagination",
-        "component": "Pagination"
-      },
-      {
-        "name": "Panel",
-        "url": "panel",
-        "component": "Panel"
-      },
-      {
-        "name": "Selector",
-        "url": "selector",
-        "component": "Selector"
-      },
-      {
-        "name": "Side navbar",
-        "url": "side-navbar",
-        "component": "SideNavbar"
-      },
-      {
-        "name": "Tab menu",
-        "url": "tab-menu",
-        "component": "TabMenu"
-      },
-      {
-        "name": "Top Navbar",
-        "url": "top-navbar",
-        "component": "TopNavbar"
-      }
-    ]
+    "url": "components"
   },
   {
     "name": "Utilities",
@@ -179,5 +42,9 @@
         "url": "text"
       }
     ]
+  },
+  {
+    "name": "Releases",
+    "url": "releases"
   }
 ]

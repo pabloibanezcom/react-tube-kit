@@ -40,7 +40,7 @@ const LayoutWrapper = ({
   }, [sideNavbarSticky, sideNavbarStretch, windowSize]);
 
   return (
-    <div className={`layout ${className}`}>
+    <div className={`layout flex-grow-1 ${className}`}>
       <LoadingSpinner
         loading={loading || !(!showSideNavbar || isNavbarSticky || isNavbarStretch)}
         background="dark"

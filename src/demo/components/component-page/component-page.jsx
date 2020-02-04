@@ -11,13 +11,13 @@ const ComponentPage = ({ componentData, examples }) => {
       <p>{componentData.description}</p>
       <div>
         <span className="font-weight-normal mr-2">Created:</span>
-        <Button type="link" color="secondary">
+        <Button type="link" color="secondary" to="/releases" hash={componentData.created}>
           {componentData.created}
         </Button>
       </div>
       <div>
         <span className="font-weight-normal mr-2">Last modified:</span>
-        <Button type="link" color="secondary">
+        <Button type="link" color="secondary" to="/releases" hash={componentData.lastModified}>
           {componentData.lastModified}
         </Button>
       </div>
